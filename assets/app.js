@@ -170,6 +170,10 @@ const pcMenuIcons = {
   "客户档案": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
   "客户门店档案": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
   "货主客户关系": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="5" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h0"/><path d="M18 21v-2a4 4 0 0 0-4-4h0"/></svg>',
+  "供应商合同": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+  "货主客户协议": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><line x1="12" y1="14" x2="12" y2="14"/></svg>',
+  "供应商合同详情": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+  "货主客户协议详情": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><line x1="12" y1="14" x2="12" y2="14"/></svg>',
   "货主仓库关系表": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',
   "客户门店仓库关系表": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><line x1="9" y1="18" x2="15" y2="18"/></svg>',
   "客户要货单": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
@@ -205,7 +209,11 @@ const pcMenuIcons = {
   "财务对账报表": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
   "财务协同": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
   "质检报告": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
-  "接口日志": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
+  "接口日志": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>',
+  "评价维度配置": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+  "客户评价报表": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>',
+  "客户评价明细": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  "商品调价单": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>'
 };
 
 const pcMenu = [
@@ -213,13 +221,14 @@ const pcMenu = [
   { group: "基础信息", items: [
     { file: "pc-org.html", name: "组织管理" },
     { file: "pc-supplier.html", name: "供应商档案" },
+    { file: "pc-suppliercontract.html", name: "供应商合同" },
+    { file: "pc-suppliercontract-detail.html", name: "供应商合同详情" },
     { file: "pc-newproduct.html", name: "新品录入单" },
     { file: "pc-productinfo.html", name: "商品信息" },
     { file: "pc-warehouse.html", name: "配送仓管理" },
-    { file: "pc-vehicle.html", name: "车辆管理" },
-    { file: "pc-sla.html", name: "标准时效" },
     { file: "pc-warehouserelation.html", name: "仓库关系表" },
-    { file: "pc-storeordercycle.html", name: "门店要货周期定义表" }
+    { file: "pc-storeordercycle.html", name: "门店要货周期定义表" },
+    { file: "pc-customerservice.html", name: "评价维度配置" }
   ] },
   { group: "货主管理", items: [
     { file: "pc-owner.html", name: "货主档案" },
@@ -228,7 +237,9 @@ const pcMenu = [
     { file: "pc-customerstore.html", name: "客户门店档案" },
     { file: "pc-ownercustomer.html", name: "货主客户关系" },
     { file: "pc-ownerwarehouse.html", name: "货主仓库关系表" },
-    { file: "pc-customerstorerelation.html", name: "客户门店仓库关系表" }
+    { file: "pc-customerstorerelation.html", name: "客户门店仓库关系表" },
+    { file: "pc-ownercustomeragreement.html", name: "货主客户协议" },
+    { file: "pc-priceadjust.html", name: "商品调价单" }
   ] },
   { group: "业务管理", items: [
     { file: "pc-demand.html", name: "客户要货单" },
@@ -264,7 +275,9 @@ const pcMenu = [
     { file: "pc-reportcenter.html", name: "运营综合报表" },
     { file: "pc-reportcenter.html", name: "配送履约报表" },
     { file: "pc-reportcenter.html", name: "库存分析报表" },
-    { file: "pc-reportcenter.html", name: "财务对账报表" }
+    { file: "pc-reportcenter.html", name: "财务对账报表" },
+    { file: "pc-evaluationreport.html", name: "客户评价报表" },
+    { file: "pc-evaluationdetail.html", name: "客户评价明细" }
   ] },
   { group: "运营支撑", items: [
     { file: "pc-approval.html", name: "审批中心" },
@@ -429,6 +442,16 @@ const pcDemoRoutes = {
     { label: "商品信息", file: "pc-productinfo.html" },
     { label: "货主档案", file: "pc-owner.html" }
   ],
+  suppliercontract: [
+    { label: "供应商档案", file: "pc-supplier.html" },
+    { label: "货主供应商", file: "pc-ownersupplier.html" },
+    { label: "入库申请单", file: "pc-inbound.html" }
+  ],
+  suppliercontractdetail: [
+    { label: "供应商合同", file: "pc-suppliercontract.html" },
+    { label: "供应商档案", file: "pc-supplier.html" },
+    { label: "入库申请单", file: "pc-inbound.html" }
+  ],
   warehouse: [
     { label: "车辆管理", file: "pc-vehicle.html" },
     { label: "货主仓库关系表", file: "pc-ownerwarehouse.html" },
@@ -448,6 +471,11 @@ const pcDemoRoutes = {
     { label: "客户门店档案", file: "pc-customerstore.html" },
     { label: "客户要货单", file: "pc-demand.html" },
     { label: "客户门店仓库关系表", file: "pc-customerstorerelation.html" }
+  ],
+  customerservice: [
+    { label: "客户评价报表", file: "pc-evaluationreport.html" },
+    { label: "货主档案", file: "pc-owner.html" },
+    { label: "客户档案", file: "pc-customer.html" }
   ],
   productinfo: [
     { label: "新品录入单", file: "pc-newproduct.html" },
@@ -490,6 +518,21 @@ const pcDemoRoutes = {
     { label: "客户要货单", file: "pc-demand.html" },
     { label: "货主仓库关系表", file: "pc-ownerwarehouse.html" }
   ],
+  ownercustomeragreement: [
+    { label: "货主档案", file: "pc-owner.html" },
+    { label: "客户档案", file: "pc-customer.html" },
+    { label: "货主客户关系", file: "pc-ownercustomer.html" }
+  ],
+  ownercustomeragreementdetail: [
+    { label: "货主客户协议", file: "pc-ownercustomeragreement.html" },
+    { label: "货主档案", file: "pc-owner.html" },
+    { label: "客户档案", file: "pc-customer.html" }
+  ],
+  priceadjust: [
+    { label: "货主档案", file: "pc-owner.html" },
+    { label: "商品信息", file: "pc-productinfo.html" },
+    { label: "货主客户协议", file: "pc-ownercustomeragreement.html" }
+  ],
   approval: [
     { label: "财务协同", file: "pc-finance.html" },
     { label: "接口日志", file: "pc-logs.html" },
@@ -504,6 +547,16 @@ const pcDemoRoutes = {
     { label: "财务协同", file: "pc-finance.html" },
     { label: "首页工作台", file: "pc-dashboard.html" },
     { label: "审批中心", file: "pc-approval.html" }
+  ],
+  evaluationreport: [
+    { label: "客户评价明细", file: "pc-evaluationdetail.html" },
+    { label: "客户服务评价体系", file: "pc-customerservice.html" },
+    { label: "财务协同", file: "pc-finance.html" }
+  ],
+  evaluationdetail: [
+    { label: "客户评价报表", file: "pc-evaluationreport.html" },
+    { label: "客户服务评价体系", file: "pc-customerservice.html" },
+    { label: "财务协同", file: "pc-finance.html" }
   ]
 };
 
@@ -1229,6 +1282,50 @@ const pcPages = {
         <tr><td>SUP004</td><td>安洁防护用品厂</td><td>品牌供应商</td><td>新品直配</td><td>孙磊</td><td>13800040004</td><td>清洁消杀/防护</td><td>单笔结算</td><td><span class="tag blue">已配置</span></td></tr>
       </tbody></table></div>`
   },
+  suppliercontract: {
+    title: "供应商合同",
+    desc: "管理与供应商签署的采购合同，记录合同关联的商品明细，支持按供应商查询合同商品供应范围，用于采购入库和财务结算。",
+    actions: ["新增合同", "导出合同"],
+    content: `
+      <div class="data-table-wrap"><table><thead><tr><th>合同编号</th><th>合同名称</th><th>供应商</th><th>签约日期</th><th>有效期至</th><th>结算方式</th><th>状态</th></tr></thead><tbody>
+        <tr><td><a class="doc-link" href="pc-suppliercontract-detail.html">HT-SUP001-2026</a></td><td>华润怡宝年度采购框架合同</td><td>华润怡宝供应链</td><td>2026-01-01</td><td>2026-12-31</td><td>月结30天</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-suppliercontract-detail.html">HT-SUP002-2026</a></td><td>中粮食品配送服务协议</td><td>中粮食品配送</td><td>2026-01-15</td><td>2027-01-14</td><td>月结45天</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-suppliercontract-detail.html">HT-SUP003-2026</a></td><td>华南集采中心合作协议</td><td>华南区域集采中心</td><td>2026-02-01</td><td>2027-01-31</td><td>季结</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-suppliercontract-detail.html">HT-SUP004-2026</a></td><td>安洁防护用品采购协议</td><td>安洁防护用品厂</td><td>2026-03-01</td><td>2027-02-28</td><td>单笔结算</td><td><span class="tag blue">待续签</span></td></tr>
+      </tbody></table></div>`
+  },
+  suppliercontractdetail: {
+    title: "供应商合同详情",
+    desc: "查看合同基本信息与关联商品明细。",
+    actions: ["编辑合同", "下载合同", "返回列表"],
+    content: `
+      <div class="section-card">
+        <div class="section-head"><h3>合同基本信息</h3><div class="action-row"><button class="ghost-button">编辑合同</button><button class="ghost-button">下载合同</button><a class="ghost-button" href="pc-suppliercontract.html">返回列表</a></div></div>
+        <div class="info-grid">
+          <div class="info-item"><div class="k">合同编号</div><div>HT-SUP001-2026</div></div>
+          <div class="info-item"><div class="k">合同名称</div><div>华润怡宝年度采购框架合同</div></div>
+          <div class="info-item"><div class="k">供应商</div><div>华润怡宝供应链</div></div>
+          <div class="info-item"><div class="k">供应商类型</div><div>品牌供应商</div></div>
+          <div class="info-item"><div class="k">签约日期</div><div>2026-01-01</div></div>
+          <div class="info-item"><div class="k">有效期至</div><div>2026-12-31</div></div>
+          <div class="info-item"><div class="k">结算方式</div><div>月结30天</div></div>
+          <div class="info-item"><div class="k">合同状态</div><div><span class="tag green">生效中</span></div></div>
+          <div class="info-item"><div class="k">联系人</div><div>刘明</div></div>
+          <div class="info-item"><div class="k">联系电话</div><div>13800010001</div></div>
+        </div>
+      </div>
+      <div class="section-card" style="margin-top:12px;">
+        <div class="section-head"><h3>合同商品明细</h3><div class="action-row"><button class="ghost-button">新增商品</button><button class="ghost-button">批量导入</button></div></div>
+        <div class="data-table-wrap"><table><thead><tr><th>商品编码</th><th>商品名称</th><th>规格</th><th>单位</th><th>供应商报价(未税)</th><th>税率</th><th>含税单价</th><th>最低起订量</th><th>状态</th></tr></thead><tbody>
+          <tr><td>MAT-001</td><td>怡宝饮用纯净水550ml</td><td>24瓶/箱</td><td>箱</td><td>18.50</td><td>13%</td><td>20.91</td><td>50</td><td><span class="tag green">在供</span></td></tr>
+          <tr><td>MAT-002</td><td>怡宝饮用纯净水1.5L</td><td>12瓶/箱</td><td>箱</td><td>22.00</td><td>13%</td><td>24.86</td><td>30</td><td><span class="tag green">在供</span></td></tr>
+          <tr><td>MAT-003</td><td>五常大米5kg</td><td>4袋/箱</td><td>箱</td><td>65.00</td><td>13%</td><td>73.45</td><td>20</td><td><span class="tag green">在供</span></td></tr>
+          <tr><td>MAT-004</td><td>鲁花花生油5L</td><td>4桶/箱</td><td>箱</td><td>88.00</td><td>13%</td><td>99.44</td><td>15</td><td><span class="tag green">在供</span></td></tr>
+          <tr><td>MAT-005</td><td>综合品类-清洁剂</td><td>12瓶/箱</td><td>箱</td><td>28.00</td><td>13%</td><td>31.64</td><td>40</td><td><span class="tag green">在供</span></td></tr>
+          <tr><td>MAT-NEW-001</td><td>新品-消杀喷雾</td><td>24瓶/箱</td><td>箱</td><td>38.94</td><td>13%</td><td>44.00</td><td>25</td><td><span class="tag orange">待上线</span></td></tr>
+        </tbody></table></div>
+      </div>`
+  },
   warehouse: {
     title: "配送仓管理",
     desc: "维护配送仓库基础信息，用于入库、发货、退仓等业务环节的仓库分配与调度。",
@@ -1282,6 +1379,21 @@ const pcPages = {
         <tr><td>OC004</td><td>STORE004</td><td>海珠网点</td><td>外部客户-门店联盟</td><td><span class="tag orange">按月</span></td><td>每月 1号、10号、20号</td><td>2026-02-01</td><td><span class="tag blue">待确认</span></td><td>旬度要货，待客户确认</td></tr>
         <tr><td>OC005</td><td>STORE005</td><td>大兴新城店</td><td>内部客户-区域共享仓</td><td><span class="tag blue">按周</span></td><td>周二、周四、周六</td><td>2026-01-01</td><td><span class="tag green">生效中</span></td><td>含周末配送</td></tr>
       </tbody></table></div>`
+  },
+  customerservice: {
+    title: "评价维度配置",
+    desc: "维护客户评价维度、评分规则与评价权重，支持客户对商品质量、物流履约和客服服务进行多维度评价。",
+    actions: ["新增维度", "导出配置"],
+    content: `
+      <div class="section-card">
+        <div class="section-head"><h3>评价维度配置</h3><div class="action-row"><button class="ghost-button">新增维度</button><button class="ghost-button">导出配置</button></div></div>
+        <div class="data-table-wrap"><table><thead><tr><th>维度编码</th><th>维度名称</th><th>评价对象</th><th>评分方式</th><th>分值范围</th><th>权重</th><th>评价周期</th><th>状态</th></tr></thead><tbody>
+          <tr><td>EVT001</td><td>商品质量评分</td><td>商品</td><td>5星制</td><td>1-5星</td><td>30%</td><td>月度</td><td><span class="tag green">启用</span></td></tr>
+          <tr><td>EVT002</td><td>物流履约评分</td><td>配送单</td><td>5星制</td><td>1-5星</td><td>35%</td><td>月度</td><td><span class="tag green">启用</span></td></tr>
+          <tr><td>EVT003</td><td>服务态度评分</td><td>客服</td><td>5星制</td><td>1-5星</td><td>20%</td><td>月度</td><td><span class="tag green">启用</span></td></tr>
+          <tr><td>EVT004</td><td>问题响应评分</td><td>客服</td><td>5星制</td><td>1-5星</td><td>15%</td><td>月度</td><td><span class="tag green">启用</span></td></tr>
+        </tbody></table></div>
+      </div>`
   },
   sla: {
     title: "标准时效",
@@ -2154,6 +2266,73 @@ const pcPages = {
         <tr><td>CSREL005</td><td>STORE005</td><td>大兴新城店</td><td>内部客户-区域共享仓</td><td>WH003</td><td>华北3仓</td><td>HB03-A区</td><td><span class="tag green">生效中</span></td><td>2026-01-01</td><td></td></tr>
       </tbody></table></div>`
   },
+  ownercustomeragreement: {
+    title: "货主客户协议",
+    desc: "管理与客户签署的货主服务协议，明确服务范围、结算方式、时效要求等协议条款，支持多货主与多客户间的差异化协议管理。",
+    actions: ["新增协议", "导出协议"],
+    content: `
+      <div class="data-table-wrap"><table><thead><tr><th>协议编号</th><th>协议名称</th><th>货主</th><th>客户</th><th>协议类型</th><th>生效日期</th><th>到期日期</th><th>结算方式</th><th>状态</th></tr></thead><tbody>
+        <tr><td><a class="doc-link" href="pc-ownercustomeragreement-detail.html">XY-OC-2026-001</a></td><td>自有货主A-华东分部年度服务协议</td><td>自有货主A</td><td>内部客户-华东分部</td><td>仓储配送协议</td><td>2026-01-01</td><td>2026-12-31</td><td>月结30天</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-ownercustomeragreement-detail.html">XY-OC-2026-002</a></td><td>外部货主B-门店联盟合作协议</td><td>外部货主B</td><td>外部客户-门店联盟</td><td>要货配送协议</td><td>2026-01-15</td><td>2027-01-14</td><td>单笔结算</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-ownercustomeragreement-detail.html">XY-OC-2026-003</a></td><td>自有货主C-区域共享仓服务协议</td><td>自有货主C</td><td>内部客户-区域共享仓</td><td>仓储服务协议</td><td>2026-02-01</td><td>2027-01-31</td><td>月结45天</td><td><span class="tag green">生效中</span></td></tr>
+        <tr><td><a class="doc-link" href="pc-ownercustomeragreement-detail.html">XY-OC-2026-004</a></td><td>外部货主B-连锁品牌合作协议</td><td>外部货主B</td><td>外部客户-连锁品牌</td><td>要货配送协议</td><td>2026-03-01</td><td>2027-02-28</td><td>月结30天</td><td><span class="tag blue">待续签</span></td></tr>
+      </tbody></table></div>`
+  },
+  priceadjust: {
+    title: "商品调价单",
+    desc: "支持货主对商品进价、售价、税率进行调整申请，审批通过后更新商品价格信息。",
+    actions: ["新建调价", "导出调价单"],
+    content: `
+      <div class="grid-2">
+        <div class="section-card"><div class="section-head"><h3>商品调价单列表</h3><div class="action-row"><button class="primary-button">新建调价</button><button class="ghost-button">批量审核</button></div></div><div class="list">
+          <div class="list-row"><div><div class="list-title">TJD20260526001</div><div class="muted">自有货主A / 调价商品3项 / 原价→新价 / 生效日期 2026-06-01 / 待审核</div></div><span class="tag orange">待审核</span></div>
+          <div class="list-row"><div><div class="list-title">TJD20260526002</div><div class="muted">外部货主B / 调价商品5项 / 进价调整 / 生效日期 2026-06-05 / 待审批</div></div><span class="tag orange">待审批</span></div>
+          <div class="list-row"><div><div class="list-title">TJD20260526003</div><div class="muted">自有货主C / 调价商品2项 / 税率调整13%→9% / 生效日期 2026-06-01 / 审批驳回</div></div><span class="tag red">审批驳回</span></div>
+          <div class="list-row"><div><div class="list-title">TJD20260525001</div><div class="muted">自有货主A / 调价商品8项 / 价格体系调整 / 生效日期 2026-05-26 / 已完成</div></div><span class="tag green">已完成</span></div>
+        </div></div>
+        <div class="section-card"><div class="notice" style="background:#e6f7ff;border-color:#91d5ff;"><div class="title">处理口径</div><div class="desc">调价申请审批通过后，新价格自动生效，并同步更新商品信息主数据。</div></div><div class="info-grid">
+          <div class="info-item"><div class="k">当前单据</div><div>TJD20260526001</div></div>
+          <div class="info-item"><div class="k">货主</div><div>自有货主A</div></div>
+          <div class="info-item"><div class="k">调价类型</div><div>售价调整</div></div>
+          <div class="info-item"><div class="k">调价商品数</div><div>3</div></div>
+          <div class="info-item"><div class="k">生效日期</div><div>2026-06-01</div></div>
+          <div class="info-item"><div class="k">申请状态</div><div>待审核</div></div>
+          <div class="info-item"><div class="k">审批状态</div><div>待审批</div></div>
+          <div class="info-item"><div class="k">下一处理人</div><div>商品价格专员</div></div>
+        </div></div>
+      </div>`
+  },
+  ownercustomeragreementdetail: {
+    title: "货主客户协议详情",
+    desc: "查看协议基本信息与条款明细。",
+    actions: ["编辑协议", "下载协议", "返回列表"],
+    content: `
+      <div class="section-card">
+        <div class="section-head"><h3>协议基本信息</h3><div class="action-row"><button class="ghost-button">编辑协议</button><button class="ghost-button">下载协议</button><a class="ghost-button" href="pc-ownercustomeragreement.html">返回列表</a></div></div>
+        <div class="info-grid">
+          <div class="info-item"><div class="k">协议编号</div><div>XY-OC-2026-001</div></div>
+          <div class="info-item"><div class="k">协议名称</div><div>自有货主A-华东分部年度服务协议</div></div>
+          <div class="info-item"><div class="k">货主</div><div>自有货主A</div></div>
+          <div class="info-item"><div class="k">客户</div><div>内部客户-华东分部</div></div>
+          <div class="info-item"><div class="k">协议类型</div><div>仓储配送协议</div></div>
+          <div class="info-item"><div class="k">生效日期</div><div>2026-01-01</div></div>
+          <div class="info-item"><div class="k">到期日期</div><div>2026-12-31</div></div>
+          <div class="info-item"><div class="k">结算方式</div><div>月结30天</div></div>
+          <div class="info-item"><div class="k">协议状态</div><div><span class="tag green">生效中</span></div></div>
+          <div class="info-item"><div class="k">签约人</div><div>李明</div></div>
+          <div class="info-item"><div class="k">联系电话</div><div>13900010001</div></div>
+        </div>
+      </div>
+      <div class="section-card" style="margin-top:12px;">
+        <div class="section-head"><h3>协议条款明细</h3><div class="action-row"><button class="ghost-button">查看条款</button><button class="ghost-button">下载协议</button></div></div>
+        <div class="data-table-wrap"><table><thead><tr><th>条款类型</th><th>服务内容</th><th>服务时效</th><th>结算账期</th><th>价格机制</th><th>备注</th></tr></thead><tbody>
+          <tr><td>仓储服务</td><td>华东1仓存储与配送履约</td><td>48小时配送达</td><td>月结30天</td><td>含税含配送</td><td>含华东全区域配送</td></tr>
+          <tr><td>增值服务</td><td>效期预警 / 批次管理</td><td>-</td><td>月结30天</td><td>按件计费</td><td>需提前申请开通</td></tr>
+          <tr><td>要货配送</td><td>华南2仓发货至门店</td><td>72小时配送达</td><td>单笔结算</td><td>含税不含配送</td><td>配送费另计</td></tr>
+          <tr><td>退仓服务</td><td>支持无理由退仓</td><td>退仓申请7天内</td><td>单笔结算</td><td>按退仓数量扣减</td><td>包装需完整</td></tr>
+        </tbody></table></div>
+      </div>`
+  },
   approval: {
     title: "审批中心",
     desc: "统一处理客户要货、退仓、损溢、物权转移等审批动作。",
@@ -2190,6 +2369,62 @@ const pcPages = {
           <div class="list-row"><div><div class="list-title">待处理差异 3 项</div><div class="muted">主要集中在损溢单和退货单</div></div><span class="tag red">异常</span></div>
           <div class="list-row"><div><div class="list-title">今日已完成回执 42 项</div><div class="muted">配送、退仓和入库单回执正常</div></div><span class="tag green">正常</span></div>
         </div><div class="empty-state" style="margin-top:10px;"><div class="empty-title">暂无新增财务差异工单</div><div class="empty-desc">当前展示的是系统自动归集的差异摘要，后续可在此生成人工处理工单。</div><button class="ghost-button">查看历史工单</button></div></div>
+      </div>`
+  },
+  evaluationreport: {
+    title: "客户评价报表",
+    desc: "汇总客户对商品、物流和服务的评价数据，支持按客户、货主、仓库和时间维度分析评价得分与趋势。",
+    actions: ["导出报表", "刷新数据"],
+    content: `
+      <div class="section-card">
+        <div class="section-head"><h3>评价综合概览</h3><div class="action-row"><button class="ghost-button">导出报表</button><button class="primary-button">刷新数据</button></div></div>
+        <div class="status-strip">
+          <div class="status-card">
+            <div class="label">本月评价总数</div>
+            <div class="value">1,286</div>
+            <div class="note">较上月 +12.5%</div>
+          </div>
+          <div class="status-card">
+            <div class="label">综合平均得分</div>
+            <div class="value" style="color:#16a34a;">4.52</div>
+            <div class="note">满分5星</div>
+          </div>
+          <div class="status-card">
+            <div class="label">好评率</div>
+            <div class="value" style="color:#16a34a;">92.3%</div>
+            <div class="note">4星及以上</div>
+          </div>
+          <div class="status-card">
+            <div class="label">待跟进差评</div>
+            <div class="value" style="color:#dc2626;">18</div>
+            <div class="note">需处理</div>
+          </div>
+        </div>
+      </div>
+      <div class="section-card" style="margin-top:12px;">
+        <div class="section-head"><h3>各维度评价得分</h3><div class="action-row"><button class="ghost-button">导出明细</button></div></div>
+        <div class="data-table-wrap"><table><thead><tr><th>评价维度</th><th>本月平均分</th><th>上月平均分</th><th>环比变化</th><th>行业均值</th><th>得分趋势</th></tr></thead><tbody>
+          <tr><td>商品质量评分</td><td><span class="tag green">4.68</span></td><td>4.55</td><td><span class="tag green">↑ 0.13</span></td><td>4.20</td><td><span class="tag green">↑ 优于行业</span></td></tr>
+          <tr><td>物流履约评分</td><td><span class="tag orange">4.31</span></td><td>4.42</td><td><span class="tag red">↓ 0.11</span></td><td>4.35</td><td><span class="tag orange">↓ 略低于行业</span></td></tr>
+          <tr><td>服务态度评分</td><td><span class="tag green">4.72</span></td><td>4.65</td><td><span class="tag green">↑ 0.07</span></td><td>4.30</td><td><span class="tag green">↑ 优于行业</span></td></tr>
+          <tr><td>问题响应评分</td><td><span class="tag red">3.89</span></td><td>3.95</td><td><span class="tag red">↓ 0.06</span></td><td>4.10</td><td><span class="tag red">↓ 低于行业</span></td></tr>
+        </tbody></table></div>
+      </div>`
+  },
+  evaluationdetail: {
+    title: "客户评价明细",
+    desc: "查看客户评价的详细记录，包含评价内容、评分、关联单据等完整信息。",
+    actions: ["导出", "筛选"],
+    content: `
+      <div class="section-card">
+        <div class="section-head"><h3>客户评价明细</h3><div class="action-row"><button class="ghost-button">导出</button><button class="ghost-button">筛选</button></div></div>
+        <div class="data-table-wrap"><table><thead><tr><th>评价单号</th><th>客户</th><th>货主</th><th>仓库</th><th>评价维度</th><th>评分</th><th>评价内容</th><th>评价时间</th><th>关联单据</th><th>状态</th></tr></thead><tbody>
+          <tr><td>EV20260526001</td><td>内部客户-华东分部</td><td>自有货主A</td><td>华东1仓</td><td>物流履约</td><td><span class="tag green">★★★★★</span></td><td>配送准时，包装完好，配送员态度好</td><td>2026-05-26 14:30</td><td>PS20260525012</td><td><span class="tag green">已归档</span></td></tr>
+          <tr><td>EV20260526002</td><td>外部客户-门店联盟</td><td>外部货主B</td><td>华南2仓</td><td>商品质量</td><td><span class="tag orange">★★★★☆</span></td><td>商品新鲜度良好，有1件轻微破损</td><td>2026-05-26 10:15</td><td>PS20260525008</td><td><span class="tag green">已归档</span></td></tr>
+          <tr><td>EV20260526003</td><td>内部客户-区域共享仓</td><td>自有货主C</td><td>华北3仓</td><td>物流履约</td><td><span class="tag green">★★★★★</span></td><td>准时到达，客服响应迅速</td><td>2026-05-26 09:45</td><td>PS20260525015</td><td><span class="tag green">已归档</span></td></tr>
+          <tr><td>EV20260526004</td><td>外部客户-门店联盟</td><td>外部货主B</td><td>华南2仓</td><td>服务态度</td><td><span class="tag orange">★★★★☆</span></td><td>问题处理及时，略有延迟</td><td>2026-05-25 16:20</td><td>PS20260524021</td><td><span class="tag green">已归档</span></td></tr>
+          <tr><td>EV20260526005</td><td>内部客户-华东分部</td><td>自有货主A</td><td>华东1仓</td><td>问题响应</td><td><span class="tag red">★★★☆☆</span></td><td>退仓问题响应较慢，等待超过48小时</td><td>2026-05-25 11:00</td><td>TC20260524003</td><td><span class="tag orange">待跟进</span></td></tr>
+        </tbody></table></div>
       </div>`
   },
   logs: {
@@ -3812,6 +4047,12 @@ const pcSummaries = {
     ["待审核", "5", "新提交供应商资质"],
     ["合作到期", "3", "需续签合作协议"]
   ],
+  suppliercontract: [
+    ["合同总数", "24", "含年度与单项目合同"],
+    ["生效中", "18", "正常执行"],
+    ["待续签", "4", "协议到期前30天预警"],
+    ["商品覆盖", "156", "合同关联商品数"]
+  ],
   warehouse: [
     ["配送仓总数", "18", "覆盖全国主要区域"],
     ["启用仓库", "15", "正常运行"],
@@ -3835,6 +4076,12 @@ const pcSummaries = {
     ["按周模式", "98", "指定每周可要货日"],
     ["按月模式", "54", "指定每月可要货号"],
     ["未配置门店", "34", "需定义要货周期"]
+  ],
+  customerservice: [
+    ["评价维度", "4", "商品/物流/服务/响应"],
+    ["本月评价数", "1,286", "较上月 +12.5%"],
+    ["综合平均分", "4.52", "满分5星"],
+    ["待跟进差评", "18", "需人工跟进"]
   ],
   owner: [
     ["货主总数", "36", "自有与外部并存"],
@@ -3866,6 +4113,12 @@ const pcSummaries = {
     ["待调整关系", "5", "新客户待配置"],
     ["冲突关系", "1", "需人工确认"]
   ],
+  ownercustomeragreement: [
+    ["协议总数", "18", "含年度与项目协议"],
+    ["生效中", "14", "正常执行"],
+    ["待续签", "3", "协议到期前30天预警"],
+    ["客户覆盖", "26", "协议覆盖客户数"]
+  ],
   ownerwarehouse: [
     ["关系总数", "42", "覆盖主要仓库"],
     ["默认入库仓", "28", "自动带出"],
@@ -3878,6 +4131,12 @@ const pcSummaries = {
     ["待配置门店", "12", "需分配仓库"],
     ["库存地点", "24", "WMS 库位映射"]
   ],
+  priceadjust: [
+    ["待审核", "3", "调价申请待审批"],
+    ["待生效", "5", "已审批待到生效日"],
+    ["本月调价商品", "18", "近30日调价数"],
+    ["已完成", "12", "本月已完成"]
+  ],
   approval: [
     ["待审批", "18", "客户要货为主"],
     ["高优先", "3", "损溢/物权转移"],
@@ -3889,6 +4148,18 @@ const pcSummaries = {
     ["传单失败", "3", "需人工干预"],
     ["已回执", "42", "近24小时"],
     ["差异工单", "3", "待闭环"]
+  ],
+  evaluationreport: [
+    ["本月评价数", "1,286", "较上月 +12.5%"],
+    ["综合平均分", "4.52", "4星以上占比92.3%"],
+    ["好评率", "92.3%", "优于行业均值"],
+    ["待跟进差评", "18", "需客服跟进"]
+  ],
+  evaluationdetail: [
+    ["评价明细总数", "1,286", "本月数据"],
+    ["已归档", "1,268", "正常完结"],
+    ["待跟进", "18", "需客服处理"],
+    ["差评占比", "7.7%", "3星及以下"]
   ],
   logs: [
     ["成功调用", "268", "近24小时"],
@@ -5293,6 +5564,34 @@ const pcTabConfigs = {
       ["下游", "BMS", "库存调整财务传单", "待触发", "调整完成后自动传单"]
     ]
   },
+  priceadjust: {
+    detailFields: [
+      ["调价单号", "TJD20260526001"],
+      ["货主", "自有货主A"],
+      ["调价仓库", "华东1仓"],
+      ["调价类型", "售价调整"],
+      ["生效日期", "2026-06-01"],
+      ["申请状态", "待审核"],
+      ["审批状态", "待审批"],
+      ["下一处理人", "商品价格专员"]
+    ],
+    detailHeaders: ["商品编码", "条形码", "商品名称", "规格", "单位", "进价", "售价", "税率", "新进价", "新售价", "新税率", "调整说明"],
+    detailRows: [
+      ["TJD20260526001", "6901234567890", "农夫山泉饮用天然水", "550ml*24瓶/箱", "箱", "¥42.00", "¥48.00", "13%", "¥45.00", "¥52.00", "13%", "进价调整"],
+      ["TJD20260526001", "6902234567891", "农夫山泉饮用天然水", "550ml*12瓶/箱", "箱", "¥22.00", "¥26.00", "13%", "¥24.00", "¥28.00", "13%", "售价调整"],
+      ["TJD20260526001", "6903234567892", "哇哈哈饮用纯净水", "596ml*24瓶/箱", "箱", "¥38.00", "¥44.00", "9%", "¥36.00", "¥42.00", "9%", "税率调整"]
+    ],
+    listFilters: ["调价单号", "货主", "调价类型", "生效日期", "申请状态", "审批状态"],
+    listHeaders: ["操作", "勾选", "调价单号", "货主", "调价仓库", "调价类型", "生效日期", "调价商品数", "提交人", "审批人", "时间", "申请状态", "审批状态", "下一处理人"],
+    extraTabs: [
+      {
+        key: "create",
+        label: "新增",
+        title: "新增商品调价单",
+        render: renderPriceAdjustCreateTab
+      }
+    ]
+  },
   inventorycheck: {
     detailFields: [
       ["盘点单号", "PD20260526001"],
@@ -6039,6 +6338,213 @@ function bindInventoryPlanFormPageEvents() {
 
 // ========== End 盘点计划申请单 Functions ==========
 
+// -- 商品调价单 CRUD State --
+const priceAdjustPageState = {
+  selectedEditRow: null,
+  listRecords: null,
+  nextOrderSequence: 6
+};
+const priceAdjustFormState = {
+  mode: "create",
+  record: null,
+  goodsRows: null
+};
+
+// ========== 商品调价单 CRUD Functions ==========
+
+function getPriceAdjustListRecords() {
+  if (!priceAdjustPageState.listRecords) {
+    priceAdjustPageState.listRecords = [
+      { orderNo: "TJD20260526001", owner: "自有货主A", warehouse: "华东1仓", adjustType: "售价调整", effectiveDate: "2026-06-01", submitStatus: "待审核", approveStatus: "待审批", submitter: "张经理", approver: "李价格专员", time: "2026-05-26 09:30", nextHandler: "商品价格专员", goodsCount: 3 },
+      { orderNo: "TJD20260526002", owner: "外部货主B", warehouse: "华南2仓", adjustType: "进价调整", effectiveDate: "2026-06-05", submitStatus: "待审批", approveStatus: "", submitter: "王雪", approver: "", time: "2026-05-26 10:15", nextHandler: "价格管理岗", goodsCount: 5 },
+      { orderNo: "TJD20260526003", owner: "自有货主C", warehouse: "华北3仓", adjustType: "税率调整", effectiveDate: "2026-06-01", submitStatus: "审批驳回", approveStatus: "已驳回", submitter: "陈华", approver: "张经理", time: "2026-05-25 14:20", nextHandler: "", goodsCount: 2 },
+      { orderNo: "TJD20260525001", owner: "自有货主A", warehouse: "华东1仓", adjustType: "价格体系调整", effectiveDate: "2026-05-26", submitStatus: "已完成", approveStatus: "已通过", submitter: "张经理", approver: "李价格专员", time: "2026-05-25 16:00", nextHandler: "", goodsCount: 8 }
+    ];
+  }
+  return priceAdjustPageState.listRecords;
+}
+
+function getPriceAdjustGoodsPresetRows() {
+  return [
+    ["6901234567890", "农夫山泉饮用天然水", "550ml*24瓶/箱", "箱", "¥42.00", "¥48.00", "13%", "¥45.00", "¥52.00", "13%", "进价调整"],
+    ["6902234567891", "农夫山泉饮用天然水", "550ml*12瓶/箱", "箱", "¥22.00", "¥26.00", "13%", "¥24.00", "¥28.00", "13%", "售价调整"],
+    ["6903234567892", "哇哈哈饮用纯净水", "596ml*24瓶/箱", "箱", "¥38.00", "¥44.00", "9%", "¥36.00", "¥42.00", "9%", "税率调整"]
+  ];
+}
+
+function preparePriceAdjustFormState(mode, record) {
+  priceAdjustFormState.mode = mode;
+  priceAdjustFormState.record = record || null;
+  priceAdjustFormState.goodsRows = record ? [
+    ["6901234567890", "农夫山泉饮用天然水", "550ml*24瓶/箱", "箱", "¥42.00", "¥48.00", "13%", "¥45.00", "¥52.00", "13%", "进价调整"]
+  ] : getPriceAdjustGoodsPresetRows();
+}
+
+function savePriceAdjustCreateDraft() {
+  const records = getPriceAdjustListRecords();
+  const seq = priceAdjustPageState.nextOrderSequence++;
+  const newRecord = {
+    orderNo: `TJD${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, "0")}${String(new Date().getDate()).padStart(2, "0")}${String(seq).padStart(2, "0")}`,
+    owner: "自有货主A", warehouse: "华东1仓", adjustType: "售价调整",
+    effectiveDate: new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0") + "-01",
+    submitStatus: "草稿", approveStatus: "", submitter: "当前用户", approver: "",
+    time: new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0") + "-" + String(new Date().getDate()).padStart(2, "0") + " " + String(new Date().getHours()).padStart(2, "0") + ":" + String(new Date().getMinutes()).padStart(2, "0"),
+    nextHandler: "商品价格专员", goodsCount: 3
+  };
+  records.unshift(newRecord);
+  return newRecord;
+}
+
+function savePriceAdjustEditDraft() {
+  // In prototype, just return success
+}
+
+// ========== 商品调价单 新增页面 ==========
+
+function renderPriceAdjustCreateTab() {
+  preparePriceAdjustFormState("create");
+  const goodsRows = priceAdjustFormState.goodsRows;
+  const orderNo = "TJD" + new Date().getFullYear() + String(new Date().getMonth() + 1).padStart(2, "0") + String(new Date().getDate()).padStart(2, "0") + String(priceAdjustPageState.nextOrderSequence).padStart(2, "0");
+  const today = new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0") + "-" + String(new Date().getDate()).padStart(2, "0");
+
+  return `
+    <div class="section-card">
+      <div class="section-head"><h3>新增商品调价单</h3><div class="action-row"><button class="ghost-button" data-tab-switch="list">返回列表</button><button class="ghost-button" id="priceAdjustCreateSaveButton">保存草稿</button><button class="primary-button" id="priceAdjustCreateSubmitButton">提交审批</button></div></div>
+      <div class="pc-form-grid cols-3">
+        <div class="pc-form-field" data-pc-form-label="货主" data-pc-filled-value="自有货主A">
+          <div class="pc-form-label">货主 <span style="color:var(--pc-brand);">*</span></div>
+          <div class="pc-form-value">请选择货主</div>
+        </div>
+        <div class="pc-form-field" data-pc-form-label="调价仓库" data-pc-filled-value="华东1仓">
+          <div class="pc-form-label">调价仓库 <span style="color:var(--pc-brand);">*</span></div>
+          <div class="pc-form-value">请选择调价仓库</div>
+        </div>
+        <div class="pc-form-field" data-pc-form-label="调价类型" data-pc-filled-value="售价调整">
+          <div class="pc-form-label">调价类型 <span style="color:var(--pc-brand);">*</span></div>
+          <div class="pc-form-value">请选择调价类型</div>
+        </div>
+        <div class="pc-form-field" data-pc-form-label="生效日期" data-pc-filled-value="${today}">
+          <div class="pc-form-label">生效日期 <span style="color:var(--pc-brand);">*</span></div>
+          <div class="pc-form-value">请选择生效日期</div>
+        </div>
+        <div class="pc-form-field" data-pc-form-label="申请人" data-pc-filled-value="当前用户">
+          <div class="pc-form-label">申请人</div>
+          <div class="pc-form-value">当前用户</div>
+        </div>
+        <div class="pc-form-field" data-pc-form-label="调价原因" data-pc-filled-value="">
+          <div class="pc-form-label">调价原因</div>
+          <div class="pc-form-value">请填写调价原因</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-card" style="margin-top:10px;">
+      <div class="section-head"><h3>调价商品明细</h3><div class="action-row"><button class="ghost-button" id="priceAdjustAddGoodsButton">添加商品</button></div></div>
+      <div class="notice" style="margin-bottom:12px;"><div class="title">调价说明</div><div class="desc">选择商品后录入新的进价、售价和税率，系统自动计算差额并同步更新商品主数据。</div></div>
+      <div class="drawer-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>商品编码</th><th>商品名称</th><th>规格</th><th>单位</th>
+              <th>原进价</th><th>原售价</th><th>原税率</th>
+              <th>新进价</th><th>新售价</th><th>新税率</th>
+              <th>调整说明</th>
+            </tr>
+          </thead>
+          <tbody id="priceAdjustGoodsTbody">
+            ${goodsRows.map(row => `<tr>
+              <td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td>
+              <td>${row[4]}</td><td>${row[5]}</td><td>${row[6]}</td>
+              <td><input type="text" value="${row[7]}" style="width:72px;border:1px solid #e2e8f0;border-radius:4px;padding:3px 6px;font-size:13px;" /></td>
+              <td><input type="text" value="${row[8]}" style="width:72px;border:1px solid #e2e8f0;border-radius:4px;padding:3px 6px;font-size:13px;" /></td>
+              <td><input type="text" value="${row[9]}" style="width:60px;border:1px solid #e2e8f0;border-radius:4px;padding:3px 6px;font-size:13px;" /></td>
+              <td>${row[10]}</td>
+            </tr>`).join("")}
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+function bindPriceAdjustSubmitApproveEvents() {
+  const createButton = document.getElementById("priceAdjustCreateButton");
+  const openCreateTab = () => {
+    priceAdjustPageState.selectedEditRow = null;
+    renderPcPage("priceadjust", "create");
+  };
+  if (createButton) createButton.addEventListener("click", openCreateTab);
+
+  document.querySelectorAll("[data-priceadjust-edit-entry]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const orderNo = btn.dataset.orderNo;
+      const record = getPriceAdjustListRecords().find(r => r.orderNo === orderNo);
+      if (!record) return;
+      priceAdjustPageState.selectedEditRow = record;
+      preparePriceAdjustFormState("edit", record);
+      openModal("form", "编辑商品调价单");
+    });
+  });
+
+  const batchApproveBtn = document.querySelector("[data-priceadjust-batch-approve]");
+  if (batchApproveBtn) batchApproveBtn.addEventListener("click", () => {
+    const checked = document.querySelectorAll("[data-priceadjust-submit-row]:checked");
+    if (checked.length === 0) { showToast("warning", "未选择", "请先勾选需要批量审批的单据。"); return; }
+    showToast("success", "批量审批成功", `已审批 ${checked.length} 条商品调价单。`);
+  });
+
+  const batchDeleteBtn = document.querySelector("[data-priceadjust-batch-delete]");
+  if (batchDeleteBtn) batchDeleteBtn.addEventListener("click", () => {
+    const checked = document.querySelectorAll("[data-priceadjust-submit-row]:checked");
+    if (checked.length === 0) { showToast("warning", "未选择", "请先勾选需要删除的单据。"); return; }
+    showToast("success", "批量删除成功", `已删除 ${checked.length} 条草稿单据。`);
+  });
+}
+
+function bindPriceAdjustFormPageEvents() {
+  var saveBtn = document.getElementById("priceAdjustCreateSaveButton");
+  if (saveBtn) {
+    saveBtn.addEventListener("click", function() {
+      savePriceAdjustCreateDraft();
+      renderPcPage("priceadjust", "list");
+      showToast("success", "保存成功", "商品调价单草稿已保存。");
+    });
+  }
+
+  var submitBtn = document.getElementById("priceAdjustCreateSubmitButton");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", function() {
+      if (!validatePcForm("新增商品调价单")) return;
+      var record = savePriceAdjustCreateDraft();
+      if (record) {
+        record.submitStatus = "待审批";
+        record.time = new Date().getFullYear() + "-" + String(new Date().getMonth() + 1).padStart(2, "0") + "-" + String(new Date().getDate()).padStart(2, "0") + " " + String(new Date().getHours()).padStart(2, "0") + ":" + String(new Date().getMinutes()).padStart(2, "0");
+      }
+      renderPcPage("priceadjust", "list");
+      showToast("success", "提交成功", "商品调价单已提交审批。");
+    });
+  }
+
+  var addGoodsBtn = document.getElementById("priceAdjustAddGoodsButton");
+  if (addGoodsBtn) {
+    addGoodsBtn.addEventListener("click", function() {
+      var tbody = document.getElementById("priceAdjustGoodsTbody");
+      if (!tbody) return;
+      var inputStyle = 'style="width:100%;border:1px solid #e2e8f0;border-radius:4px;padding:4px 6px;font-size:13px;box-sizing:border-box;"';
+      var tr = document.createElement("tr");
+      tr.innerHTML = '<td><input type="text" placeholder="商品编码" ' + inputStyle + ' /></td>' +
+        '<td><input type="text" placeholder="商品名称" ' + inputStyle + ' /></td>' +
+        '<td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>' +
+        '<td><input type="text" placeholder="新进价" ' + inputStyle + ' /></td>' +
+        '<td><input type="text" placeholder="新售价" ' + inputStyle + ' /></td>' +
+        '<td><input type="text" placeholder="新税率" ' + inputStyle + ' /></td>' +
+        '<td><input type="text" placeholder="调整说明" ' + inputStyle + ' /></td>';
+      tbody.appendChild(tr);
+    });
+  }
+}
+
+// ========== End 商品调价单 Functions ==========
+
 // ========== 盘点结果单 主从表 Functions ==========
 
 // 主表列：单据信息 + 商品信息（参考库存台账总账库存）
@@ -6575,6 +7081,7 @@ const pcAutoListPageKeys = new Set([
   "inventoryplan",
   "inventorynotify",
   "inventorycheck",
+  "priceadjust",
   "ownershipapply",
   "ownershipnotice",
   "ownership",
@@ -6675,6 +7182,9 @@ function getNewProductListRecords() {
       category: "防护用品",
       brand: "护安",
       model: "HA-GLOVE-50",
+      purchasePrice: "61.95",
+      salePrice: "75.00",
+      taxRate: "13%",
       temperature: "常温",
       packQty: "50",
       recordStatus: "草稿",
@@ -6701,6 +7211,9 @@ function getNewProductListRecords() {
       category: "清洁消杀",
       brand: "安洁",
       model: "AJ-WIPE-36",
+      purchasePrice: "28.00",
+      salePrice: "35.00",
+      taxRate: "13%",
       temperature: "常温",
       packQty: "36",
       recordStatus: "草稿",
@@ -6727,6 +7240,9 @@ function getNewProductListRecords() {
       category: "包材辅料",
       brand: "包易达",
       model: "BYD-BOX-12",
+      purchasePrice: "45.00",
+      salePrice: "55.00",
+      taxRate: "13%",
       temperature: "常温",
       packQty: "12",
       recordStatus: "已提交",
@@ -6753,6 +7269,9 @@ function getNewProductListRecords() {
       category: "清洁消杀",
       brand: "安洁",
       model: "AJ-XP-24",
+      purchasePrice: "38.94",
+      salePrice: "48.00",
+      taxRate: "13%",
       temperature: "常温",
       packQty: "24",
       recordStatus: "已录入",
@@ -6882,14 +7401,14 @@ function renderNewProductApprovalTab() {
 }
 
 function renderNewProductListRows() {
-  const headers = ["操作","勾选","单号","货主","提交人","审批人","时间","商品编码","条形码","商品名称","规格","单位","分类","品牌","型号","温度要求","包装数量","录入状态","审批状态","审批意见","驳回原因","下一审批人","回写状态","附件"];
+  const headers = ["操作","勾选","单号","货主","提交人","审批人","时间","商品编码","条形码","商品名称","规格","单位","分类","品牌","型号","进价","售价","税率","温度要求","包装数量","录入状态","审批状态","审批意见","驳回原因","下一审批人","回写状态","附件"];
   return getNewProductListRecords().map((record, rowIndex) => {
-    const row = [record.submitStatus === "草稿" ? "编辑" : "查看", "", record.orderNo, record.owner, record.submitter || normalizeNewProductOwner(record.owner), record.approver || "-", record.time || "-", record.productCode, record.barcode, record.productName, record.spec, record.unit, record.category, record.brand, record.model, record.temperature, record.packQty, record.recordStatus, record.approveStatus, record.approveComment, record.rejectReason, record.nextApprover, record.writeBackStatus, record.attachments];
+    const row = [record.submitStatus === "草稿" ? "编辑" : "查看", "", record.orderNo, record.owner, record.submitter || normalizeNewProductOwner(record.owner), record.approver || "-", record.time || "-", record.productCode, record.barcode, record.productName, record.spec, record.unit, record.category, record.brand, record.model, record.purchasePrice || "-", record.salePrice || "-", record.taxRate || "-", record.temperature, record.packQty, record.recordStatus, record.approveStatus, record.approveComment, record.rejectReason, record.nextApprover, record.writeBackStatus, record.attachments];
     return `
                 <tr class="table-row-clickable" data-drawer="detail" data-drawer-title="新品录入单详情" data-drawer-index="${rowIndex}" data-drawer-row="${encodeURIComponent(JSON.stringify(row))}" data-drawer-headers="${encodeURIComponent(JSON.stringify(headers))}">
                   <td><div class="table-action-group"><button class="table-action-button" data-newproduct-view-entry data-row-id="${record.rowId}">查看</button>${record.submitStatus === "草稿" ? `<button class="table-action-button primary" data-newproduct-edit-entry data-row-id="${record.rowId}">编辑</button>` : ""}</div></td>
                   <td><input type="checkbox" data-newproduct-submit-row data-row-id="${record.rowId}" data-submit-status="${record.submitStatus}" data-submit-label="${record.orderNo} / ${record.productName}" ${record.submitStatus === "已审核通过" ? "disabled" : ""} /></td>
-                  <td>${record.orderNo}</td><td>${record.owner}</td><td data-newproduct-submitter>${record.submitter || normalizeNewProductOwner(record.owner)}</td><td data-newproduct-approver>${record.approver || "-"}</td><td data-newproduct-time>${record.time || "-"}</td><td>${record.productCode}</td><td>${record.barcode}</td><td>${record.productName}</td><td>${record.spec}</td><td>${record.unit}</td><td>${record.category}</td><td>${record.brand}</td><td>${record.model}</td><td>${record.temperature}</td><td>${record.packQty}</td><td data-newproduct-record-status="${record.recordStatus}"><span class="tag ${record.recordStatus === "草稿" ? "gray" : record.recordStatus === "已提交" ? "blue" : record.recordStatus === "已驳回" ? "red" : "green"}">${record.recordStatus}</span></td><td data-newproduct-approve-status="${record.approveStatus}"><span class="tag ${record.approveStatus === "待提交" ? "gray" : record.approveStatus === "待审批" ? "orange" : record.approveStatus === "审批驳回" ? "red" : "green"}">${record.approveStatus}</span></td><td data-newproduct-approve-comment>${record.approveComment}</td><td data-newproduct-reject-reason>${record.rejectReason}</td><td data-newproduct-next-approver>${record.nextApprover}</td><td data-newproduct-writeback>${record.writeBackStatus}</td><td>${record.attachments}</td>
+                  <td>${record.orderNo}</td><td>${record.owner}</td><td data-newproduct-submitter>${record.submitter || normalizeNewProductOwner(record.owner)}</td><td data-newproduct-approver>${record.approver || "-"}</td><td data-newproduct-time>${record.time || "-"}</td><td>${record.productCode}</td><td>${record.barcode}</td><td>${record.productName}</td><td>${record.spec}</td><td>${record.unit}</td><td>${record.category}</td><td>${record.brand}</td><td>${record.model}</td><td>${record.purchasePrice || "-"}</td><td>${record.salePrice || "-"}</td><td>${record.taxRate || "-"}</td><td>${record.temperature}</td><td>${record.packQty}</td><td data-newproduct-record-status="${record.recordStatus}"><span class="tag ${record.recordStatus === "草稿" ? "gray" : record.recordStatus === "已提交" ? "blue" : record.recordStatus === "已驳回" ? "red" : "green"}">${record.recordStatus}</span></td><td data-newproduct-approve-status="${record.approveStatus}"><span class="tag ${record.approveStatus === "待提交" ? "gray" : record.approveStatus === "待审批" ? "orange" : record.approveStatus === "审批驳回" ? "red" : "green"}">${record.approveStatus}</span></td><td data-newproduct-approve-comment>${record.approveComment}</td><td data-newproduct-reject-reason>${record.rejectReason}</td><td data-newproduct-next-approver>${record.nextApprover}</td><td data-newproduct-writeback>${record.writeBackStatus}</td><td>${record.attachments}</td>
                 </tr>`;
   }).join("");
 }
@@ -8114,15 +8633,15 @@ function renderNewProductCreateTab() {
         <div class="drawer-table-wrap">
           <table>
             <thead>
-              <tr><th><input type="checkbox" id="newProductSelectAllRows" /></th><th>序号</th><th>商品编码</th><th>条形码</th><th>商品名称</th><th>规格</th><th>单位</th><th>商品分类</th><th>品牌</th><th>型号</th><th>温层</th><th>包装数量</th></tr>
+              <tr><th><input type="checkbox" id="newProductSelectAllRows" /></th><th>序号</th><th>商品编码</th><th>条形码</th><th>商品名称</th><th>规格</th><th>单位</th><th>商品分类</th><th>品牌</th><th>型号</th><th>进价</th><th>售价</th><th>税率</th><th>温层</th><th>包装数量</th></tr>
             </thead>
             <tbody id="newProductScanResultTbody">
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>1</td><td>MAT-NEW-001</td><td>6923000000018</td><td>新品-消杀喷雾</td><td>24瓶/箱</td><td>箱</td><td>清洁消杀</td><td>安洁</td><td>AJ-XP-24</td><td>常温</td><td>24</td></tr>
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>2</td><td>MAT-NEW-002</td><td>6923000000025</td><td>新品-医用手套</td><td>50盒/箱</td><td>箱</td><td>防护用品</td><td>护安</td><td>HA-GLOVE-50</td><td>常温</td><td>50</td></tr>
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>3</td><td>MAT-INV-001</td><td>6906000000019</td><td>物料-低值易耗品001</td><td>12瓶/箱</td><td>箱</td><td>低值易耗品</td><td>自有品牌A</td><td>INV-A-12</td><td>常温</td><td>12</td></tr>
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>4</td><td>MAT-INV-002</td><td>6906000000026</td><td>物料-商品002</td><td>24袋/箱</td><td>箱</td><td>日化用品</td><td>日化品牌B</td><td>RH-B-24</td><td>常温</td><td>24</td></tr>
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>5</td><td>MAT-INV-003</td><td>6906000000033</td><td>物料-商品003</td><td>6盒/箱</td><td>箱</td><td>食品</td><td>食品品牌C</td><td>SP-C-06</td><td>冷藏</td><td>6</td></tr>
-              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>6</td><td>MAT-IN-001</td><td>6923000001021</td><td>医用口罩</td><td>100只/箱</td><td>箱</td><td>防护用品</td><td>护安</td><td>HA-MASK-100</td><td>常温</td><td>100</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>1</td><td>MAT-NEW-001</td><td>6923000000018</td><td>新品-消杀喷雾</td><td>24瓶/箱</td><td>箱</td><td>清洁消杀</td><td>安洁</td><td>AJ-XP-24</td><td>38.94</td><td>48.00</td><td>13%</td><td>常温</td><td>24</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>2</td><td>MAT-NEW-002</td><td>6923000000025</td><td>新品-医用手套</td><td>50盒/箱</td><td>箱</td><td>防护用品</td><td>护安</td><td>HA-GLOVE-50</td><td>61.95</td><td>75.00</td><td>13%</td><td>常温</td><td>50</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>3</td><td>MAT-INV-001</td><td>6906000000019</td><td>物料-低值易耗品001</td><td>12瓶/箱</td><td>箱</td><td>低值易耗品</td><td>自有品牌A</td><td>INV-A-12</td><td>22.00</td><td>28.00</td><td>13%</td><td>常温</td><td>12</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>4</td><td>MAT-INV-002</td><td>6906000000026</td><td>物料-商品002</td><td>24袋/箱</td><td>箱</td><td>日化用品</td><td>日化品牌B</td><td>RH-B-24</td><td>35.00</td><td>42.00</td><td>13%</td><td>常温</td><td>24</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>5</td><td>MAT-INV-003</td><td>6906000000033</td><td>物料-商品003</td><td>6盒/箱</td><td>箱</td><td>食品</td><td>食品品牌C</td><td>SP-C-06</td><td>18.00</td><td>25.00</td><td>9%</td><td>冷藏</td><td>6</td></tr>
+              <tr><td><input type="checkbox" class="newProductRowCheckbox" /></td><td>6</td><td>MAT-IN-001</td><td>6923000001021</td><td>医用口罩</td><td>100只/箱</td><td>箱</td><td>防护用品</td><td>护安</td><td>HA-MASK-100</td><td>55.00</td><td>68.00</td><td>13%</td><td>常温</td><td>100</td></tr>
             </tbody>
           </table>
         </div>
@@ -8173,6 +8692,9 @@ function renderNewProductEditTab() {
         { label: "商品分类", value: editState.category, filledValue: `${editState.category}（已确认）` },
         { label: "品牌", value: editState.brand, filledValue: `${editState.brand}（已复核）` },
         { label: "型号", value: editState.model, filledValue: `${editState.model}（已调整）` },
+        { label: "进价", value: editState.purchasePrice || "-", filledValue: editState.purchasePrice || "38.94" },
+        { label: "售价", value: editState.salePrice || "-", filledValue: editState.salePrice || "48.00" },
+        { label: "税率", value: editState.taxRate || "-", filledValue: editState.taxRate || "13%" },
         { label: "温层", value: editState.temperature, filledValue: editState.temperature },
         { label: "包装数量", value: editState.packQty, filledValue: `${editState.packQty}` },
         { label: "附件资料", value: editState.attachments, filledValue: `${editState.attachments}（已补传）`, width: "full" },
@@ -8439,6 +8961,12 @@ const pcListConfigs = {
     emptyDesc: "请调整供应商编码或类型后重新查询。",
     total: 128
   },
+  suppliercontract: {
+    filters: ["合同编号", "合同名称", "供应商", "签约日期", "有效期至", "结算方式", "状态"],
+    emptyTitle: "未查询到供应商合同",
+    emptyDesc: "请调整合同编号或供应商条件后重新查询。",
+    total: 24
+  },
   warehouse: {
     filters: ["仓库编码", "仓库名称", "仓库类型", "所属区域", "温层支持", "状态"],
     emptyTitle: "未查询到配送仓信息",
@@ -8624,6 +9152,36 @@ const pcListConfigs = {
     emptyTitle: "未查询到客户门店关系",
     emptyDesc: "请调整门店、客户或仓库条件后重新查询关系配置。",
     total: 186
+  },
+  ownercustomeragreement: {
+    filters: ["协议编号", "协议名称", "货主", "客户", "协议类型", "生效日期", "状态"],
+    emptyTitle: "未查询到货主客户协议",
+    emptyDesc: "请调整协议编号、货主或客户条件后重新查询。",
+    total: 18
+  },
+  priceadjust: {
+    filters: ["调价单号", "货主", "调价类型", "生效日期", "申请状态", "审批状态"],
+    emptyTitle: "未查询到商品调价单",
+    emptyDesc: "请调整调价单号、货主或状态条件后重新查询。",
+    total: 12
+  },
+  customerservice: {
+    filters: ["评价维度", "评价对象", "评分方式", "状态"],
+    emptyTitle: "未查询到评价维度配置",
+    emptyDesc: "请调整评价维度或状态条件后重新查询。",
+    total: 4
+  },
+  evaluationreport: {
+    filters: ["评价维度", "客户", "货主", "仓库", "评价时间", "状态"],
+    emptyTitle: "未查询到客户评价数据",
+    emptyDesc: "请调整评价维度、客户或时间条件后重新查询。",
+    total: 1286
+  },
+  evaluationdetail: {
+    filters: ["评价单号", "客户", "货主", "仓库", "评价维度", "评价时间", "状态"],
+    emptyTitle: "未查询到客户评价明细",
+    emptyDesc: "请调整评价单号、客户或评价维度条件后重新查询。",
+    total: 1286
   },
   finance: {
     filters: ["业务单据号", "单据类型", "传单状态", "BMS回执", "差异状态", "日期范围"],
@@ -13725,6 +14283,9 @@ function renderPcTabContent(key, tab) {
                   <th>商品分类</th>
                   <th>品牌</th>
                   <th>型号</th>
+                  <th>进价</th>
+                  <th>售价</th>
+                  <th>税率</th>
                   <th>温层</th>
                   <th>包装数量</th>
                   <th>录入状态</th>
@@ -14452,6 +15013,114 @@ function renderPcTabContent(key, tab) {
         </div>`;
     }
 
+    if (key === "priceadjust") {
+      return `
+        <div class="section-card" data-filter-section>
+          <div class="section-head"><h3>列表查询</h3></div>
+          <div class="list-filter-grid" style="margin-bottom:12px;">
+            ${(config.listFilters || []).map((item) => `<div class="input">${item}：全部</div>`).join("")}
+          </div>
+          <div class="action-row" style="margin-bottom:12px;">
+            <button class="primary-button" data-modal="refresh" data-action-label="执行查询">查询</button>
+            <button class="ghost-button" data-list-action="reset-list">重置条件</button>
+            <button class="primary-button" id="priceAdjustSubmitButton">提交</button>
+            <button class="primary-button" id="priceAdjustApproveButton">审批</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="section-head"><h3>列表结果</h3><div class="action-row"><button class="ghost-button" data-filter-toggle>展开筛选</button><button class="primary-button" id="priceAdjustCreateButton">新增</button><button class="ghost-button" data-modal="import">导入</button><button class="ghost-button" data-modal="export">导出</button><button class="ghost-button" id="priceAdjustBatchApproveButton">批量审批</button><button class="ghost-button" id="priceAdjustBatchDeleteButton">批量删除</button></div></div>
+          <div class="notice"><div class="title">处理口径</div><div class="desc">调价申请审批通过后，新价格自动生效，并同步更新商品信息主数据。</div></div>
+          <div class="drawer-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>操作</th>
+                  <th><input type="checkbox" id="priceAdjustSelectAllDraft" /></th>
+                  <th>调价单号</th>
+                  <th>货主</th>
+                  <th>调价仓库</th>
+                  <th>调价类型</th>
+                  <th>生效日期</th>
+                  <th>调价商品数</th>
+                  <th>提交人</th>
+                  <th>审批人</th>
+                  <th>时间</th>
+                  <th>申请状态</th>
+                  <th>审批状态</th>
+                  <th>下一处理人</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" /></td>
+                  <td>TJD20260526001</td>
+                  <td>自有货主A</td>
+                  <td>华东1仓</td>
+                  <td>售价调整</td>
+                  <td>2026-06-01</td>
+                  <td>3</td>
+                  <td>张经理</td>
+                  <td>李价格专员</td>
+                  <td>2026-05-26 09:30</td>
+                  <td><span class="tag orange">待审核</span></td>
+                  <td><span class="tag orange">待审批</span></td>
+                  <td>商品价格专员</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" /></td>
+                  <td>TJD20260526002</td>
+                  <td>外部货主B</td>
+                  <td>华南2仓</td>
+                  <td>进价调整</td>
+                  <td>2026-06-05</td>
+                  <td>5</td>
+                  <td>王雪</td>
+                  <td>—</td>
+                  <td>2026-05-26 10:15</td>
+                  <td><span class="tag orange">待审批</span></td>
+                  <td><span class="tag gray">—</span></td>
+                  <td>价格管理岗</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" disabled /></td>
+                  <td>TJD20260526003</td>
+                  <td>自有货主C</td>
+                  <td>华北3仓</td>
+                  <td>税率调整</td>
+                  <td>2026-06-01</td>
+                  <td>2</td>
+                  <td>陈华</td>
+                  <td>张经理</td>
+                  <td>2026-05-25 14:20</td>
+                  <td><span class="tag red">审批驳回</span></td>
+                  <td><span class="tag red">已驳回</span></td>
+                  <td>—</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" disabled /></td>
+                  <td>TJD20260525001</td>
+                  <td>自有货主A</td>
+                  <td>华东1仓</td>
+                  <td>价格体系调整</td>
+                  <td>2026-05-26</td>
+                  <td>8</td>
+                  <td>张经理</td>
+                  <td>李价格专员</td>
+                  <td>2026-05-25 16:00</td>
+                  <td><span class="tag green">已完成</span></td>
+                  <td><span class="tag green">已通过</span></td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>`;
+    }
+
     const filters = config.listFilters || [];
     return `
       <div class="section-card" data-filter-section>
@@ -14492,6 +15161,113 @@ function renderPcTabContent(key, tab) {
             <tr><td>OW-007</td><td>OWNER003</td><td>自有货主C</td><td>WH-HB03</td><td>华北3仓</td><td>1000</td><td>正常仓</td><td><span class="tag green">生效中</span></td><td>2026-03-10</td></tr>
             <tr><td>OW-008</td><td>OWNER003</td><td>自有货主C</td><td>WH-HB03</td><td>华北3仓</td><td>1008</td><td>差异仓</td><td><span class="tag orange">待生效</span></td><td>2026-06-01</td></tr>
           </tbody></table></div>
+        </div>`;
+    }
+    if (key === "priceadjust") {
+      return `
+        <div class="section-card" data-filter-section>
+          <div class="section-head"><h3>列表查询</h3></div>
+          <div class="list-filter-grid" style="margin-bottom:12px;">
+            ${(config.listFilters || []).map((item) => `<div class="input">${item}：全部</div>`).join("")}
+          </div>
+          <div class="action-row" style="margin-bottom:12px;">
+            <button class="primary-button" data-modal="refresh" data-action-label="执行查询">查询</button>
+            <button class="ghost-button" data-list-action="reset-list">重置条件</button>
+            <button class="primary-button" id="priceAdjustSubmitButton">提交</button>
+            <button class="primary-button" id="priceAdjustApproveButton">审批</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="section-head"><h3>列表结果</h3><div class="action-row"><button class="ghost-button" data-filter-toggle>展开筛选</button><button class="primary-button" id="priceAdjustCreateButton">新增</button><button class="ghost-button" data-modal="import">导入</button><button class="ghost-button" data-modal="export">导出</button><button class="ghost-button" id="priceAdjustBatchApproveButton">批量审批</button><button class="ghost-button" id="priceAdjustBatchDeleteButton">批量删除</button></div></div>
+          <div class="notice"><div class="title">处理口径</div><div class="desc">调价申请审批通过后，新价格自动生效，并同步更新商品信息主数据。</div></div>
+          <div class="drawer-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>操作</th>
+                  <th><input type="checkbox" id="priceAdjustSelectAllDraft" /></th>
+                  <th>调价单号</th>
+                  <th>货主</th>
+                  <th>调价仓库</th>
+                  <th>调价类型</th>
+                  <th>生效日期</th>
+                  <th>调价商品数</th>
+                  <th>提交人</th>
+                  <th>审批人</th>
+                  <th>时间</th>
+                  <th>申请状态</th>
+                  <th>审批状态</th>
+                  <th>下一处理人</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" /></td>
+                  <td>TJD20260526001</td>
+                  <td>自有货主A</td>
+                  <td>华东1仓</td>
+                  <td>售价调整</td>
+                  <td>2026-06-01</td>
+                  <td>3</td>
+                  <td>张经理</td>
+                  <td>李价格专员</td>
+                  <td>2026-05-26 09:30</td>
+                  <td><span class="tag orange">待审核</span></td>
+                  <td><span class="tag orange">待审批</span></td>
+                  <td>商品价格专员</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" /></td>
+                  <td>TJD20260526002</td>
+                  <td>外部货主B</td>
+                  <td>华南2仓</td>
+                  <td>进价调整</td>
+                  <td>2026-06-05</td>
+                  <td>5</td>
+                  <td>王雪</td>
+                  <td>—</td>
+                  <td>2026-05-26 10:15</td>
+                  <td><span class="tag orange">待审批</span></td>
+                  <td><span class="tag gray">—</span></td>
+                  <td>价格管理岗</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" disabled /></td>
+                  <td>TJD20260526003</td>
+                  <td>自有货主C</td>
+                  <td>华北3仓</td>
+                  <td>税率调整</td>
+                  <td>2026-06-01</td>
+                  <td>2</td>
+                  <td>陈华</td>
+                  <td>张经理</td>
+                  <td>2026-05-25 14:20</td>
+                  <td><span class="tag red">审批驳回</span></td>
+                  <td><span class="tag red">已驳回</span></td>
+                  <td>—</td>
+                </tr>
+                <tr class="table-row-clickable">
+                  <td><button class="table-action-button">查看</button></td>
+                  <td><input type="checkbox" disabled /></td>
+                  <td>TJD20260525001</td>
+                  <td>自有货主A</td>
+                  <td>华东1仓</td>
+                  <td>价格体系调整</td>
+                  <td>2026-05-26</td>
+                  <td>8</td>
+                  <td>张经理</td>
+                  <td>李价格专员</td>
+                  <td>2026-05-25 16:00</td>
+                  <td><span class="tag green">已完成</span></td>
+                  <td><span class="tag green">已通过</span></td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>`;
     }
     return renderPcListShell(key, data.content);
@@ -14563,7 +15339,7 @@ function renderPcTabContent(key, tab) {
 
 function renderPcTabButtons(activeTab, key) {
   const config = resolvePcTabConfig(key);
-  const hideFormTabs = ["newproduct", "inventoryplan", "returnapply", "returnapplyin", "ownershipapply"].includes(key);
+  const hideFormTabs = ["newproduct", "inventoryplan", "returnapply", "returnapplyin", "ownershipapply", "priceadjust"].includes(key);
   const visibleExtraTabs = hideFormTabs
     ? (config.extraTabs || []).filter((item) => !["create", "edit"].includes(item.key))
     : (config.extraTabs || []);
@@ -14627,6 +15403,9 @@ function bindPcInnerTabSwitchEvents(key) {
       }
       if (key === "inventoryplan" && targetTab === "create") {
         inventoryPlanPageState.selectedEditRow = null;
+      }
+      if (key === "priceadjust" && targetTab === "create") {
+        priceAdjustPageState.selectedEditRow = null;
       }
       renderPcPage(key, element.dataset.tabSwitch || "overview");
     });
@@ -14841,6 +15620,8 @@ function renderPcPage(key, activeTab) {
   bindReturnApplySubmitApproveEvents();
   bindInventoryPlanSubmitApproveEvents();
   bindInventoryPlanFormPageEvents();
+  bindPriceAdjustSubmitApproveEvents();
+  bindPriceAdjustFormPageEvents();
   bindQualityReportEvents();
   bindReturnApplyInSubmitApproveEvents();
   bindOwnershipApplySubmitApproveEvents();
