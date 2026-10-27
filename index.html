@@ -1,12 +1,2188 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3PL运营平台多页面原型入口</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <title>3PL运营平台静态原型</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --line: #d9e0ee;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-soft: #e8f0ff;
+      --success: #16a34a;
+      --warn: #d97706;
+      --danger: #dc2626;
+      --nav: #111827;
+      --nav-soft: #1f2937;
+      --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    .page {
+      padding: 24px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #0f172a);
+      color: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      opacity: 0.92;
+      line-height: 1.7;
+      max-width: 960px;
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .segment {
+      display: inline-flex;
+      background: #e9eef7;
+      padding: 6px;
+      border-radius: 999px;
+      gap: 6px;
+    }
+
+    .segment button,
+    .mini-tabs button,
+    .pc-page-tabs button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .segment button.active,
+    .mini-tabs button.active,
+    .pc-page-tabs button.active {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .summary-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .summary-card .value {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .summary-card .desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-header h2 {
+      font-size: 18px;
+    }
+
+    .panel-header .sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .pc-shell {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 900px;
+    }
+
+    .sidebar {
+      background: var(--nav);
+      color: #fff;
+      padding: 18px 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 16px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .menu-group {
+      margin-bottom: 18px;
+    }
+
+    .menu-title {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 0 10px 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .menu-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      margin-bottom: 4px;
+      border-radius: 12px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.86);
+      border: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .menu-item.active {
+      background: var(--nav-soft);
+      color: #fff;
+    }
+
+    .pc-main {
+      background: #f8fafc;
+    }
+
+    .pc-topbar {
+      height: 72px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .search {
+      width: 360px;
+      background: #f3f6fb;
+      border: 1px solid #e5ebf3;
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .user-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #dbeafe;
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .pc-content {
+      padding: 18px;
+    }
+
+    .pc-page-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .pc-screen {
+      display: none;
+    }
+
+    .pc-screen.active {
+      display: block;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .kpi-card,
+    .section-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .kpi-card .kpi-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-card .kpi-value {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .kpi-card .kpi-trend {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .trend-up { color: var(--success); }
+    .trend-warn { color: var(--warn); }
+    .trend-down { color: var(--danger); }
+
+    .section-card h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .section-head h3 {
+      margin-bottom: 0;
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      padding-left: 10px;
+      border-left: 3px solid var(--primary-soft);
+    }
+
+    .action-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .list-row {
+      border: 1px solid #e8edf5;
+      background: #fafcff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .list-row .title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .list-row .meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .tag.blue { background: #e0ebff; color: #1d4ed8; }
+    .tag.green { background: #dcfce7; color: #15803d; }
+    .tag.orange { background: #ffedd5; color: #c2410c; }
+    .tag.red { background: #fee2e2; color: #b91c1c; }
+    .tag.gray { background: #eef2f7; color: #475569; }
+
+    .filter-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .input,
+    .button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    .button {
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      min-width: 96px;
+    }
+
+    .button,
+    .ghost-button,
+    .primary-button,
+    .danger-button,
+    .text-button {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ghost-button,
+    .primary-button,
+    .danger-button,
+    .text-button {
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 13px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .primary-button {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .danger-button {
+      background: #fff1f2;
+      color: #be123c;
+      border-color: #fecdd3;
+    }
+
+    .text-button {
+      color: var(--primary);
+      background: #eff6ff;
+      border-color: #dbeafe;
+    }
+
+    .status-banner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .banner-card {
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .banner-card .title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .banner-card .desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .empty-state {
+      border: 1px dashed #cbd5e1;
+      background: linear-gradient(180deg, #fafcff, #f8fbff);
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .empty-state .empty-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .empty-state .empty-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #ecf1f6;
+      text-align: left;
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      font-size: 14px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed #e5ebf3;
+    }
+
+    .info-item .k {
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .mobile-zone {
+      padding: 18px;
+      background: #eff4fb;
+    }
+
+    .mini-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .phone {
+      width: 360px;
+      margin: 0 auto;
+      background: #0f172a;
+      border-radius: 36px;
+      padding: 14px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    .phone-screen {
+      background: #f8fafc;
+      border-radius: 28px;
+      min-height: 760px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 26px;
+      background: #111827;
+      margin: 10px auto 8px;
+      border-radius: 999px;
+    }
+
+    .mini-page {
+      display: none;
+      padding-bottom: 76px;
+    }
+
+    .mini-page.active {
+      display: block;
+    }
+
+    .mini-header {
+      padding: 16px 18px 12px;
+      background: #fff;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .mini-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .mini-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .mini-section {
+      margin: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .mini-section h4 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .quick-card {
+      background: #f8fbff;
+      border: 1px solid #dbe7ff;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .quick-card .qc-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .quick-card .qc-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .mini-list-row {
+      padding: 12px 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .mini-list-row:last-child {
+      border-bottom: 0;
+    }
+
+    .mini-list-row .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .mini-list-row .name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .mini-list-row .desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .form-field {
+      background: #f8fafc;
+      border: 1px solid #e7edf5;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .form-field .field-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .bottom-actions {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 64px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: linear-gradient(to top, #f8fafc 70%, rgba(248, 250, 252, 0));
+    }
+
+    .ghost-btn,
+    .primary-btn {
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid var(--line);
+    }
+
+    .ghost-btn {
+      background: #fff;
+      color: #334155;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .tabbar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background: #fff;
+      border-top: 1px solid #e5ebf3;
+      padding: 8px 4px 10px;
+    }
+
+    .tabbar div {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .tabbar .active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .modal-mask {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.44);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .modal-mask.show {
+      display: flex;
+    }
+
+    .modal {
+      width: min(560px, 100%);
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
+      overflow: hidden;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      padding: 18px 20px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid #e5ebf3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .modal-sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+      line-height: 1.7;
+    }
+
+    .modal-body {
+      display: grid;
+      gap: 12px;
+    }
+
+    .textarea {
+      min-height: 92px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+      background: #fbfdff;
+      color: var(--text);
+    }
+
+    .modal-footer {
+      border-top: 1px solid #e5ebf3;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .proto-note {
+      margin-top: 20px;
+      background: #fff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1280px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        padding: 16px;
+      }
+
+      .summary-grid,
+      .grid-3,
+      .grid-2,
+      .filter-bar,
+      .detail-layout,
+      .status-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .pc-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .search {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <script src="assets/app.js"></script>
+  <div class="page">
+    <section class="hero">
+      <h1>3PL运营平台静态原型</h1>
+      <p>本原型覆盖 PC 端和小程序端的核心页面，聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
+      <div class="chip-row">
+        <div class="chip">范围：3PL平台</div>
+        <div class="chip">终端：PC端 + 小程序端</div>
+        <div class="chip">页面：工作台 / 业务中心 / 大小码转换 / 库存 / 待办 / 发起 / 单据</div>
+        <div class="chip">大小码转换：BZSQ → BZTZ → BZ 三段式</div>
+        <div class="chip">形式：单文件静态原型</div>
+      </div>
+    </section>
+
+
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="label">核心主链路</div>
+        <div class="value">4条</div>
+        <div class="desc">客户要货、入库协同、退仓协同、大小码转换</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">PC端页面</div>
+        <div class="value">19页</div>
+        <div class="desc">含大小码转换 5 页：包装信息、映射、申请单、通知单、转换单</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">小程序页面</div>
+        <div class="value">12页</div>
+        <div class="desc">含驻场转换作业 3 页：申请、商品录入、已录入确认</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">当前原型阶段</div>
+        <div class="value">V2</div>
+        <div class="desc">已对齐需求方案 V1.4 与徐福记试点规则</div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="panel" id="pcPrototype">
+        <div class="panel-header">
+          <div>
+            <h2>PC端原型</h2>
+            <div class="sub">后台管理式布局，适合管理、审批、查询、调度和分析</div>
+          </div>
+        </div>
+        <div class="pc-shell">
+          <aside class="sidebar">
+            <div class="brand">
+              <div class="brand-logo">3</div>
+              <div>
+                <div style="font-weight:700;">3PL运营平台</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.58);">PC管理端</div>
+              </div>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">首页</div>
+              <button class="menu-item active">首页工作台</button>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">基础配置</div>
+              <button class="menu-item">货主管理</button>
+              <button class="menu-item">合同应用</button>
+              <button class="menu-item">货主客户关系</button>
+              <button class="menu-item">客户仓库关系</button>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">业务中心</div>
+              <button class="menu-item">客户要货</button>
+              <button class="menu-item">外部货主入库</button>
+              <button class="menu-item">配送管理</button>
+              <button class="menu-item">退仓管理</button>
+              <button class="menu-item">调拨管理</button>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">大小码转换</div>
+              <button class="menu-item">商品包装信息</button>
+              <button class="menu-item">大小码映射</button>
+              <button class="menu-item">转换申请单</button>
+              <button class="menu-item">转换通知单</button>
+              <button class="menu-item">转换单</button>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">库存与协同</div>
+              <button class="menu-item">库存台账</button>
+              <button class="menu-item">财务协同</button>
+              <button class="menu-item">审批中心</button>
+              <button class="menu-item">接口日志</button>
+            </div>
+          </aside>
+
+          <div class="pc-main">
+            <div class="pc-topbar">
+              <div class="search">搜索单据号 / 客户 / 货主 / 仓库 / 商品</div>
+              <div class="user-bar">
+                <span>消息 12</span>
+                <span>预警 5</span>
+                <span class="avatar">张</span>
+                <span>张经理</span>
+              </div>
+            </div>
+
+            <div class="pc-content">
+              <div class="pc-page-tabs" id="pcPageTabs">
+                <button class="active" data-pc-screen="dashboard">首页工作台</button>
+                <button data-pc-screen="demand">客户要货单</button>
+                <button data-pc-screen="inbound">外部货主入库</button>
+                <button data-pc-screen="purchasein">采购入库接收</button>
+                <button data-pc-screen="purchasereturn">采购退货</button>
+                <button data-pc-screen="delivery">配送管理</button>
+                <button data-pc-screen="return">退仓管理</button>
+                <button data-pc-screen="transfer">调拨管理</button>
+                <button data-pc-screen="loss">损溢管理</button>
+                <button data-pc-screen="ownership">物权转移</button>
+                <button data-pc-screen="packgoods">商品包装信息</button>
+                <button data-pc-screen="inventory">库存台账</button>
+                <button data-pc-screen="approval">审批中心</button>
+                <button data-pc-screen="finance">财务协同</button>
+                <button data-pc-screen="logs">接口日志</button>
+              </div>
+
+              <div class="pc-screen active" id="pc-dashboard">
+                <div class="status-banner">
+                  <div class="banner-card">
+                    <div class="title">今日运营概览</div>
+                    <div class="desc">当前重点关注客户要货履约、WMS回传时效和BMS财务回执。首页支持从异常直接跳到处理页面，便于汇报和现场演示。</div>
+                  </div>
+                  <div class="banner-card">
+                    <div class="title">建议演示路径</div>
+                    <div class="desc">首页工作台 -> 客户要货单 -> 配送管理 -> 财务协同 -> 接口日志 -> 小程序申请与待办。</div>
+                  </div>
+                </div>
+
+                <div class="grid-3">
+                  <div class="kpi-card">
+                    <div class="kpi-label">待履约客户要货单</div>
+                    <div class="kpi-value">128</div>
+                    <div class="kpi-trend trend-up">较昨日 +18</div>
+                  </div>
+                  <div class="kpi-card">
+                    <div class="kpi-label">今日出库量</div>
+                    <div class="kpi-value">3,560</div>
+                    <div class="kpi-trend trend-up">履约准时率 97.3%</div>
+                  </div>
+                  <div class="kpi-card">
+                    <div class="kpi-label">接口异常数</div>
+                    <div class="kpi-value">7</div>
+                    <div class="kpi-trend trend-warn">待处理 3 项高优先</div>
+                  </div>
+                </div>
+
+                <div class="grid-2">
+                  <div class="section-card">
+                    <h3>待办事项</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">客户要货单待审核</div>
+                          <div class="meta">单据数 18 / 平均等待 1.6 小时</div>
+                        </div>
+                        <span class="tag orange">待审批</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">退仓单待处理</div>
+                          <div class="meta">异常回仓 4 单 / 需确认原货主与仓库</div>
+                        </div>
+                        <span class="tag red">高优先</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">财务回执差异待跟进</div>
+                          <div class="meta">BMS回执失败 3 单 / 含配送单与采购退货单</div>
+                        </div>
+                        <span class="tag blue">待处理</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>异常预警</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">库存不足预警</div>
+                          <div class="meta">华东1仓 / 货主 A / 低值易耗品 12 项</div>
+                        </div>
+                        <span class="tag orange">库存预警</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">WMS回传超时</div>
+                          <div class="meta">配送通知单 6 单超过 30 分钟未回传</div>
+                        </div>
+                        <span class="tag red">接口异常</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">客户签收延迟</div>
+                          <div class="meta">TMS 签收回传延迟 8 单</div>
+                        </div>
+                        <span class="tag gray">待关注</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-demand">
+                <div class="filter-bar">
+                  <div class="input">客户：全部客户</div>
+                  <div class="input">货主：全部货主</div>
+                  <div class="input">仓库：默认发货仓</div>
+                  <div class="input">状态：待履约</div>
+                  <div class="input">日期：近7天</div>
+                  <button class="button">查询</button>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>要货单号</th>
+                      <th>客户</th>
+                      <th>货主</th>
+                      <th>发货仓</th>
+                      <th>商品数</th>
+                      <th>数量</th>
+                      <th>履约状态</th>
+                      <th>审核状态</th>
+                      <th>来源</th>
+                      <th>转换</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>JJY0000120260526KHKHYH001</td>
+                      <td>内部客户-华东分部</td>
+                      <td>自有货主A</td>
+                      <td>华东1仓</td>
+                      <td>5</td>
+                      <td>260</td>
+                      <td><span class="tag blue">待履约</span></td>
+                      <td><span class="tag green">已审核</span></td>
+                      <td>SAP接口</td>
+                      <td><span class="tag orange">需转换</span></td>
+                      <td>查看 | 生成配送</td>
+                    </tr>
+                    <tr>
+                      <td>JJY0000120260526KHKHYH002</td>
+                      <td>外部客户-门店联盟</td>
+                      <td>外部货主B</td>
+                      <td>华南2仓</td>
+                      <td>3</td>
+                      <td>125</td>
+                      <td><span class="tag orange">待审核</span></td>
+                      <td><span class="tag orange">审批中</span></td>
+                      <td>SAP接口</td>
+                      <td><span class="tag gray">不需转换</span></td>
+                      <td>查看 | 审核</td>
+                    </tr>
+                    <tr>
+                      <td>WZB0000220260526KHKHYH003</td>
+                      <td>内部客户-区域共享仓</td>
+                      <td>自有货主C</td>
+                      <td>华北3仓</td>
+                      <td>8</td>
+                      <td>420</td>
+                      <td><span class="tag gray">部分签收</span></td>
+                      <td><span class="tag green">已审核</span></td>
+                      <td>手工创建</td>
+                      <td><span class="tag gray">不需转换</span></td>
+                      <td>查看 | 跟踪</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="card" style="margin-top:12px;padding:12px;background:#fff;border:1px solid #e5e6eb;border-radius:8px;">
+                  <div style="font-weight:600;margin-bottom:6px;">大小包装转换明细 t_3pl_demand_convert_detail（convert_flag=1：源商品与数量自动带出、不可编辑；转换后商品与数量人工录入）</div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>要货单号<br><small style="color:#86909c;font-weight:400;">demand_no</small></th>
+                        <th>行号<br><small style="color:#86909c;font-weight:400;">line_no</small></th>
+                        <th>源商品<br><small style="color:#86909c;font-weight:400;">source_material_code</small></th>
+                        <th>源商品数量(自动带出,不可编辑)<br><small style="color:#86909c;font-weight:400;">source_qty</small></th>
+                        <th>转换后商品<br><small style="color:#86909c;font-weight:400;">target_material_code</small></th>
+                        <th>转换后数量(手工录入)<br><small style="color:#86909c;font-weight:400;">target_qty</small></th>
+                        <th>单位<br><small style="color:#86909c;font-weight:400;">target_unit</small></th>
+                        <th>已履约数量<br><small style="color:#86909c;font-weight:400;">fulfilled_qty</small></th>
+                        <th>剩余待履约数量<br><small style="color:#86909c;font-weight:400;">remain_qty</small></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>JJY0000120260526KHKHYH001</td>
+                        <td>1</td>
+                        <td>XFJ-CS-1001 什锦糖果整箱</td>
+                        <td>10.0</td>
+                        <td>XFJ-KG-1001 什锦糖果散装</td>
+                        <td>119.5</td>
+                        <td>KG</td><td>0.0</td><td>10.0</td>
+                      </tr>
+                      <tr>
+                        <td>JJY0000120260526KHKHYH001</td>
+                        <td>2</td>
+                        <td>XFJ-CS-2002 棒棒糖整箱</td>
+                        <td>6.0</td>
+                        <td>XFJ-ST-2002 棒棒糖散件</td>
+                        <td>144.0</td>
+                        <td>ST</td><td>0.0</td><td>6.0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="color:#86909c;font-size:12px;margin-top:6px;">审核有效后生成发货通知单（PSTZ）下发 WMS 与 TMS，转换要求随通知下发；不需转换的要货直接生成发货通知单。</div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-inbound">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <h3>外部货主入库申请</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">RK20260526001</div>
+                          <div class="meta">外部货主B / 华南2仓 / 商品 6 项 / 数量 320</div>
+                        </div>
+                        <span class="tag orange">待审核</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">RK20260526003</div>
+                          <div class="meta">外部货主C / 华东1仓 / 商品 4 项 / 数量 180</div>
+                        </div>
+                        <span class="tag blue">已下发WMS</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">RK20260526005</div>
+                          <div class="meta">外部货主A / 华北3仓 / 商品 8 项 / 数量 460</div>
+                        </div>
+                        <span class="tag green">已入库</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>入库执行详情</h3>
+                    <div class="info-grid">
+                      <div class="info-item"><div class="k">入库通知单</div><div>RK20260526003</div></div>
+                      <div class="info-item"><div class="k">货主</div><div>外部货主C</div></div>
+                      <div class="info-item"><div class="k">入库仓库</div><div>华东1仓</div></div>
+                      <div class="info-item"><div class="k">当前状态</div><div><span class="tag blue">已下发WMS</span></div></div>
+                      <div class="info-item"><div class="k">WMS作业</div><div>收货完成，待上架</div></div>
+                      <div class="info-item"><div class="k">财务协同</div><div>待回传BMS</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-purchasein">
+                <div class="section-card">
+                  <h3>采购入库接收列表</h3>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>采购入库单号</th>
+                        <th>来源系统</th>
+                        <th>货主</th>
+                        <th>仓库</th>
+                        <th>数量</th>
+                        <th>库存状态</th>
+                        <th>资源资产回传</th>
+                        <th>BMS状态</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>CGRK20260526001</td>
+                        <td>WMS</td>
+                        <td>自有货主A</td>
+                        <td>华东1仓</td>
+                        <td>220</td>
+                        <td><span class="tag blue">已同步库存</span></td>
+                        <td><span class="tag green">已发送</span></td>
+                        <td><span class="tag orange">待回执</span></td>
+                      </tr>
+                      <tr>
+                        <td>CGRK20260526004</td>
+                        <td>WMS</td>
+                        <td>外部货主B</td>
+                        <td>华南2仓</td>
+                        <td>130</td>
+                        <td><span class="tag green">已完成</span></td>
+                        <td><span class="tag green">已发送</span></td>
+                        <td><span class="tag green">已回执</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-purchasereturn">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <h3>采购退货单列表</h3>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>采购退货单号</th>
+                          <th>货主</th>
+                          <th>仓库</th>
+                          <th>数量</th>
+                          <th>库存扣减</th>
+                          <th>状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>CGTH20260526002</td>
+                          <td>自有货主A</td>
+                          <td>华东1仓</td>
+                          <td>80</td>
+                          <td>已扣减</td>
+                          <td><span class="tag blue">待传BMS</span></td>
+                        </tr>
+                        <tr>
+                          <td>CGTH20260526005</td>
+                          <td>外部货主B</td>
+                          <td>华南2仓</td>
+                          <td>45</td>
+                          <td>已扣减</td>
+                          <td><span class="tag green">已完成</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>退货处理说明</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">来源</div>
+                          <div class="meta">采购退货单直接由 WMS 传入 3PL</div>
+                        </div>
+                        <span class="tag blue">系统接收</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">库存动作</div>
+                          <div class="meta">接收单据后同步减少库存台账和可用量</div>
+                        </div>
+                        <span class="tag orange">关键</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">下游同步</div>
+                          <div class="meta">同步资源资产系统与 BMS 系统</div>
+                        </div>
+                        <span class="tag green">自动</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-delivery">
+                <div class="detail-layout">
+                  <div class="section-card">
+                    <div class="section-head">
+                      <h3>配送通知单详情</h3>
+                      <div class="action-row">
+                        <button class="ghost-button">导出</button>
+                        <button class="text-button">催WMS</button>
+                        <button class="primary-button">刷新状态</button>
+                      </div>
+                    </div>
+                    <div class="info-grid">
+                      <div class="info-item"><div class="k">配送通知单号</div><div>DZT20260526001</div></div>
+                      <div class="info-item"><div class="k">来源要货单</div><div>YH20260526001</div></div>
+                      <div class="info-item"><div class="k">客户</div><div>内部客户-华东分部</div></div>
+                      <div class="info-item"><div class="k">货主</div><div>自有货主A</div></div>
+                      <div class="info-item"><div class="k">发货仓</div><div>华东1仓</div></div>
+                      <div class="info-item"><div class="k">配送状态</div><div><span class="tag blue">执行中</span></div></div>
+                      <div class="info-item"><div class="k">WMS状态</div><div>已拣货，待复核</div></div>
+                      <div class="info-item"><div class="k">TMS状态</div><div>已生成运单，待发运</div></div>
+                    </div>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>执行轨迹</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">10:10 已下发WMS/TMS</div>
+                          <div class="meta">系统自动生成配送通知单并下发执行系统</div>
+                        </div>
+                        <span class="tag blue">节点1</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">10:35 WMS开始拣货</div>
+                          <div class="meta">已锁定库存并生成出库作业任务</div>
+                        </div>
+                        <span class="tag blue">节点2</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">11:20 TMS已接单</div>
+                          <div class="meta">承运商：顺捷物流，运单号 YD9087612</div>
+                        </div>
+                        <span class="tag green">节点3</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-inventory">
+                <div class="grid-3">
+                  <div class="kpi-card">
+                    <div class="kpi-label">总库存SKU</div>
+                    <div class="kpi-value">12,860</div>
+                    <div class="kpi-trend trend-up">覆盖 18 个仓库</div>
+                  </div>
+                  <div class="kpi-card">
+                    <div class="kpi-label">可用库存</div>
+                    <div class="kpi-value">92.6%</div>
+                    <div class="kpi-trend trend-up">较上周 +1.8%</div>
+                  </div>
+                  <div class="kpi-card">
+                    <div class="kpi-label">异常库存</div>
+                    <div class="kpi-value">46</div>
+                    <div class="kpi-trend trend-warn">待检/残次/损溢</div>
+                  </div>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>货主</th>
+                      <th>仓库</th>
+                      <th>商品</th>
+                      <th>可用库存</th>
+                      <th>锁定库存</th>
+                      <th>待检库存</th>
+                      <th>在途库存</th>
+                      <th>预警状态</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>自有货主A</td>
+                      <td>华东1仓</td>
+                      <td>物料-低值易耗品001</td>
+                      <td>1,220</td>
+                      <td>80</td>
+                      <td>20</td>
+                      <td>40</td>
+                      <td><span class="tag green">正常</span></td>
+                    </tr>
+                    <tr>
+                      <td>外部货主B</td>
+                      <td>华南2仓</td>
+                      <td>物料-商品002</td>
+                      <td>120</td>
+                      <td>60</td>
+                      <td>0</td>
+                      <td>15</td>
+                      <td><span class="tag orange">低库存</span></td>
+                    </tr>
+                    <tr>
+                      <td>自有货主C</td>
+                      <td>华北3仓</td>
+                      <td>物料-商品003</td>
+                      <td>680</td>
+                      <td>100</td>
+                      <td>15</td>
+                      <td>0</td>
+                      <td><span class="tag red">异常库存</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pc-screen" id="pc-return">
+                <div class="detail-layout">
+                  <div class="section-card">
+                    <h3>退仓单列表</h3>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>退仓单号</th>
+                          <th>来源单据</th>
+                          <th>客户</th>
+                          <th>原货主</th>
+                          <th>退回仓</th>
+                          <th>状态</th>
+                          <th>处理动作</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>TK20260526008</td>
+                          <td>PS20260521012</td>
+                          <td>内部客户-华东分部</td>
+                          <td>自有货主A</td>
+                          <td>华东1仓</td>
+                          <td><span class="tag orange">审批中</span></td>
+                          <td>查看 | 审核</td>
+                        </tr>
+                        <tr>
+                          <td>TK20260526011</td>
+                          <td>PS20260522003</td>
+                          <td>外部客户-门店联盟</td>
+                          <td>外部货主B</td>
+                          <td>华南2仓</td>
+                          <td><span class="tag blue">仓库收货中</span></td>
+                          <td>查看 | 跟踪</td>
+                        </tr>
+                        <tr>
+                          <td>TK20260526015</td>
+                          <td>PS20260523006</td>
+                          <td>内部客户-共享仓</td>
+                          <td>自有货主C</td>
+                          <td>华北3仓</td>
+                          <td><span class="tag green">已入库</span></td>
+                          <td>查看 | 关闭</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>退仓处理侧栏</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">原单回溯结果</div>
+                          <div class="meta">已匹配原货主、自有货主A；已匹配原仓库、华东1仓</div>
+                        </div>
+                        <span class="tag green">已完成</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">WMS收货状态</div>
+                          <div class="meta">待下发退仓收货指令</div>
+                        </div>
+                        <span class="tag orange">待处理</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">财务协同</div>
+                          <div class="meta">退仓结果入库后自动传 BMS</div>
+                        </div>
+                        <span class="tag gray">未触发</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-transfer">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <div class="section-head">
+                      <h3>调拨单列表</h3>
+                      <div class="action-row">
+                        <button class="ghost-button">批量导出</button>
+                        <button class="primary-button">刷新WMS结果</button>
+                      </div>
+                    </div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>调拨单号</th>
+                          <th>调出仓</th>
+                          <th>调入仓</th>
+                          <th>货主</th>
+                          <th>商品数</th>
+                          <th>状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>DB20260526001</td>
+                          <td>华东1仓</td>
+                          <td>华东2仓</td>
+                          <td>自有货主A</td>
+                          <td>4</td>
+                          <td><span class="tag blue">已同步库存</span></td>
+                        </tr>
+                        <tr>
+                          <td>DB20260526003</td>
+                          <td>华南2仓</td>
+                          <td>华中1仓</td>
+                          <td>外部货主B</td>
+                          <td>2</td>
+                          <td><span class="tag orange">待传BMS</span></td>
+                        </tr>
+                        <tr>
+                          <td>DB20260526005</td>
+                          <td>华北3仓</td>
+                          <td>华北4仓</td>
+                          <td>自有货主C</td>
+                          <td>6</td>
+                          <td><span class="tag green">已完成</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>调拨执行视图</h3>
+                    <div class="info-grid">
+                      <div class="info-item"><div class="k">来源系统</div><div>WMS</div></div>
+                      <div class="info-item"><div class="k">当前状态</div><div><span class="tag blue">已同步库存</span></div></div>
+                      <div class="info-item"><div class="k">调出仓影响</div><div>库存 -120</div></div>
+                      <div class="info-item"><div class="k">调入仓影响</div><div>库存 +120</div></div>
+                      <div class="info-item"><div class="k">资源资产回传</div><div>已发送</div></div>
+                      <div class="info-item"><div class="k">BMS传单</div><div>待回执</div></div>
+                    </div>
+                    <div style="margin-top:14px;">
+                      <button class="primary-button">查看库存变化</button>
+                      <button class="ghost-button" data-open-modal="retryModal">失败重试说明</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-loss">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <h3>损溢单列表</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">SY20260526005</div>
+                          <div class="meta">华南2仓 / 破损 / 数量 32 / 责任人 王婷</div>
+                        </div>
+                        <span class="tag red">审批中</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">SY20260526009</div>
+                          <div class="meta">华东1仓 / 自然损耗 / 数量 18 / 责任人 李波</div>
+                        </div>
+                        <span class="tag blue">处理中</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">SY20260526012</div>
+                          <div class="meta">华北3仓 / 污染报废 / 数量 9 / 责任人 陈明</div>
+                        </div>
+                        <span class="tag green">已完成</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>损溢处理说明</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">库存影响</div>
+                          <div class="meta">扣减可用库存并记录损溢明细</div>
+                        </div>
+                        <span class="tag orange">关键</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">财务联动</div>
+                          <div class="meta">审批完成后同步 BMS 进行财务处理</div>
+                        </div>
+                        <span class="tag blue">自动</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">审计留痕</div>
+                          <div class="meta">保留责任认定、原因、图片与处理记录</div>
+                        </div>
+                        <span class="tag gray">必备</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-ownership">
+                <div class="detail-layout">
+                  <div class="section-card">
+                    <h3>物权转移列表</h3>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>转移单号</th>
+                          <th>原货主</th>
+                          <th>目标货主</th>
+                          <th>仓库</th>
+                          <th>数量</th>
+                          <th>状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>WQ20260526003</td>
+                          <td>外部货主B</td>
+                          <td>自有货主A</td>
+                          <td>华东1仓</td>
+                          <td>260</td>
+                          <td><span class="tag orange">待审批</span></td>
+                        </tr>
+                        <tr>
+                          <td>WQ20260526007</td>
+                          <td>外部货主C</td>
+                          <td>自有货主C</td>
+                          <td>华北3仓</td>
+                          <td>140</td>
+                          <td><span class="tag blue">待WMS确认</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>货权变化概览</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">校验项目</div>
+                          <div class="meta">合同有效性、库存可用量、货主属性、仓库范围</div>
+                        </div>
+                        <span class="tag blue">已配置</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">WMS结果回传</div>
+                          <div class="meta">回传库存属性变更结果后更新归属台账</div>
+                        </div>
+                        <span class="tag orange">待确认</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">BMS协同</div>
+                          <div class="meta">转移完成后传递物权转移财务数据</div>
+                        </div>
+                        <span class="tag gray">自动处理</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-packgoods">
+                <div class="detail-layout">
+                  <div class="section-card">
+                    <h3>商品包装信息</h3>
+                    <div class="section-note">来源：主数据 material_package（MARM 下发），平台只读镜像，人工可补充</div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>商品编码</th>
+                          <th>可选单位</th>
+                          <th>包装层级</th>
+                          <th>分子/分母</th>
+                          <th>EAN</th>
+                          <th>包装规格</th>
+                          <th>允许拆箱</th>
+                          <th>允许配送</th>
+                          <th>毛重</th>
+                          <th>来源</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>XFJ-CS-1001</td>
+                          <td>CS</td>
+                          <td><span class="tag blue">大码（箱）</span></td>
+                          <td>12 / 1</td>
+                          <td>6901234500018</td>
+                          <td>什锦糖果 12KG/箱</td>
+                          <td><span class="tag green">允许</span></td>
+                          <td>允许</td>
+                          <td>12.5 KG</td>
+                          <td>MDM</td>
+                        </tr>
+                        <tr>
+                          <td>XFJ-ST-0001</td>
+                          <td>KG</td>
+                          <td><span class="tag orange">小码（散装）</span></td>
+                          <td>1 / 1</td>
+                          <td>6901234500025</td>
+                          <td>草莓味散装糖果</td>
+                          <td><span class="tag gray">不适用</span></td>
+                          <td>允许</td>
+                          <td>—</td>
+                          <td>MDM</td>
+                        </tr>
+                        <tr>
+                          <td>XFJ-ST-0002</td>
+                          <td>KG</td>
+                          <td><span class="tag orange">小码（散装）</span></td>
+                          <td>1 / 1</td>
+                          <td>6901234500032</td>
+                          <td>柠檬味散装糖果</td>
+                          <td><span class="tag gray">不适用</span></td>
+                          <td>允许</td>
+                          <td>—</td>
+                          <td>MDM</td>
+                        </tr>
+                        <tr>
+                          <td>XFJ-ST-0003</td>
+                          <td>KG</td>
+                          <td><span class="tag orange">小码（散装）</span></td>
+                          <td>1 / 1</td>
+                          <td>6901234500049</td>
+                          <td>葡萄味散装糖果</td>
+                          <td><span class="tag gray">不适用</span></td>
+                          <td>允许</td>
+                          <td>—</td>
+                          <td>人工补充</td>
+                        </tr>
+                        <tr>
+                          <td>MAT-10611461</td>
+                          <td>CS2</td>
+                          <td><span class="tag blue">大码（箱）</span></td>
+                          <td>12 / 1</td>
+                          <td>6903000000051</td>
+                          <td>12瓶/箱</td>
+                          <td><span class="tag green">允许</span></td>
+                          <td>允许</td>
+                          <td>12.0 KG</td>
+                          <td>MDM</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>包装层级标识（F1 扩展字段）</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">pack_level 包装层级</div>
+                          <div class="meta">1 大码 / 2 小码 / 3 通用；由 box、mid 标记自动推导，人工可锁定</div>
+                        </div>
+                        <span class="tag blue">自动推导</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">is_devanning 允许拆箱</div>
+                          <div class="meta">取自 material_package.is_devanning，转换前置强校验项</div>
+                        </div>
+                        <span class="tag red">强校验</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">size_code_type 大码/小码</div>
+                          <div class="meta">由大小码映射表反向回填：1 大码 / 2 小码 / 3 两者皆可</div>
+                        </div>
+                        <span class="tag gray">映射回填</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">ref_molecule / ref_denominator</div>
+                          <div class="meta">参考换算率，界面只读提示，不参与计算、不做校验阻断</div>
+                        </div>
+                        <span class="tag orange">只读参考</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">goods_measure 计重/计件</div>
+                          <div class="meta">1 计重 / 2 计件，决定散装录入单位后缀是否为 KG</div>
+                        </div>
+                        <span class="tag blue">计重</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-approval">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <div class="section-head">
+                      <h3>待审批列表</h3>
+                      <div class="action-row">
+                        <button class="ghost-button">转交</button>
+                        <button class="danger-button">驳回</button>
+                        <button class="primary-button" data-open-modal="approvalModal">审批通过</button>
+                      </div>
+                    </div>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">客户要货单 YH20260526002</div>
+                          <div class="meta">申请人：李明 / 提交时间：09:28 / 金额影响：中</div>
+                        </div>
+                        <span class="tag orange">待审批</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">损溢单 SY20260526005</div>
+                          <div class="meta">申请人：王婷 / 数量：32 / 原因：破损</div>
+                        </div>
+                        <span class="tag red">高优先</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">物权转移单 WQ20260526003</div>
+                          <div class="meta">原货主：外部货主B / 目标货主：自有货主A</div>
+                        </div>
+                        <span class="tag blue">待确认</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>审批详情</h3>
+                    <div class="info-grid">
+                      <div class="info-item"><div class="k">单据类型</div><div>客户要货单</div></div>
+                      <div class="info-item"><div class="k">单据编号</div><div>YH20260526002</div></div>
+                      <div class="info-item"><div class="k">客户</div><div>外部客户-门店联盟</div></div>
+                      <div class="info-item"><div class="k">货主</div><div>外部货主B</div></div>
+                      <div class="info-item"><div class="k">审核结论</div><div><span class="tag orange">待审批</span></div></div>
+                      <div class="info-item"><div class="k">审批动作</div><div>通过 / 驳回 / 转交</div></div>
+                    </div>
+                    <div style="margin-top:14px;" class="action-row">
+                      <button class="ghost-button">查看流程</button>
+                      <button class="danger-button">驳回</button>
+                      <button class="primary-button" data-open-modal="approvalModal">审批通过</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-finance">
+                <div class="grid-2">
+                  <div class="section-card">
+                    <div class="section-head">
+                      <h3>财务协同任务</h3>
+                      <div class="action-row">
+                        <button class="ghost-button">导出差异</button>
+                        <button class="primary-button">批量重推</button>
+                      </div>
+                    </div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>业务单据</th>
+                          <th>单据类型</th>
+                          <th>传单状态</th>
+                          <th>BMS回执</th>
+                          <th>差异状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>PS20260526003</td>
+                          <td>配送单</td>
+                          <td><span class="tag blue">已传BMS</span></td>
+                          <td><span class="tag orange">待回执</span></td>
+                          <td><span class="tag gray">无</span></td>
+                        </tr>
+                        <tr>
+                          <td>TK20260526011</td>
+                          <td>退仓单</td>
+                          <td><span class="tag blue">已传BMS</span></td>
+                          <td><span class="tag green">已回执</span></td>
+                          <td><span class="tag gray">无</span></td>
+                        </tr>
+                        <tr>
+                          <td>SY20260526005</td>
+                          <td>损溢单</td>
+                          <td><span class="tag red">传单失败</span></td>
+                          <td><span class="tag red">失败</span></td>
+                          <td><span class="tag red">待处理</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="section-card">
+                    <h3>差异处理看板</h3>
+                    <div class="list">
+                      <div class="list-row">
+                        <div>
+                          <div class="title">待处理差异 3 项</div>
+                          <div class="meta">主要集中在损溢单和采购退货单</div>
+                        </div>
+                        <span class="tag red">异常</span>
+                      </div>
+                      <div class="list-row">
+                        <div>
+                          <div class="title">今日已完成回执 42 项</div>
+                          <div class="meta">配送、退仓和采购入库回执正常</div>
+                        </div>
+                        <span class="tag green">正常</span>
+                      </div>
+                    </div>
+                    <div style="margin-top:14px;" class="empty-state">
+                      <div class="empty-title">暂无新增财务差异工单</div>
+                      <div class="empty-desc">当前展示的是系统自动归集的差异摘要，若发生新增回执失败，可在此生成人工处理工单。</div>
+                      <button class="ghost-button">查看历史工单</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pc-screen" id="pc-logs">
+                <div class="section-card">
+                  <div class="section-head">
+                    <h3>接口日志中心</h3>
+                    <div class="action-row">
+                      <button class="ghost-button">查看失败日志</button>
+                      <button class="primary-button" data-open-modal="retryModal">重试异常接口</button>
+                    </div>
+                  </div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>时间</th>
+                        <th>接口名称</th>
+                        <th>方向</th>
+                        <th>关联单据</th>
+                        <th>状态</th>
+                        <th>说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>10:12:23</td>
+                        <td>WMS采购入库接收接口</td>
+                        <td>WMS -> 3PL</td>
+                        <td>CGRK20260526001</td>
+                        <td><span class="tag green">成功</span></td>
+                        <td>库存同步完成，已回传资源资产</td>
+                      </tr>
+                      <tr>
+                        <td>10:18:45</td>
+                        <td>BMS财务回执接口</td>
+                        <td>BMS -> 3PL</td>
+                        <td>PS20260526003</td>
+                        <td><span class="tag orange">重试中</span></td>
+                        <td>回执超时，等待第2次重试</td>
+                      </tr>
+                      <tr>
+                        <td>10:26:17</td>
+                        <td>资源资产结果回传接口</td>
+                        <td>3PL -> CRS</td>
+                        <td>DB20260526003</td>
+                        <td><span class="tag red">失败</span></td>
+                        <td>签名校验失败，待重发</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="margin-top:14px;" class="empty-state">
+                    <div class="empty-title">暂无新的高优先接口告警</div>
+                    <div class="empty-desc">当前失败日志已进入自动重试或人工处理流程。该区域可在后续版本替换为真实的失败任务列表。</div>
+                    <button class="ghost-button">查看重试策略</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+    </div>
+
+    <div class="proto-note">
+      当前为首批静态原型，重点用于评审信息架构、页面布局和核心业务流程。下一步可继续扩展为多页面 HTML 原型、补充更细的字段交互、空态异常态、审批弹层、以及更贴近真实产品的高保真视觉稿。
+    </div>
+  </div>
+
+  <div class="modal-mask" id="approvalModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">审批通过</div>
+          <div class="modal-sub">用于演示审批人对客户要货、退仓、损溢、物权转移等单据的统一处理动作。</div>
+        </div>
+        <button class="ghost-button" data-close-modal="approvalModal">关闭</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-field">
+          <div class="field-label">审批意见</div>
+          <div>同意提交执行，已校验合同、库存及关系表配置。</div>
+        </div>
+        <div class="textarea">审批备注：请 WMS 优先处理该单，TMS 需同步关注时效。</div>
+      </div>
+      <div class="modal-footer">
+        <button class="ghost-button" data-close-modal="approvalModal">取消</button>
+        <button class="primary-button" data-close-modal="approvalModal">确认通过</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="retryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">异常接口重试</div>
+          <div class="modal-sub">用于演示失败日志的人工干预入口，可扩展为查看报文、重试记录和补偿任务。</div>
+        </div>
+        <button class="ghost-button" data-close-modal="retryModal">关闭</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-field">
+          <div class="field-label">失败接口</div>
+          <div>资源资产结果回传接口 / 调拨单 DB20260526003</div>
+        </div>
+        <div class="form-field">
+          <div class="field-label">失败原因</div>
+          <div>签名校验失败，建议确认密钥版本与时间戳。</div>
+        </div>
+        <div class="textarea">处理建议：先校验签名配置，再执行接口重发；如仍失败，则生成补偿任务并通知集成负责人。</div>
+      </div>
+      <div class="modal-footer">
+        <button class="ghost-button" data-close-modal="retryModal">取消</button>
+        <button class="primary-button" data-close-modal="retryModal">立即重试</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const pcPageButtons = document.querySelectorAll("#pcPageTabs button");
+    const pcScreens = document.querySelectorAll(".pc-screen");
+
+    pcPageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        pcPageButtons.forEach((item) => item.classList.remove("active"));
+        pcScreens.forEach((screen) => screen.classList.remove("active"));
+        button.classList.add("active");
+        document.getElementById("pc-" + button.dataset.pcScreen).classList.add("active");
+      });
+    });
+
+
+    const openModalButtons = document.querySelectorAll("[data-open-modal]");
+    const closeModalButtons = document.querySelectorAll("[data-close-modal]");
+
+    openModalButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const modal = document.getElementById(button.dataset.openModal);
+        if (modal) {
+          modal.classList.add("show");
+        }
+      });
+    });
+
+    closeModalButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const modal = document.getElementById(button.dataset.closeModal);
+        if (modal) {
+          modal.classList.remove("show");
+        }
+      });
+    });
+
+    document.querySelectorAll(".modal-mask").forEach((mask) => {
+      mask.addEventListener("click", (event) => {
+        if (event.target === mask) {
+          mask.classList.remove("show");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
