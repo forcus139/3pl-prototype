@@ -534,6 +534,11 @@
       margin-bottom: 14px;
     }
 
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -1130,7 +1135,7 @@
                   <button class="button">查询</button>
                 </div>
 
-                <table>
+                <div class="table-scroll"><table>
                   <thead>
                     <tr>
                       <th>要货单号</th>
@@ -1187,11 +1192,11 @@
                       <td>查看 | 跟踪</td>
                     </tr>
                   </tbody>
-                </table>
+                </table></div>
 
                 <div class="card" style="margin-top:12px;padding:12px;background:#fff;border:1px solid #e5e6eb;border-radius:8px;">
                   <div style="font-weight:600;margin-bottom:6px;">大小包装转换明细 t_3pl_demand_convert_detail（convert_flag=1：源商品与数量自动带出、不可编辑；转换后商品与数量人工录入）</div>
-                  <table>
+                  <div class="table-scroll"><table>
                     <thead>
                       <tr>
                         <th>要货单号<br><small style="color:#86909c;font-weight:400;">demand_no</small></th>
@@ -1225,7 +1230,7 @@
                         <td>ST</td><td>0.0</td><td>6.0</td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table></div>
                   <div style="color:#86909c;font-size:12px;margin-top:6px;">审核有效后生成发货通知单（PSTZ）下发 WMS 与 TMS，转换要求随通知下发；不需转换的要货直接生成发货通知单。</div>
                 </div>
               </div>
@@ -1276,7 +1281,7 @@
               <div class="pc-screen" id="pc-purchasein">
                 <div class="section-card">
                   <h3>采购入库接收列表</h3>
-                  <table>
+                  <div class="table-scroll"><table>
                     <thead>
                       <tr>
                         <th>采购入库单号</th>
@@ -1311,7 +1316,7 @@
                         <td><span class="tag green">已回执</span></td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table></div>
                 </div>
               </div>
 
@@ -1319,7 +1324,7 @@
                 <div class="grid-2">
                   <div class="section-card">
                     <h3>采购退货单列表</h3>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>采购退货单号</th>
@@ -1348,7 +1353,7 @@
                           <td><span class="tag green">已完成</span></td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -1451,7 +1456,7 @@
                   </div>
                 </div>
 
-                <table>
+                <div class="table-scroll"><table>
                   <thead>
                     <tr>
                       <th>货主</th>
@@ -1496,14 +1501,14 @@
                       <td><span class="tag red">异常库存</span></td>
                     </tr>
                   </tbody>
-                </table>
+                </table></div>
               </div>
 
               <div class="pc-screen" id="pc-return">
                 <div class="detail-layout">
                   <div class="section-card">
                     <h3>退仓单列表</h3>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>退仓单号</th>
@@ -1544,7 +1549,7 @@
                           <td>查看 | 关闭</td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -1586,7 +1591,7 @@
                         <button class="primary-button">刷新WMS结果</button>
                       </div>
                     </div>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>调拨单号</th>
@@ -1623,7 +1628,7 @@
                           <td><span class="tag green">已完成</span></td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -1706,7 +1711,7 @@
                 <div class="detail-layout">
                   <div class="section-card">
                     <h3>物权转移列表</h3>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>转移单号</th>
@@ -1735,7 +1740,7 @@
                           <td><span class="tag blue">待WMS确认</span></td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -1772,7 +1777,7 @@
                   <div class="section-card">
                     <h3>商品包装信息</h3>
                     <div class="section-note">来源：主数据 material_package（MARM 下发），平台只读镜像，人工可补充</div>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>商品编码</th>
@@ -1849,7 +1854,7 @@
                           <td>MDM</td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -1960,7 +1965,7 @@
                         <button class="primary-button">批量重推</button>
                       </div>
                     </div>
-                    <table>
+                    <div class="table-scroll"><table>
                       <thead>
                         <tr>
                           <th>业务单据</th>
@@ -1993,7 +1998,7 @@
                           <td><span class="tag red">待处理</span></td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table></div>
                   </div>
 
                   <div class="section-card">
@@ -2032,7 +2037,7 @@
                       <button class="primary-button" data-open-modal="retryModal">重试异常接口</button>
                     </div>
                   </div>
-                  <table>
+                  <div class="table-scroll"><table>
                     <thead>
                       <tr>
                         <th>时间</th>
@@ -2069,7 +2074,7 @@
                         <td>签名校验失败，待重发</td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table></div>
                   <div style="margin-top:14px;" class="empty-state">
                     <div class="empty-title">暂无新的高优先接口告警</div>
                     <div class="empty-desc">当前失败日志已进入自动重试或人工处理流程。该区域可在后续版本替换为真实的失败任务列表。</div>
