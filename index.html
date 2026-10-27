@@ -184,7 +184,7 @@
 
     .pc-shell {
       display: grid;
-      grid-template-columns: 220px 1fr;
+      grid-template-columns: 220px minmax(0, 1fr);
       min-height: 900px;
     }
 
@@ -247,6 +247,7 @@
 
     .pc-main {
       background: #f8fafc;
+      min-width: 0;
     }
 
     .pc-topbar {
