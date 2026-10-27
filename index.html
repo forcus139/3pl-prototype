@@ -120,7 +120,7 @@
 
     .summary-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
       gap: 14px;
       margin-bottom: 20px;
     }
@@ -916,11 +916,11 @@
   <div class="page">
     <section class="hero">
       <h1>3PL运营平台静态原型</h1>
-      <p>本原型覆盖 PC 端的核心页面，聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
+      <p>本原型分为<b>平台端</b>与<b>货主端</b>两部分：平台端供 3PL 运营方内部用户使用（用户中心单点登录），货主端为入驻货主门户（本地账号，用户 / 角色 / 权限本地维护，见需求 11.2）。聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
-        <div class="chip">终端：PC端</div>
-        <div class="chip">页面：工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同</div>
+        <div class="chip">终端：平台端 + 货主端（PC Web）</div>
+        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 9 页</div>
         <div class="chip">大小码转换：BZSQ → BZTZ → BZ 三段式</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -935,9 +935,14 @@
         <div class="desc">客户要货、入库协同、退仓协同、大小码转换</div>
       </div>
       <div class="summary-card">
-        <div class="label">PC端页面</div>
-        <div class="value">19页</div>
-        <div class="desc">含大小码转换 5 页：包装信息、映射、申请单、通知单、转换单</div>
+        <div class="label">平台端页面</div>
+        <div class="value">15页</div>
+        <div class="desc">工作台、基础配置、业务中心、大小码转换、库存、审批、财务、接口日志（用户中心登录）</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">货主端页面</div>
+        <div class="value">9页</div>
+        <div class="desc">门户首页、入驻申请、发货 / 入库 / 退货申请、数据查询、对账、跟踪、账号与角色（本地账号）</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -950,8 +955,8 @@
       <section class="panel" id="pcPrototype">
         <div class="panel-header">
           <div>
-            <h2>PC端原型</h2>
-            <div class="sub">后台管理式布局，适合管理、审批、查询、调度和分析</div>
+            <h2>平台端原型（3PL 运营方）</h2>
+            <div class="sub">内部用户经用户中心单点登录；后台管理式布局，适合管理、审批、查询、调度和分析</div>
           </div>
         </div>
         <div class="pc-shell">
@@ -2083,11 +2088,239 @@
         </div>
       </section>
 
+      <section class="panel" id="portalPrototype">
+        <div class="panel-header">
+          <div>
+            <h2>货主端原型（货主门户）</h2>
+            <div class="sub">面向入驻货主的自助服务：本地账号登录（用户 / 角色 / 权限本地维护，见需求 11.2），数据仅限所属货主（11.10）</div>
+          </div>
+        </div>
+        <div class="portal-topbar">
+          <div><b>3PL 货主门户</b> · 徐福记（JJY00001）</div>
+          <div>本地账号：xufj_admin（货主管理员） · 消息 3 · 退出</div>
+        </div>
+        <div class="portal-shell">
+          <aside class="portal-sidebar">
+            <div class="menu-group"><div class="menu-title">门户</div>
+              <button class="menu-item active" data-po-screen="home">门户首页</button>
+            </div>
+            <div class="menu-group"><div class="menu-title">入驻申请</div>
+              <button class="menu-item" data-po-screen="entry">入驻申请单</button>
+            </div>
+            <div class="menu-group"><div class="menu-title">业务申请</div>
+              <button class="menu-item" data-po-screen="demand">发货申请（要货）</button>
+              <button class="menu-item" data-po-screen="inbound">入库申请</button>
+              <button class="menu-item" data-po-screen="return">退货申请</button>
+            </div>
+            <div class="menu-group"><div class="menu-title">查询与协同</div>
+              <button class="menu-item" data-po-screen="data">基础数据查询</button>
+              <button class="menu-item" data-po-screen="finance">财务对账</button>
+              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
+            </div>
+            <div class="menu-group"><div class="menu-title">账号</div>
+              <button class="menu-item" data-po-screen="account">账号与角色（本地）</button>
+            </div>
+          </aside>
+          <div class="portal-main">
+            <div class="pc-page-tabs" id="poPageTabs">
+              <button class="active" data-po-screen="home">门户首页</button>
+              <button data-po-screen="entry">入驻申请</button>
+              <button data-po-screen="demand">发货申请</button>
+              <button data-po-screen="inbound">入库申请</button>
+              <button data-po-screen="return">退货申请</button>
+              <button data-po-screen="data">数据查询</button>
+              <button data-po-screen="finance">财务对账</button>
+              <button data-po-screen="track">全链路跟踪</button>
+              <button data-po-screen="account">账号与角色</button>
+            </div>
+
+            <div class="po-screen active" id="po-home">
+              <div class="grid-3">
+                <div class="kpi-card"><div class="kpi-label">待发货申请</div><div class="kpi-value">12</div><div class="kpi-trend trend-up">今日新增 3</div></div>
+                <div class="kpi-card"><div class="kpi-label">待收货入库</div><div class="kpi-value">5</div><div class="kpi-trend trend-up">在途 2</div></div>
+                <div class="kpi-card"><div class="kpi-label">对账差异待核对</div><div class="kpi-value">2</div><div class="kpi-trend trend-down">较上月 -1</div></div>
+              </div>
+              <div class="section-card">
+                <div class="section-head"><div class="title">待办事项</div><span class="tag blue">仅本货主</span></div>
+                <div class="list">
+                  <div class="list-row"><div><div class="title">发货申请待确认</div><div class="meta">JJY0000120260527KHYH00012 · 华润万家天河店 · 3 项商品</div></div><button class="ghost-button">去确认</button></div>
+                  <div class="list-row"><div><div class="title">对账差异待核对</div><div class="meta">2026-10 账期 · 配送费差异 ¥126.40</div></div><button class="ghost-button">去核对</button></div>
+                  <div class="list-row"><div><div class="title">客户门店入驻审批中</div><div class="meta">永辉超市-滨江店 · 已提交 2 天</div></div><span class="tag orange">审批中</span></div>
+                </div>
+              </div>
+              <div class="section-card">
+                <div class="section-head"><div class="title">快捷入口</div></div>
+                <div class="action-row">
+                  <button class="primary-button">新建发货申请</button>
+                  <button class="ghost-button">新建入库申请</button>
+                  <button class="ghost-button">供应商商品入驻（货源清单）</button>
+                  <button class="ghost-button">查库存商品</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-entry">
+              <div class="section-card">
+                <div class="section-head"><div class="title">入驻申请单（客户 / 客户门店 / 新品 / 供应商 / 供应商商品）</div><span class="tag blue">提交后进入平台审批中心</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">类型：全部</div><div class="input">状态：全部</div><div class="input">日期：近30天</div><button class="primary-button">查询</button><button class="ghost-button">新建入驻申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>申请单号</th><th>申请类型</th><th>申请对象</th><th>提交时间</th><th>审批状态</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>RZJJ0000120261024KHDRZ00001</td><td>客户门店入驻</td><td>永辉超市-滨江店</td><td>2026-10-25 09:12</td><td><span class="tag orange">审批中</span></td><td>查看 | 撤回</td></tr>
+                    <tr><td>RZJJ0000120261022XPZRZ00002</td><td>新品入驻</td><td>XFJ-KG-1002 什锦糖果分享装</td><td>2026-10-22 16:40</td><td><span class="tag green">已通过</span></td><td>查看</td></tr>
+                    <tr><td>RZJJ0000120261020GYSRZ00003</td><td>供应商入驻</td><td>华益食品有限公司</td><td>2026-10-20 11:05</td><td><span class="tag green">已通过</span></td><td>查看</td></tr>
+                    <tr><td>RZJJ0000120261018HYQDRZ00004</td><td>供应商商品入驻（货源清单）</td><td>什锦糖果散装 ← 华益食品</td><td>2026-10-18 14:22</td><td><span class="tag green">已通过</span></td><td>查看 | 货源清单</td></tr>
+                    <tr><td>RZJJ0000120261015KHDRZ00005</td><td>客户入驻</td><td>华润万家有限公司</td><td>2026-10-15 10:30</td><td><span class="tag green">已通过</span></td><td>查看</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-demand">
+              <div class="section-card">
+                <div class="section-head"><div class="title">发货申请（客户要货）</div><span class="tag blue">仅本货主数据</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">单号：JJY00001…</div><div class="input">客户：全部</div><div class="input">状态：待履约</div><div class="input">日期：近7天</div><button class="primary-button">查询</button><button class="ghost-button">新建发货申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>发货申请单号</th><th>客户</th><th>收货门店</th><th>发货仓</th><th>商品数</th><th>申请数量</th><th>转换标记</th><th>状态</th><th>创建时间</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY0000120260526KHKHYH00001</td><td>华润万家</td><td>天河店</td><td>华东1仓</td><td>3</td><td>120</td><td><span class="tag orange">需转换</span></td><td><span class="tag blue">待履约</span></td><td>2026-05-26 08:30</td><td>查看 | 跟踪</td></tr>
+                    <tr><td>JJY0000120260526KHKHYH00002</td><td>永辉超市</td><td>滨江店</td><td>华东1仓</td><td>2</td><td>80</td><td><span class="tag gray">不需转换</span></td><td><span class="tag green">部分签收</span></td><td>2026-05-26 09:15</td><td>查看 | 跟踪</td></tr>
+                    <tr><td>JJY0000120260525KHKHYH00003</td><td>永辉超市</td><td>之江店</td><td>华东1仓</td><td>1</td><td>50</td><td><span class="tag gray">不需转换</span></td><td><span class="tag green">全部签收</span></td><td>2026-05-25 15:40</td><td>查看</td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：需转换的申请由平台专人完成大小包装转换（转换明细 t_3pl_demand_convert_detail）后下发 WMS/TMS，门户可跟踪状态。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-inbound">
+              <div class="section-card">
+                <div class="section-head"><div class="title">入库申请</div></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">单号</div><div class="input">仓库：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新建入库申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>入库申请单号</th><th>申请类型</th><th>仓库</th><th>预计到货</th><th>商品数</th><th>数量</th><th>审核状态</th><th>WMS回传</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY0000120260525RKSD00003</td><td>销售退回入库</td><td>华东1仓</td><td>2026-05-28</td><td>2</td><td>36</td><td><span class="tag green">已审核</span></td><td><span class="tag blue">收货中</span></td><td>查看</td></tr>
+                    <tr><td>JJY0000120260524RKSD00002</td><td>采购到货入库</td><td>华东1仓</td><td>2026-05-26</td><td>4</td><td>210</td><td><span class="tag green">已审核</span></td><td><span class="tag green">已入库</span></td><td>查看</td></tr>
+                    <tr><td>JJY0000120260523RKSD00001</td><td>调拨入库</td><td>华东2仓</td><td>2026-05-25</td><td>1</td><td>60</td><td><span class="tag orange">待审核</span></td><td><span class="tag gray">未下发</span></td><td>查看 | 撤回</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-return">
+              <div class="section-card">
+                <div class="section-head"><div class="title">退货申请</div></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">单号</div><div class="input">客户：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新建退货申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>退货申请单号</th><th>来源配送单</th><th>客户</th><th>退货仓</th><th>退货数量</th><th>退货原因</th><th>审批状态</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY0000120260524THSQ00002</td><td>JJY0000120260520PSYD00008</td><td>华润万家</td><td>华东1仓</td><td>12</td><td>临期退货</td><td><span class="tag orange">审批中</span></td><td>查看</td></tr>
+                    <tr><td>JJY0000120260518THSQ00001</td><td>JJY0000120260512PSYD00005</td><td>永辉超市</td><td>华东1仓</td><td>5</td><td>破损退货</td><td><span class="tag green">已入库</span></td><td>查看</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-data">
+              <div class="section-card">
+                <div class="section-head"><div class="title">基础数据查询（商品 / 包装）</div><span class="tag gray">主数据同步，门户只读</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">商品编码 / 名称：什锦</div><div class="input">包装层级：全部</div><button class="primary-button">查询</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>商品编码</th><th>商品名称</th><th>规格</th><th>单位</th><th>包装层级</th><th>转换关系</th><th>状态</th></tr></thead>
+                  <tbody>
+                    <tr><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>24瓶/箱</td><td>箱</td><td>大码</td><td>1 箱 = 24 瓶</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>1瓶</td><td>瓶</td><td>小码</td><td>—</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>6瓶/提</td><td>提</td><td>小码</td><td>—</td><td><span class="tag green">启用</span></td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：商品、品类、品牌、包装信息均来源于主数据平台同步，货主门户只读查询（11.10）。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-finance">
+              <div class="section-card">
+                <div class="section-head"><div class="title">财务对账</div></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">账期：2026-10</div><div class="input">业务类型：全部</div><div class="input">对账状态：全部</div><button class="primary-button">查询</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>账单编号</th><th>账期</th><th>业务类型</th><th>单据数</th><th>金额（元）</th><th>对账状态</th><th>差异说明</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY00001DZ2026100001</td><td>2026-10</td><td>仓储费</td><td>326</td><td>48,265.00</td><td><span class="tag green">已对平</span></td><td>—</td><td>查看 | 导出</td></tr>
+                    <tr><td>JJY00001DZ2026100002</td><td>2026-10</td><td>配送费</td><td>214</td><td>36,912.50</td><td><span class="tag red">差异待核对</span></td><td>2 单里程费差异 ¥126.40</td><td>核对 | 发起差异</td></tr>
+                    <tr><td>JJY00001DZ2026090001</td><td>2026-09</td><td>仓储费</td><td>301</td><td>45,108.00</td><td><span class="tag green">已对平</span></td><td>—</td><td>查看 | 导出</td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：账单由平台财务协同生成（11.8），货主核对差异后发起差异协同，处理结果 BMS 回执。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-track">
+              <div class="section-card">
+                <div class="section-head"><div class="title">全链路跟踪</div></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">单号：JJY0000120260526KHKHYH00001</div><button class="primary-button">查询</button>
+                </div>
+                <div class="list">
+                  <div class="list-row"><div><div class="title">要货接收（SAP → 3PL）</div><div class="meta">2026-05-26 08:30 · 生成客户要货申请 KHYH00001 · 需大小码转换</div></div><span class="tag green">完成</span></div>
+                  <div class="list-row"><div><div class="title">包装转换</div><div class="meta">2026-05-26 10:12 · 整箱 5 → 散装 119.5（t_3pl_demand_convert_detail）</div></div><span class="tag green">完成</span></div>
+                  <div class="list-row"><div><div class="title">发货通知下发 WMS / TMS</div><div class="meta">2026-05-26 10:20 · 配送通知单 PSTZ00001</div></div><span class="tag green">完成</span></div>
+                  <div class="list-row"><div><div class="title">仓库拣货出库（WMS）</div><div class="meta">2026-05-26 14:05 · 华东1仓 · 已出库 120</div></div><span class="tag green">完成</span></div>
+                  <div class="list-row"><div><div class="title">运输在途（TMS）</div><div class="meta">2026-05-26 16:30 · 运单 YD00001 · 承运：顺捷冷链</div></div><span class="tag blue">在途</span></div>
+                  <div class="list-row"><div><div class="title">客户签收</div><div class="meta">预计 2026-05-27 12:00 前 · 华润万家天河店</div></div><span class="tag gray">待签收</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-account">
+              <div class="section-card">
+                <div class="section-head"><div class="title">账号与角色（本地用户体系）</div><span class="tag blue">需求 11.2：货主端用户本地建立</span></div>
+                <div class="meta" style="margin-bottom:10px;">货主端账号由平台开通货主管理员后本地维护：密码加密存储、绑定所属货主 JJY00001、数据权限固定本货主全量；子账号由货主管理员自助管理。</div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>手机号</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>xufj_admin</td><td>陈明</td><td>货主管理员</td><td>138****6621</td><td><span class="tag green">启用</span></td><td>2026-10-27 09:05</td><td>编辑 | 重置密码</td></tr>
+                    <tr><td>xufj_op01</td><td>李婷</td><td>货主操作员</td><td>139****3082</td><td><span class="tag green">启用</span></td><td>2026-10-26 17:22</td><td>编辑 | 重置密码 | 停用</td></tr>
+                    <tr><td>xufj_site01</td><td>王强</td><td>驻场作业人员</td><td>137****5510</td><td><span class="tag gray">停用</span></td><td>2026-09-30 08:40</td><td>启用</td></tr>
+                  </tbody>
+                </table></div>
+                <div class="action-row" style="margin-top:10px;">
+                  <button class="primary-button">新建子账号</button><button class="ghost-button">新增角色</button>
+                </div>
+              </div>
+              <div class="section-card">
+                <div class="section-head"><div class="title">角色与权限（t_3pl_role / t_3pl_role_perm）</div></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>角色</th><th>菜单权限</th><th>数据权限</th><th>说明</th></tr></thead>
+                  <tbody>
+                    <tr><td>货主管理员</td><td>门户全部菜单</td><td>本货主全量</td><td>可管理子账号与角色</td></tr>
+                    <tr><td>货主操作员</td><td>业务申请 / 查询 / 对账 / 跟踪</td><td>本货主全量</td><td>不可管理账号</td></tr>
+                    <tr><td>驻场作业人员</td><td>全链路跟踪</td><td>本货主全量</td><td>现场查看专用</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
       
     </div>
 
     <div class="proto-note">
-      当前为首批静态原型，重点用于评审信息架构、页面布局和核心业务流程。下一步可继续扩展为多页面 HTML 原型、补充更细的字段交互、空态异常态、审批弹层、以及更贴近真实产品的高保真视觉稿。
+      当前原型分为平台端与货主端两个面板，重点用于评审信息架构、页面布局和核心业务流程。下一步可继续扩展为多页面 HTML 原型、补充更细的字段交互、空态异常态、审批弹层、以及更贴近真实产品的高保真视觉稿。
     </div>
   </div>
 
@@ -2156,7 +2389,17 @@
     });
 
 
-    const openModalButtons = document.querySelectorAll("[data-open-modal]");
+const poButtons = document.querySelectorAll("[data-po-screen]");
+    const poScreens = document.querySelectorAll(".po-screen");
+    poButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        poButtons.forEach((item) => item.classList.toggle("active", item.dataset.poScreen === button.dataset.poScreen));
+        poScreens.forEach((screen) => screen.classList.remove("active"));
+        document.getElementById("po-" + button.dataset.poScreen).classList.add("active");
+      });
+    });
+
+        const openModalButtons = document.querySelectorAll("[data-open-modal]");
     const closeModalButtons = document.querySelectorAll("[data-close-modal]");
 
     openModalButtons.forEach((button) => {
