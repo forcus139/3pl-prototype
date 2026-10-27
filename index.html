@@ -910,6 +910,44 @@
         width: 100%;
       }
     }
+
+    /* ── 货主端门户 ── */
+    .portal-topbar {
+      height: 56px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 14px;
+    }
+
+    .portal-shell {
+      display: grid;
+      grid-template-columns: 200px minmax(0, 1fr);
+      min-height: 640px;
+    }
+
+    .portal-sidebar {
+      background: #134e4a;
+      color: #fff;
+      padding: 16px 12px;
+    }
+
+    .portal-main {
+      background: #f8fafc;
+      min-width: 0;
+      padding: 16px;
+    }
+
+    .po-screen {
+      display: none;
+    }
+
+    .po-screen.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
