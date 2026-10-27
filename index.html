@@ -226,6 +226,11 @@
       letter-spacing: 0.08em;
     }
 
+    .menu-item.disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+
     .menu-item {
       display: block;
       width: 100%;
@@ -959,7 +964,7 @@
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
         <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 9 页</div>
-        <div class="chip">大小码转换：BZSQ → BZTZ → BZ 三段式</div>
+        <div class="chip">大小码转换：客户要货单驱动（convert_flag + 转换明细），审核后随发货通知下发 WMS / TMS</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
     </section>
@@ -974,8 +979,8 @@
       </div>
       <div class="summary-card">
         <div class="label">平台端页面</div>
-        <div class="value">15页</div>
-        <div class="desc">工作台、基础配置、业务中心、大小码转换、库存、审批、财务、接口日志（用户中心登录）</div>
+        <div class="value">16页</div>
+        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、财务、接口日志（用户中心登录）</div>
       </div>
       <div class="summary-card">
         <div class="label">货主端页面</div>
@@ -1003,47 +1008,42 @@
               <div class="brand-logo">3</div>
               <div>
                 <div style="font-weight:700;">3PL运营平台</div>
-                <div style="font-size:12px;color:rgba(255,255,255,0.58);">PC管理端</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.58);">平台管理端</div>
               </div>
             </div>
 
             <div class="menu-group">
               <div class="menu-title">首页</div>
-              <button class="menu-item active">首页工作台</button>
+              <button class="menu-item active" data-pc-screen="dashboard">首页工作台</button>
             </div>
 
             <div class="menu-group">
               <div class="menu-title">基础配置</div>
-              <button class="menu-item">货主管理</button>
-              <button class="menu-item">合同应用</button>
-              <button class="menu-item">货主客户关系</button>
-              <button class="menu-item">客户仓库关系</button>
+              <button class="menu-item disabled" title="本页暂未设计原型">货主管理</button>
+              <button class="menu-item disabled" title="本页暂未设计原型">合同应用</button>
+              <button class="menu-item" data-pc-screen="priceadjust">价格维护</button>
             </div>
 
             <div class="menu-group">
               <div class="menu-title">业务中心</div>
-              <button class="menu-item">客户要货</button>
-              <button class="menu-item">外部货主入库</button>
-              <button class="menu-item">配送管理</button>
-              <button class="menu-item">退仓管理</button>
-              <button class="menu-item">调拨管理</button>
+              <button class="menu-item" data-pc-screen="demand">客户要货</button>
+              <button class="menu-item" data-pc-screen="inbound">外部货主入库</button>
+              <button class="menu-item" data-pc-screen="delivery">配送管理</button>
+              <button class="menu-item" data-pc-screen="return">退仓管理</button>
+              <button class="menu-item" data-pc-screen="transfer">调拨管理</button>
             </div>
 
             <div class="menu-group">
               <div class="menu-title">大小码转换</div>
-              <button class="menu-item">商品包装信息</button>
-              <button class="menu-item">大小码映射</button>
-              <button class="menu-item">转换申请单</button>
-              <button class="menu-item">转换通知单</button>
-              <button class="menu-item">转换单</button>
+              <button class="menu-item" data-pc-screen="packgoods">商品包装信息</button>
             </div>
 
             <div class="menu-group">
               <div class="menu-title">库存与协同</div>
-              <button class="menu-item">库存台账</button>
-              <button class="menu-item">财务协同</button>
-              <button class="menu-item">审批中心</button>
-              <button class="menu-item">接口日志</button>
+              <button class="menu-item" data-pc-screen="inventory">库存台账</button>
+              <button class="menu-item" data-pc-screen="finance">财务协同</button>
+              <button class="menu-item" data-pc-screen="approval">审批中心</button>
+              <button class="menu-item" data-pc-screen="logs">接口日志</button>
             </div>
           </aside>
 
@@ -1071,6 +1071,7 @@
                 <button data-pc-screen="loss">损溢管理</button>
                 <button data-pc-screen="ownership">物权转移</button>
                 <button data-pc-screen="packgoods">商品包装信息</button>
+                <button data-pc-screen="priceadjust">价格维护</button>
                 <button data-pc-screen="inventory">库存台账</button>
                 <button data-pc-screen="approval">审批中心</button>
                 <button data-pc-screen="finance">财务协同</button>
@@ -1916,7 +1917,7 @@
                       <div class="list-row">
                         <div>
                           <div class="title">size_code_type 大码/小码</div>
-                          <div class="meta">由大小码映射表反向回填：1 大码 / 2 小码 / 3 两者皆可</div>
+                          <div class="meta">由商品包装信息维护：1 大码 / 2 小码 / 3 两者皆可</div>
                         </div>
                         <span class="tag gray">映射回填</span>
                       </div>
@@ -2120,6 +2121,26 @@
                     <button class="ghost-button">查看重试策略</button>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div class="pc-screen" id="pc-priceadjust">
+              <div class="section-card">
+                <div class="section-head"><div class="title">价格维护（t_3pl_price，需求 12.2.7）</div><span class="tag blue">平台内部维护 · 不传其它系统</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">货主：徐福记 JJY00001</div><div class="input">客户：全部</div><div class="input">商品：什锦</div><div class="input">状态：生效</div>
+                  <button class="primary-button">查询</button><button class="ghost-button">新增价格</button><button class="ghost-button">批量导入</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>货主</th><th>客户</th><th>商品编码</th><th>商品名称</th><th>价格类型</th><th>单价</th><th>计价单位</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY00001 徐福记</td><td>华润万家</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>销售价</td><td>8.5000</td><td>瓶</td><td><span class="tag green">生效</span></td><td>编辑 | 停用</td></tr>
+                    <tr><td>JJY00001 徐福记</td><td>（货主默认价）</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>销售价</td><td>9.0000</td><td>瓶</td><td><span class="tag green">生效</span></td><td>编辑 | 停用</td></tr>
+                    <tr><td>JJY00001 徐福记</td><td>永辉超市</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>销售价</td><td>8.8000</td><td>瓶</td><td><span class="tag green">生效</span></td><td>编辑 | 停用</td></tr>
+                    <tr><td>JJY00001 徐福记</td><td>（货主默认价）</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>销售价</td><td>168.0000</td><td>箱</td><td><span class="tag gray">停用</span></td><td>启用 | 编辑</td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">取价规则：客户价优先，未配置客户价取货主默认价；客户要货下单时按本表取价并快照到要货明细（unit_price），对账按快照价计算；货主门户只读查询。</div>
               </div>
             </div>
           </div>
@@ -2414,14 +2435,14 @@
 
   <script>
 
-    const pcPageButtons = document.querySelectorAll("#pcPageTabs button");
+    const pcPageButtons = document.querySelectorAll("[data-pc-screen]");
     const pcScreens = document.querySelectorAll(".pc-screen");
 
     pcPageButtons.forEach((button) => {
+      if (button.classList.contains("disabled")) return;
       button.addEventListener("click", () => {
-        pcPageButtons.forEach((item) => item.classList.remove("active"));
+        pcPageButtons.forEach((item) => item.classList.toggle("active", item.dataset.pcScreen === button.dataset.pcScreen));
         pcScreens.forEach((screen) => screen.classList.remove("active"));
-        button.classList.add("active");
         document.getElementById("pc-" + button.dataset.pcScreen).classList.add("active");
       });
     });
