@@ -120,7 +120,7 @@
 
     .summary-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
       gap: 14px;
       margin-bottom: 20px;
     }
@@ -152,7 +152,7 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 20px;
       align-items: start;
     }
@@ -916,11 +916,11 @@
   <div class="page">
     <section class="hero">
       <h1>3PL运营平台静态原型</h1>
-      <p>本原型覆盖 PC 端和小程序端的核心页面，聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
+      <p>本原型覆盖 PC 端的核心页面，聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
-        <div class="chip">终端：PC端 + 小程序端</div>
-        <div class="chip">页面：工作台 / 业务中心 / 大小码转换 / 库存 / 待办 / 发起 / 单据</div>
+        <div class="chip">终端：PC端</div>
+        <div class="chip">页面：工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同</div>
         <div class="chip">大小码转换：BZSQ → BZTZ → BZ 三段式</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -938,11 +938,6 @@
         <div class="label">PC端页面</div>
         <div class="value">19页</div>
         <div class="desc">含大小码转换 5 页：包装信息、映射、申请单、通知单、转换单</div>
-      </div>
-      <div class="summary-card">
-        <div class="label">小程序页面</div>
-        <div class="value">12页</div>
-        <div class="desc">含驻场转换作业 3 页：申请、商品录入、已录入确认</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -1047,7 +1042,7 @@
                   </div>
                   <div class="banner-card">
                     <div class="title">建议演示路径</div>
-                    <div class="desc">首页工作台 -> 客户要货单 -> 配送管理 -> 财务协同 -> 接口日志 -> 小程序申请与待办。</div>
+                    <div class="desc">首页工作台 -> 客户要货单 -> 配送管理 -> 财务协同 -> 接口日志。</div>
                   </div>
                 </div>
 
