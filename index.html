@@ -959,7 +959,7 @@
   <div class="page">
     <section class="hero">
       <h1>3PL运营平台静态原型</h1>
-      <p>本原型分为<b>平台端</b>与<b>货主端</b>两部分：平台端供 3PL 运营方内部用户使用（用户中心单点登录），货主端为入驻货主门户（本地账号，用户 / 角色 / 权限本地维护，见需求 11.2）。聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
+      <p>本原型分为<b>平台端</b>与<b>货主端</b>两部分：平台端供 3PL 运营方内部用户使用（用户中心单点登录），货主端为入驻货主门户（用户中心账号，用户与权限由用户中心承载、3PL 经接口代管不留痕，见需求 11.2）。聚焦客户要货、配送、入库、退仓、库存、审批和异常处理场景，并新增大小包装转换（大小码转换）全链路页面，对齐徐福记试点业务规则，可作为产品评审、UI深化和前后端协作的起点版本。</p>
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
@@ -985,7 +985,7 @@
       <div class="summary-card">
         <div class="label">货主端页面</div>
         <div class="value">8页</div>
-        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库 / 退货申请、数据查询、账号与角色（本地账号）；财务对账一期不做</div>
+        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库 / 退货申请、数据查询、账号与角色（经用户中心）；财务对账一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -2014,12 +2014,12 @@
         <div class="panel-header">
           <div>
             <h2>货主端原型（货主门户）</h2>
-            <div class="sub">面向入驻货主的自助服务：本地账号登录（用户 / 角色 / 权限本地维护，见需求 11.2），数据仅限所属货主（11.10）</div>
+            <div class="sub">面向入驻货主的自助服务：用户中心账号登录（账号与权限存于用户中心，3PL 经 API-15 接口代管、本地不留痕，见需求 11.2），数据仅限所属货主（11.10）</div>
           </div>
         </div>
         <div class="portal-topbar">
           <div><b>3PL 货主门户</b> · 徐福记（JJY00001）</div>
-          <div>本地账号：xufj_admin（货主管理员） · 消息 3 · 退出</div>
+          <div>用户中心账号：xufj_admin（货主管理员） · 消息 3 · 退出</div>
         </div>
         <div class="portal-shell">
           <aside class="portal-sidebar">
@@ -2038,7 +2038,7 @@
               <button class="menu-item" data-po-screen="data">基础数据查询</button>              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
             </div>
             <div class="menu-group"><div class="menu-title">账号</div>
-              <button class="menu-item" data-po-screen="account">账号与角色（本地）</button>
+              <button class="menu-item" data-po-screen="account">账号与角色（用户中心）</button>
             </div>
           </aside>
           <div class="portal-main">
@@ -2186,8 +2186,8 @@
 
             <div class="po-screen" id="po-account">
               <div class="section-card">
-                <div class="section-head"><div class="title">账号与角色（本地用户体系）</div><span class="tag blue">需求 11.2：货主端用户本地建立</span></div>
-                <div class="meta" style="margin-bottom:10px;">货主端账号由平台开通货主管理员后本地维护：密码加密存储、绑定所属货主 JJY00001、数据权限固定本货主全量；子账号由货主管理员自助管理。</div>
+                <div class="section-head"><div class="title">账号与角色（经用户中心）</div><span class="tag blue">需求 11.2：货主用户由用户中心承载</span></div>
+                <div class="meta" style="margin-bottom:10px;">账号与权限存储于用户中心：新增、启停、重置密码、角色权限配置在 3PL 端操作，经用户中心接口（API-15）完成，3PL 本地不留存（不留痕）；下表数据来源于用户中心查询接口。</div>
                 <div class="table-scroll"><table>
                   <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>手机号</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead>
                   <tbody>
@@ -2201,7 +2201,7 @@
                 </div>
               </div>
               <div class="section-card">
-                <div class="section-head"><div class="title">角色与权限（t_3pl_role / t_3pl_role_perm）</div></div>
+                <div class="section-head"><div class="title">角色与权限（配置于用户中心，经 3PL 调接口维护）</div></div>
                 <div class="table-scroll"><table>
                   <thead><tr><th>角色</th><th>菜单权限</th><th>数据权限</th><th>说明</th></tr></thead>
                   <tbody>
