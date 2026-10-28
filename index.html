@@ -963,7 +963,7 @@
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
-        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 9 页</div>
+        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 8 页</div>
         <div class="chip">大小码转换：客户要货单驱动（convert_flag + 转换明细），审核后随发货通知下发 WMS / TMS</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -979,13 +979,13 @@
       </div>
       <div class="summary-card">
         <div class="label">平台端页面</div>
-        <div class="value">16页</div>
-        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、财务、接口日志（用户中心登录）</div>
+        <div class="value">14页</div>
+        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；物权转移与财务协同一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">货主端页面</div>
-        <div class="value">9页</div>
-        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库 / 退货申请、数据查询、对账、账号与角色（本地账号）</div>
+        <div class="value">8页</div>
+        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库 / 退货申请、数据查询、账号与角色（本地账号）；财务对账一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -1041,7 +1041,6 @@
             <div class="menu-group">
               <div class="menu-title">库存与协同</div>
               <button class="menu-item" data-pc-screen="inventory">库存台账</button>
-              <button class="menu-item" data-pc-screen="finance">财务协同</button>
               <button class="menu-item" data-pc-screen="approval">审批中心</button>
               <button class="menu-item" data-pc-screen="logs">接口日志</button>
             </div>
@@ -1069,12 +1068,10 @@
                 <button data-pc-screen="return">退仓管理</button>
                 <button data-pc-screen="transfer">调拨管理</button>
                 <button data-pc-screen="loss">损溢管理</button>
-                <button data-pc-screen="ownership">物权转移</button>
                 <button data-pc-screen="packgoods">商品包装信息</button>
                 <button data-pc-screen="priceadjust">价格维护</button>
                 <button data-pc-screen="inventory">库存台账</button>
                 <button data-pc-screen="approval">审批中心</button>
-                <button data-pc-screen="finance">财务协同</button>
                 <button data-pc-screen="logs">接口日志</button>
               </div>
 
@@ -1747,70 +1744,7 @@
                 </div>
               </div>
 
-              <div class="pc-screen" id="pc-ownership">
-                <div class="detail-layout">
-                  <div class="section-card">
-                    <h3>物权转移列表</h3>
-                    <div class="table-scroll"><table>
-                      <thead>
-                        <tr>
-                          <th>转移单号</th>
-                          <th>原货主</th>
-                          <th>目标货主</th>
-                          <th>仓库</th>
-                          <th>数量</th>
-                          <th>状态</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>WQ20260526003</td>
-                          <td>外部货主B</td>
-                          <td>自有货主A</td>
-                          <td>华东1仓</td>
-                          <td>260</td>
-                          <td><span class="tag orange">待审批</span></td>
-                        </tr>
-                        <tr>
-                          <td>WQ20260526007</td>
-                          <td>外部货主C</td>
-                          <td>自有货主C</td>
-                          <td>华北3仓</td>
-                          <td>140</td>
-                          <td><span class="tag blue">待WMS确认</span></td>
-                        </tr>
-                      </tbody>
-                    </table></div>
-                  </div>
-
-                  <div class="section-card">
-                    <h3>货权变化概览</h3>
-                    <div class="list">
-                      <div class="list-row">
-                        <div>
-                          <div class="title">校验项目</div>
-                          <div class="meta">合同有效性、库存可用量、货主属性、仓库范围</div>
-                        </div>
-                        <span class="tag blue">已配置</span>
-                      </div>
-                      <div class="list-row">
-                        <div>
-                          <div class="title">WMS结果回传</div>
-                          <div class="meta">回传库存属性变更结果后更新归属台账</div>
-                        </div>
-                        <span class="tag orange">待确认</span>
-                      </div>
-                      <div class="list-row">
-                        <div>
-                          <div class="title">BMS协同</div>
-                          <div class="meta">转移完成后传递物权转移财务数据</div>
-                        </div>
-                        <span class="tag gray">自动处理</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="pc-screen" id="pc-packgoods">
                 <div class="detail-layout">
@@ -1995,78 +1929,7 @@
                 </div>
               </div>
 
-              <div class="pc-screen" id="pc-finance">
-                <div class="grid-2">
-                  <div class="section-card">
-                    <div class="section-head">
-                      <h3>财务协同任务</h3>
-                      <div class="action-row">
-                        <button class="ghost-button">导出差异</button>
-                        <button class="primary-button">批量重推</button>
-                      </div>
-                    </div>
-                    <div class="table-scroll"><table>
-                      <thead>
-                        <tr>
-                          <th>业务单据</th>
-                          <th>单据类型</th>
-                          <th>传单状态</th>
-                          <th>BMS回执</th>
-                          <th>差异状态</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>PS20260526003</td>
-                          <td>配送单</td>
-                          <td><span class="tag blue">已传BMS</span></td>
-                          <td><span class="tag orange">待回执</span></td>
-                          <td><span class="tag gray">无</span></td>
-                        </tr>
-                        <tr>
-                          <td>TK20260526011</td>
-                          <td>退仓单</td>
-                          <td><span class="tag blue">已传BMS</span></td>
-                          <td><span class="tag green">已回执</span></td>
-                          <td><span class="tag gray">无</span></td>
-                        </tr>
-                        <tr>
-                          <td>SY20260526005</td>
-                          <td>损溢单</td>
-                          <td><span class="tag red">传单失败</span></td>
-                          <td><span class="tag red">失败</span></td>
-                          <td><span class="tag red">待处理</span></td>
-                        </tr>
-                      </tbody>
-                    </table></div>
-                  </div>
-
-                  <div class="section-card">
-                    <h3>差异处理看板</h3>
-                    <div class="list">
-                      <div class="list-row">
-                        <div>
-                          <div class="title">待处理差异 3 项</div>
-                          <div class="meta">主要集中在损溢单和采购退货单</div>
-                        </div>
-                        <span class="tag red">异常</span>
-                      </div>
-                      <div class="list-row">
-                        <div>
-                          <div class="title">今日已完成回执 42 项</div>
-                          <div class="meta">配送、退仓和采购入库回执正常</div>
-                        </div>
-                        <span class="tag green">正常</span>
-                      </div>
-                    </div>
-                    <div style="margin-top:14px;" class="empty-state">
-                      <div class="empty-title">暂无新增财务差异工单</div>
-                      <div class="empty-desc">当前展示的是系统自动归集的差异摘要，若发生新增回执失败，可在此生成人工处理工单。</div>
-                      <button class="ghost-button">查看历史工单</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="pc-screen" id="pc-logs">
                 <div class="section-card">
@@ -2172,9 +2035,7 @@
               <button class="menu-item" data-po-screen="return">退货申请</button>
             </div>
             <div class="menu-group"><div class="menu-title">查询与协同</div>
-              <button class="menu-item" data-po-screen="data">基础数据查询</button>
-              <button class="menu-item" data-po-screen="finance">财务对账</button>
-              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
+              <button class="menu-item" data-po-screen="data">基础数据查询</button>              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
             </div>
             <div class="menu-group"><div class="menu-title">账号</div>
               <button class="menu-item" data-po-screen="account">账号与角色（本地）</button>
@@ -2187,9 +2048,7 @@
               <button data-po-screen="demand">发货申请</button>
               <button data-po-screen="inbound">入库申请</button>
               <button data-po-screen="return">退货申请</button>
-              <button data-po-screen="data">数据查询</button>
-              <button data-po-screen="finance">财务对账</button>
-              <button data-po-screen="track">全链路跟踪</button>
+              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
               <button data-po-screen="account">账号与角色</button>
             </div>
 
@@ -2197,13 +2056,13 @@
               <div class="grid-3">
                 <div class="kpi-card"><div class="kpi-label">待履约要货单</div><div class="kpi-value">12</div><div class="kpi-trend trend-up">今日新增 3（门户 1 / SAP 2）</div></div>
                 <div class="kpi-card"><div class="kpi-label">待收货入库</div><div class="kpi-value">5</div><div class="kpi-trend trend-up">在途 2</div></div>
-                <div class="kpi-card"><div class="kpi-label">对账差异待核对</div><div class="kpi-value">2</div><div class="kpi-trend trend-down">较上月 -1</div></div>
+                <div class="kpi-card"><div class="kpi-label">投诉处理中</div><div class="kpi-value">1</div><div class="kpi-trend trend-down">较上月 -1</div></div>
               </div>
               <div class="section-card">
                 <div class="section-head"><div class="title">待办事项</div><span class="tag blue">仅本货主</span></div>
                 <div class="list">
                   <div class="list-row"><div><div class="title">发货申请待确认</div><div class="meta">JJY0000120260527KHYH00012 · 华润万家天河店 · 3 项商品（本门户发起）</div></div><button class="ghost-button">去确认</button></div>
-                  <div class="list-row"><div><div class="title">对账差异待核对</div><div class="meta">2026-10 账期 · 配送费差异 ¥126.40</div></div><button class="ghost-button">去核对</button></div>
+                  <div class="list-row"><div><div class="title">客户投诉待响应</div><div class="meta">华润万家天河店 · 配送破损投诉 1 单（11.9 客服）</div></div><button class="ghost-button">去处理</button></div>
                   <div class="list-row"><div><div class="title">客户门店入驻审批中</div><div class="meta">永辉超市-滨江店 · 已提交 2 天</div></div><span class="tag orange">审批中</span></div>
                 </div>
               </div>
@@ -2306,23 +2165,7 @@
               </div>
             </div>
 
-            <div class="po-screen" id="po-finance">
-              <div class="section-card">
-                <div class="section-head"><div class="title">财务对账</div></div>
-                <div class="action-row" style="margin-bottom:10px;">
-                  <div class="input">账期：2026-10</div><div class="input">业务类型：全部</div><div class="input">对账状态：全部</div><button class="primary-button">查询</button>
-                </div>
-                <div class="table-scroll"><table>
-                  <thead><tr><th>账单编号</th><th>账期</th><th>业务类型</th><th>单据数</th><th>金额（元）</th><th>对账状态</th><th>差异说明</th><th>操作</th></tr></thead>
-                  <tbody>
-                    <tr><td>JJY00001DZ2026100001</td><td>2026-10</td><td>仓储费</td><td>326</td><td>48,265.00</td><td><span class="tag green">已对平</span></td><td>—</td><td>查看 | 导出</td></tr>
-                    <tr><td>JJY00001DZ2026100002</td><td>2026-10</td><td>配送费</td><td>214</td><td>36,912.50</td><td><span class="tag red">差异待核对</span></td><td>2 单里程费差异 ¥126.40</td><td>核对 | 发起差异</td></tr>
-                    <tr><td>JJY00001DZ2026090001</td><td>2026-09</td><td>仓储费</td><td>301</td><td>45,108.00</td><td><span class="tag green">已对平</span></td><td>—</td><td>查看 | 导出</td></tr>
-                  </tbody>
-                </table></div>
-                <div class="meta" style="margin-top:8px;">说明：账单由平台财务协同生成（11.8），货主核对差异后发起差异协同，处理结果 BMS 回执。</div>
-              </div>
-            </div>
+            
 
             <div class="po-screen" id="po-track">
               <div class="section-card">
