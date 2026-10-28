@@ -985,7 +985,7 @@
       <div class="summary-card">
         <div class="label">货主端页面</div>
         <div class="value">9页</div>
-        <div class="desc">门户首页、入驻申请、发货 / 入库 / 退货申请、数据查询、对账、跟踪、账号与角色（本地账号）</div>
+        <div class="desc">门户首页、入驻申请、要货跟踪（只读）、入库 / 退货申请、数据查询、对账、账号与角色（本地账号）</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -2167,7 +2167,7 @@
               <button class="menu-item" data-po-screen="entry">入驻申请单</button>
             </div>
             <div class="menu-group"><div class="menu-title">业务申请</div>
-              <button class="menu-item" data-po-screen="demand">发货申请（要货）</button>
+              <button class="menu-item" data-po-screen="demand">要货查询与跟踪</button>
               <button class="menu-item" data-po-screen="inbound">入库申请</button>
               <button class="menu-item" data-po-screen="return">退货申请</button>
             </div>
@@ -2184,7 +2184,7 @@
             <div class="pc-page-tabs" id="poPageTabs">
               <button class="active" data-po-screen="home">门户首页</button>
               <button data-po-screen="entry">入驻申请</button>
-              <button data-po-screen="demand">发货申请</button>
+              <button data-po-screen="demand">要货跟踪</button>
               <button data-po-screen="inbound">入库申请</button>
               <button data-po-screen="return">退货申请</button>
               <button data-po-screen="data">数据查询</button>
@@ -2195,14 +2195,14 @@
 
             <div class="po-screen active" id="po-home">
               <div class="grid-3">
-                <div class="kpi-card"><div class="kpi-label">待发货申请</div><div class="kpi-value">12</div><div class="kpi-trend trend-up">今日新增 3</div></div>
+                <div class="kpi-card"><div class="kpi-label">待履约要货单</div><div class="kpi-value">12</div><div class="kpi-trend trend-up">今日新增 3（SAP）</div></div>
                 <div class="kpi-card"><div class="kpi-label">待收货入库</div><div class="kpi-value">5</div><div class="kpi-trend trend-up">在途 2</div></div>
                 <div class="kpi-card"><div class="kpi-label">对账差异待核对</div><div class="kpi-value">2</div><div class="kpi-trend trend-down">较上月 -1</div></div>
               </div>
               <div class="section-card">
                 <div class="section-head"><div class="title">待办事项</div><span class="tag blue">仅本货主</span></div>
                 <div class="list">
-                  <div class="list-row"><div><div class="title">发货申请待确认</div><div class="meta">JJY0000120260527KHYH00012 · 华润万家天河店 · 3 项商品</div></div><button class="ghost-button">去确认</button></div>
+                  <div class="list-row"><div><div class="title">要货单在途跟踪</div><div class="meta">JJY0000120260527KHYH00012 · 华润万家天河店 · 3 项商品</div></div><button class="ghost-button">去跟踪</button></div>
                   <div class="list-row"><div><div class="title">对账差异待核对</div><div class="meta">2026-10 账期 · 配送费差异 ¥126.40</div></div><button class="ghost-button">去核对</button></div>
                   <div class="list-row"><div><div class="title">客户门店入驻审批中</div><div class="meta">永辉超市-滨江店 · 已提交 2 天</div></div><span class="tag orange">审批中</span></div>
                 </div>
@@ -2210,7 +2210,7 @@
               <div class="section-card">
                 <div class="section-head"><div class="title">快捷入口</div></div>
                 <div class="action-row">
-                  <button class="primary-button">新建发货申请</button>
+                  <button class="primary-button">要货跟踪</button>
                   <button class="ghost-button">新建入库申请</button>
                   <button class="ghost-button">供应商商品入驻（货源清单）</button>
                   <button class="ghost-button">查库存商品</button>
@@ -2239,19 +2239,19 @@
 
             <div class="po-screen" id="po-demand">
               <div class="section-card">
-                <div class="section-head"><div class="title">发货申请（客户要货）</div><span class="tag blue">仅本货主数据</span></div>
+                <div class="section-head"><div class="title">要货查询与跟踪（只读）</div><span class="tag blue">仅本货主数据 · 入口唯一：SAP（API-8）</span></div>
                 <div class="action-row" style="margin-bottom:10px;">
-                  <div class="input">单号：JJY00001…</div><div class="input">客户：全部</div><div class="input">状态：待履约</div><div class="input">日期：近7天</div><button class="primary-button">查询</button><button class="ghost-button">新建发货申请</button>
+                  <div class="input">单号：JJY00001…</div><div class="input">客户：全部</div><div class="input">状态：待履约</div><div class="input">日期：近7天</div><button class="primary-button">查询</button>
                 </div>
                 <div class="table-scroll"><table>
-                  <thead><tr><th>发货申请单号</th><th>客户</th><th>收货门店</th><th>发货仓</th><th>商品数</th><th>申请数量</th><th>转换标记</th><th>状态</th><th>创建时间</th><th>操作</th></tr></thead>
+                  <thead><tr><th>要货单号</th><th>客户</th><th>收货门店</th><th>发货仓</th><th>商品数</th><th>申请数量</th><th>转换标记</th><th>状态</th><th>创建时间</th><th>操作</th></tr></thead>
                   <tbody>
                     <tr><td>JJY0000120260526KHKHYH00001</td><td>华润万家</td><td>天河店</td><td>华东1仓</td><td>3</td><td>120</td><td><span class="tag orange">需转换</span></td><td><span class="tag blue">待履约</span></td><td>2026-05-26 08:30</td><td>查看 | 跟踪</td></tr>
                     <tr><td>JJY0000120260526KHKHYH00002</td><td>永辉超市</td><td>滨江店</td><td>华东1仓</td><td>2</td><td>80</td><td><span class="tag gray">不需转换</span></td><td><span class="tag green">部分签收</span></td><td>2026-05-26 09:15</td><td>查看 | 跟踪</td></tr>
                     <tr><td>JJY0000120260525KHKHYH00003</td><td>永辉超市</td><td>之江店</td><td>华东1仓</td><td>1</td><td>50</td><td><span class="tag gray">不需转换</span></td><td><span class="tag green">全部签收</span></td><td>2026-05-25 15:40</td><td>查看</td></tr>
                   </tbody>
                 </table></div>
-                <div class="meta" style="margin-top:8px;">说明：需转换的申请由平台专人完成大小包装转换（转换明细 t_3pl_demand_convert_detail）后下发 WMS/TMS，门户可跟踪状态。</div>
+                <div class="meta" style="margin-top:8px;">说明：要货需求由 SAP 传入（API-8，唯一入口），门户只读跟踪；需转换（convert_flag=1）的要货单由平台专人录入转换明细，审批后按转换明细生成发货通知，否则按要货明细生成。</div>
               </div>
             </div>
 
