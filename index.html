@@ -964,7 +964,7 @@
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
         <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 7 页</div>
-        <div class="chip">大小码转换：客户要货单驱动（convert_flag + 转换明细），审核后随发货通知下发 WMS / TMS</div>
+        <div class="chip">大小码转换：按明细命中大小码对应关系表判定，转换后商品必为对应小码、数量合计=要货数量</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
     </section>
@@ -1229,7 +1229,7 @@
                 </table></div>
 
                 <div class="card" style="margin-top:12px;padding:12px;background:#fff;border:1px solid #e5e6eb;border-radius:8px;">
-                  <div style="font-weight:600;margin-bottom:6px;">大小包装转换明细 t_3pl_demand_convert_detail（convert_flag=1：源商品与数量自动带出、不可编辑；转换后商品与数量人工录入）</div>
+                  <div style="font-weight:600;margin-bottom:6px;">大小包装转换明细 t_3pl_demand_convert_detail（按明细行判定：源商品与数量自动带出、不可编辑；转换后商品必须是对应关系表小码、数量人工录入且合计=要货数量）</div>
                   <div class="table-scroll"><table>
                     <thead>
                       <tr>
@@ -1974,7 +1974,7 @@
                     <tr><td>JJY0000120260525KHKHYH00003</td><td>永辉超市</td><td>之江店</td><td>华东1仓</td><td>1</td><td>50</td><td><span class="tag gray">不需转换</span></td><td><span class="tag green">全部签收</span></td><td>2026-05-25 15:40</td><td>查看</td></tr>
                   </tbody>
                 </table></div>
-                <div class="meta" style="margin-top:8px;">说明：要货为双入口——门户可发起（来源 MANUAL）、也接收 SAP 传入（API-8，来源 SAP），按 source_type 区分、不做去重；需转换（convert_flag=1）的要货单由平台专人录入转换明细，审批后按转换明细生成发货通知，否则按要货明细生成。</div>
+                <div class="meta" style="margin-top:8px;">说明：要货为双入口——门户可发起（MANUAL）或 SAP 传入（API-8），不去重；是否需转换按明细行商品编码命中大小码对应关系表（t_3pl_size_mapping）大码判定，需转换行人工录入转换明细（转换后商品必为对应小码，数量合计=该行要货数量），发货通知按行生成：需转换行取转换明细、其余取要货明细。</div>
               </div>
             </div>
 
