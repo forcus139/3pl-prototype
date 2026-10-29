@@ -963,7 +963,7 @@
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
-        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 8 页</div>
+        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 7 页</div>
         <div class="chip">大小码转换：客户要货单驱动（convert_flag + 转换明细），审核后随发货通知下发 WMS / TMS</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -979,13 +979,13 @@
       </div>
       <div class="summary-card">
         <div class="label">平台端页面</div>
-        <div class="value">14页</div>
-        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；物权转移与财务协同一期不做</div>
+        <div class="value">12页</div>
+        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；退货、调拨、物权转移与财务协同一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">货主端页面</div>
-        <div class="value">8页</div>
-        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库 / 退货申请、数据查询、账号与角色（经用户中心）；财务对账一期不做</div>
+        <div class="value">7页</div>
+        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库申请、数据查询、账号与角色（经用户中心）；退货与财务对账一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -1030,7 +1030,6 @@
               <button class="menu-item" data-pc-screen="inbound">外部货主入库</button>
               <button class="menu-item" data-pc-screen="delivery">配送管理</button>
               <button class="menu-item" data-pc-screen="return">退仓管理</button>
-              <button class="menu-item" data-pc-screen="transfer">调拨管理</button>
             </div>
 
             <div class="menu-group">
@@ -1063,10 +1062,8 @@
                 <button data-pc-screen="demand">客户要货单</button>
                 <button data-pc-screen="inbound">外部货主入库</button>
                 <button data-pc-screen="purchasein">采购入库接收</button>
-                <button data-pc-screen="purchasereturn">采购退货</button>
                 <button data-pc-screen="delivery">配送管理</button>
                 <button data-pc-screen="return">退仓管理</button>
-                <button data-pc-screen="transfer">调拨管理</button>
                 <button data-pc-screen="loss">损溢管理</button>
                 <button data-pc-screen="packgoods">商品包装信息</button>
                 <button data-pc-screen="priceadjust">价格维护</button>
@@ -1126,7 +1123,7 @@
                       <div class="list-row">
                         <div>
                           <div class="title">财务回执差异待跟进</div>
-                          <div class="meta">BMS回执失败 3 单 / 含配送单与采购退货单</div>
+                          <div class="meta">WMS 回传超时 3 单 / 含配送与入库通知</div>
                         </div>
                         <span class="tag blue">待处理</span>
                       </div>
@@ -1357,70 +1354,7 @@
                 </div>
               </div>
 
-              <div class="pc-screen" id="pc-purchasereturn">
-                <div class="grid-2">
-                  <div class="section-card">
-                    <h3>采购退货单列表</h3>
-                    <div class="table-scroll"><table>
-                      <thead>
-                        <tr>
-                          <th>采购退货单号</th>
-                          <th>货主</th>
-                          <th>仓库</th>
-                          <th>数量</th>
-                          <th>库存扣减</th>
-                          <th>状态</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>CGTH20260526002</td>
-                          <td>自有货主A</td>
-                          <td>华东1仓</td>
-                          <td>80</td>
-                          <td>已扣减</td>
-                          <td><span class="tag blue">待传BMS</span></td>
-                        </tr>
-                        <tr>
-                          <td>CGTH20260526005</td>
-                          <td>外部货主B</td>
-                          <td>华南2仓</td>
-                          <td>45</td>
-                          <td>已扣减</td>
-                          <td><span class="tag green">已完成</span></td>
-                        </tr>
-                      </tbody>
-                    </table></div>
-                  </div>
-
-                  <div class="section-card">
-                    <h3>退货处理说明</h3>
-                    <div class="list">
-                      <div class="list-row">
-                        <div>
-                          <div class="title">来源</div>
-                          <div class="meta">采购退货单直接由 WMS 传入 3PL</div>
-                        </div>
-                        <span class="tag blue">系统接收</span>
-                      </div>
-                      <div class="list-row">
-                        <div>
-                          <div class="title">库存动作</div>
-                          <div class="meta">接收单据后同步减少库存台账和可用量</div>
-                        </div>
-                        <span class="tag orange">关键</span>
-                      </div>
-                      <div class="list-row">
-                        <div>
-                          <div class="title">下游同步</div>
-                          <div class="meta">同步资源资产系统与 BMS 系统</div>
-                        </div>
-                        <span class="tag green">自动</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="pc-screen" id="pc-delivery">
                 <div class="detail-layout">
@@ -1618,73 +1552,7 @@
                 </div>
               </div>
 
-              <div class="pc-screen" id="pc-transfer">
-                <div class="grid-2">
-                  <div class="section-card">
-                    <div class="section-head">
-                      <h3>调拨单列表</h3>
-                      <div class="action-row">
-                        <button class="ghost-button">批量导出</button>
-                        <button class="primary-button">刷新WMS结果</button>
-                      </div>
-                    </div>
-                    <div class="table-scroll"><table>
-                      <thead>
-                        <tr>
-                          <th>调拨单号</th>
-                          <th>调出仓</th>
-                          <th>调入仓</th>
-                          <th>货主</th>
-                          <th>商品数</th>
-                          <th>状态</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>DB20260526001</td>
-                          <td>华东1仓</td>
-                          <td>华东2仓</td>
-                          <td>自有货主A</td>
-                          <td>4</td>
-                          <td><span class="tag blue">已同步库存</span></td>
-                        </tr>
-                        <tr>
-                          <td>DB20260526003</td>
-                          <td>华南2仓</td>
-                          <td>华中1仓</td>
-                          <td>外部货主B</td>
-                          <td>2</td>
-                          <td><span class="tag orange">待传BMS</span></td>
-                        </tr>
-                        <tr>
-                          <td>DB20260526005</td>
-                          <td>华北3仓</td>
-                          <td>华北4仓</td>
-                          <td>自有货主C</td>
-                          <td>6</td>
-                          <td><span class="tag green">已完成</span></td>
-                        </tr>
-                      </tbody>
-                    </table></div>
-                  </div>
-
-                  <div class="section-card">
-                    <h3>调拨执行视图</h3>
-                    <div class="info-grid">
-                      <div class="info-item"><div class="k">来源系统</div><div>WMS</div></div>
-                      <div class="info-item"><div class="k">当前状态</div><div><span class="tag blue">已同步库存</span></div></div>
-                      <div class="info-item"><div class="k">调出仓影响</div><div>库存 -120</div></div>
-                      <div class="info-item"><div class="k">调入仓影响</div><div>库存 +120</div></div>
-                      <div class="info-item"><div class="k">资源资产回传</div><div>已发送</div></div>
-                      <div class="info-item"><div class="k">BMS传单</div><div>待回执</div></div>
-                    </div>
-                    <div style="margin-top:14px;">
-                      <button class="primary-button">查看库存变化</button>
-                      <button class="ghost-button" data-open-modal="retryModal">失败重试说明</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="pc-screen" id="pc-loss">
                 <div class="grid-2">
@@ -1902,8 +1770,8 @@
                       </div>
                       <div class="list-row">
                         <div>
-                          <div class="title">盘点结果单 PDJG20260526003</div>
-                          <div class="meta">华东1仓 / 差异 2 项：盘盈 1、盘亏 1</div>
+                          <div class="title">退仓单 TCDJ20260526003</div>
+                          <div class="meta">华润万家 · 退回华东1仓 · 待仓库收货确认</div>
                         </div>
                         <span class="tag blue">待确认</span>
                       </div>
@@ -2031,9 +1899,7 @@
             </div>
             <div class="menu-group"><div class="menu-title">业务申请</div>
               <button class="menu-item" data-po-screen="demand">发货申请（要货）</button>
-              <button class="menu-item" data-po-screen="inbound">入库申请</button>
-              <button class="menu-item" data-po-screen="return">退货申请</button>
-            </div>
+              <button class="menu-item" data-po-screen="inbound">入库申请</button>            </div>
             <div class="menu-group"><div class="menu-title">查询与协同</div>
               <button class="menu-item" data-po-screen="data">基础数据查询</button>              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
             </div>
@@ -2046,9 +1912,7 @@
               <button class="active" data-po-screen="home">门户首页</button>
               <button data-po-screen="entry">入驻申请</button>
               <button data-po-screen="demand">发货申请</button>
-              <button data-po-screen="inbound">入库申请</button>
-              <button data-po-screen="return">退货申请</button>
-              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
+              <button data-po-screen="inbound">入库申请</button>              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
               <button data-po-screen="account">账号与角色</button>
             </div>
 
@@ -2125,27 +1989,13 @@
                   <tbody>
                     <tr><td>JJY0000120260525RKSD00003</td><td>销售退回入库</td><td>华东1仓</td><td>2026-05-28</td><td>2</td><td>36</td><td><span class="tag green">已审核</span></td><td><span class="tag blue">收货中</span></td><td>查看</td></tr>
                     <tr><td>JJY0000120260524RKSD00002</td><td>采购到货入库</td><td>华东1仓</td><td>2026-05-26</td><td>4</td><td>210</td><td><span class="tag green">已审核</span></td><td><span class="tag green">已入库</span></td><td>查看</td></tr>
-                    <tr><td>JJY0000120260523RKSD00001</td><td>调拨入库</td><td>华东2仓</td><td>2026-05-25</td><td>1</td><td>60</td><td><span class="tag orange">待审核</span></td><td><span class="tag gray">未下发</span></td><td>查看 | 撤回</td></tr>
+                    
                   </tbody>
                 </table></div>
               </div>
             </div>
 
-            <div class="po-screen" id="po-return">
-              <div class="section-card">
-                <div class="section-head"><div class="title">退货申请</div></div>
-                <div class="action-row" style="margin-bottom:10px;">
-                  <div class="input">单号</div><div class="input">客户：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新建退货申请</button>
-                </div>
-                <div class="table-scroll"><table>
-                  <thead><tr><th>退货申请单号</th><th>来源配送单</th><th>客户</th><th>退货仓</th><th>退货数量</th><th>退货原因</th><th>审批状态</th><th>操作</th></tr></thead>
-                  <tbody>
-                    <tr><td>JJY0000120260524THSQ00002</td><td>JJY0000120260520PSYD00008</td><td>华润万家</td><td>华东1仓</td><td>12</td><td>临期退货</td><td><span class="tag orange">审批中</span></td><td>查看</td></tr>
-                    <tr><td>JJY0000120260518THSQ00001</td><td>JJY0000120260512PSYD00005</td><td>永辉超市</td><td>华东1仓</td><td>5</td><td>破损退货</td><td><span class="tag green">已入库</span></td><td>查看</td></tr>
-                  </tbody>
-                </table></div>
-              </div>
-            </div>
+            
 
             <div class="po-screen" id="po-data">
               <div class="section-card">
@@ -2231,7 +2081,7 @@
       <div class="modal-header">
         <div>
           <div class="modal-title">审批通过</div>
-          <div class="modal-sub">用于演示审批人对客户要货、退仓、损溢、盘点结果等单据的统一处理动作。</div>
+          <div class="modal-sub">用于演示审批人对客户要货、退仓、损溢等单据的统一处理动作。</div>
         </div>
         <button class="ghost-button" data-close-modal="approvalModal">关闭</button>
       </div>
@@ -2261,7 +2111,7 @@
       <div class="modal-body">
         <div class="form-field">
           <div class="field-label">失败接口</div>
-          <div>资源资产结果回传接口 / 调拨单 DB20260526003</div>
+          <div>出库结果回传接口 / 出库单 FHCK20260526003</div>
         </div>
         <div class="form-field">
           <div class="field-label">失败原因</div>
