@@ -963,7 +963,7 @@
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
-        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 8 页</div>
+        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 9 页</div>
         <div class="chip">大小码转换：按明细命中大小码对应关系表判定，转换后商品必为对应小码、数量合计=要货数量</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -979,13 +979,13 @@
       </div>
       <div class="summary-card">
         <div class="label">平台端页面</div>
-        <div class="value">12页</div>
+        <div class="value">13页</div>
         <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；调拨、物权转移与财务协同一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">货主端页面</div>
-        <div class="value">8页</div>
-        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库申请、退仓申请、数据查询、账号与角色（经用户中心）；退货与财务对账一期不做</div>
+        <div class="value">9页</div>
+        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库申请、退仓申请、退货申请、数据查询、账号与角色（经用户中心）；退货与财务对账一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -1030,6 +1030,7 @@
               <button class="menu-item" data-pc-screen="inbound">外部货主入库</button>
               <button class="menu-item" data-pc-screen="delivery">配送管理</button>
               <button class="menu-item" data-pc-screen="return">退仓管理</button>
+              <button class="menu-item" data-pc-screen="goodsreturn">退货管理</button>
             </div>
 
             <div class="menu-group">
@@ -1064,6 +1065,7 @@
                 <button data-pc-screen="purchasein">采购入库接收</button>
                 <button data-pc-screen="delivery">配送管理</button>
                 <button data-pc-screen="return">退仓管理</button>
+                <button data-pc-screen="goodsreturn">退货管理</button>
                 <button data-pc-screen="return">退仓管理</button>
                 <button data-pc-screen="loss">损溢管理</button>
                 <button data-pc-screen="packgoods">商品包装信息</button>
@@ -1578,6 +1580,29 @@
               </div>
             </div>
 
+            
+            <div class="pc-screen" id="pc-goodsreturn">
+              <div class="section-card">
+                <div class="section-head"><div class="title">退货管理（t_3pl_goods_return_apply / t_3pl_goods_return）</div><span class="tag blue">货主仓 → 供应商</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">供应商：全部</div><div class="input">仓库：全部</div><div class="input">状态：全部</div><div class="input">日期：近30天</div>
+                  <button class="primary-button">查询</button><button class="ghost-button">新建退货申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>退货申请单号</th><th>退货单号</th><th>供应商</th><th>发货仓</th><th>运输方式</th><th>退货类型</th><th>商品数</th><th>数量</th><th>状态</th><th>创建时间</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY0000120260529THSQ00001</td><td>—</td><td>华益食品</td><td>华东1仓</td><td><span class="tag blue">3PL运输</span></td><td>质量退货</td><td>2</td><td>100</td><td><span class="tag orange">待审核</span></td><td>2026-05-29 08:30</td><td>查看 | 审核</td></tr>
+                    <tr><td>JJY0000120260528THSQ00002</td><td>JJY0000120260529THDJ00001</td><td>华益食品</td><td>华东1仓</td><td><span class="tag green">供应商自提</span></td><td>临期退货</td><td>1</td><td>50</td><td><span class="tag green">已关闭</span></td><td>2026-05-28 10:15</td><td>查看</td></tr>
+                    <tr><td>JJY0000120260527THSQ00003</td><td>JJY0000120260528THDJ00002</td><td>东方供应商</td><td>华东2仓</td><td><span class="tag blue">3PL运输</span></td><td>协议退货</td><td>3</td><td>200</td><td><span class="tag blue">运输中</span></td><td>2026-05-27 14:20</td><td>查看 | 跟踪</td></tr>
+                  </tbody>
+                </table></div>
+              </div>
+              <div class="section-card">
+                <div class="section-head"><div class="title">退货流程状态（t_3pl_goods_return_apply.status）</div></div>
+                <div class="meta">新建 → 待审核 → 已审核（生成退货通知单 THTZ）→ WMS拣货中 → 已出库 → 已签收（供应商确认）→ 已关闭。运输方式分两种：3PL运输（下发WMS+TMS）或供应商自提（仅下发WMS出库指令）。</div>
+              </div>
+            </div>
+
             <div class="pc-screen" id="pc-loss">
                 <div class="grid-2">
                   <div class="section-card">
@@ -1924,7 +1949,8 @@
             <div class="menu-group"><div class="menu-title">业务申请</div>
               <button class="menu-item" data-po-screen="demand">发货申请（要货）</button>
               <button class="menu-item" data-po-screen="inbound">入库申请</button>
-              <button class="menu-item" data-po-screen="return">退仓申请</button>            </div>
+              <button class="menu-item" data-po-screen="return">退仓申请</button>
+              <button class="menu-item" data-po-screen="goodsreturn">退货申请</button>            </div>
             <div class="menu-group"><div class="menu-title">查询与协同</div>
               <button class="menu-item" data-po-screen="data">基础数据查询</button>              <button class="menu-item" data-po-screen="track">全链路跟踪</button>
             </div>
@@ -1938,7 +1964,8 @@
               <button data-po-screen="entry">入驻申请</button>
               <button data-po-screen="demand">发货申请</button>
               <button data-po-screen="inbound">入库申请</button>
-                <button data-po-screen="return">退仓申请</button>              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
+                <button data-po-screen="return">退仓申请</button>
+                <button data-po-screen="goodsreturn">退货申请</button>              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
               <button data-po-screen="account">账号与角色</button>
             </div>
 
@@ -2039,6 +2066,25 @@
                   </tbody>
                 </table></div>
                 <div class="meta" style="margin-top:8px;">说明：退仓申请由客户/门店发起，审批通过后生成退仓通知单（TCTZ）下发 WMS/TMS，WMS 收货回传后生成退仓单（TCDJ）同步库存。</div>
+              </div>
+            </div>
+
+            
+            <div class="po-screen" id="po-goodsreturn">
+              <div class="section-card">
+                <div class="section-head"><div class="title">退货申请（退回供应商）</div><span class="tag blue">仅本货主数据 · 货主仓→供应商</span></div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">供应商：全部</div><div class="input">仓库：全部</div><div class="input">状态：全部</div>
+                  <button class="primary-button">查询</button><button class="ghost-button">新建退货申请</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>退货申请单号</th><th>供应商</th><th>发货仓</th><th>运输方式</th><th>退货类型</th><th>商品数</th><th>数量</th><th>状态</th><th>创建时间</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY0000120260529THSQ00001</td><td>华益食品</td><td>华东1仓</td><td><span class="tag blue">3PL运输</span></td><td>质量退货</td><td>2</td><td>100</td><td><span class="tag orange">待审核</span></td><td>2026-05-29 08:30</td><td>查看</td></tr>
+                    <tr><td>JJY0000120260528THSQ00002</td><td>华益食品</td><td>华东1仓</td><td><span class="tag green">供应商自提</span></td><td>临期退货</td><td>1</td><td>50</td><td><span class="tag green">已关闭</span></td><td>2026-05-28 10:15</td><td>查看</td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：退货申请由货主发起，将商品退回给供应商。运输方式可选 3PL 物流运输或供应商自提；审批通过后生成退货通知单（THTZ），3PL运输时同时下发 WMS 和 TMS，自提时仅下发 WMS。</div>
               </div>
             </div>
 
