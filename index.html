@@ -963,7 +963,7 @@
       <div class="chip-row">
         <div class="chip">范围：3PL平台</div>
         <div class="chip">终端：平台端 + 货主端（PC Web）</div>
-        <div class="chip">页面：平台端（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 9 页</div>
+        <div class="chip">页面：平台端 43 页（工作台 / 基础配置 / 业务中心 / 大小码转换 / 库存与协同）+ 货主门户 15 页（基础数据 6 页支持货主自维护增删改查）</div>
         <div class="chip">大小码转换：按明细命中大小码对应关系表判定，转换后商品必为对应小码、数量合计=要货数量</div>
         <div class="chip">形式：单文件静态原型</div>
       </div>
@@ -979,13 +979,13 @@
       </div>
       <div class="summary-card">
         <div class="label">平台端页面</div>
-        <div class="value">13页</div>
-        <div class="desc">工作台、价格维护、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；调拨、物权转移与财务协同一期不做</div>
+        <div class="value">43页</div>
+        <div class="desc">工作台、基础配置、业务中心、商品包装（大小码转换）、库存、审批、接口日志（用户中心登录）；调拨、物权转移与财务协同一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">货主端页面</div>
-        <div class="value">9页</div>
-        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库申请、退仓申请、退货申请、数据查询、账号与角色（经用户中心）；退货与财务对账一期不做</div>
+        <div class="value">15页</div>
+        <div class="desc">门户首页、入驻申请、发货申请（要货）、入库申请、退仓申请、退货申请、基础数据自维护（货主商品 / 货主品类 / 品类商品 / 货主供应商 / 供应商商品 / 包装信息，均支持增删改查）、主数据查询（只读）、全链路跟踪、账号与角色（经用户中心）；财务对账一期不做</div>
       </div>
       <div class="summary-card">
         <div class="label">当前原型阶段</div>
@@ -1019,8 +1019,8 @@
 
             <div class="menu-group">
               <div class="menu-title">基础配置</div>
-              <button class="menu-item disabled" title="本页暂未设计原型">货主管理</button>
-              <button class="menu-item disabled" title="本页暂未设计原型">合同应用</button>
+              <button class="menu-item" data-pc-screen="owner">货主管理</button>
+              <button class="menu-item" data-pc-screen="suppliercontract">合同应用（BMS 只读）</button>
               <button class="menu-item" data-pc-screen="priceadjust">价格维护</button>
             </div>
 
@@ -1028,9 +1028,35 @@
               <div class="menu-title">业务中心</div>
               <button class="menu-item" data-pc-screen="demand">客户要货</button>
               <button class="menu-item" data-pc-screen="inbound">外部货主入库</button>
+              <button class="menu-item" data-pc-screen="inboundnotice">入库通知单</button>
               <button class="menu-item" data-pc-screen="delivery">配送管理</button>
+              <button class="menu-item" data-pc-screen="transportservice">运输服务申请</button>
               <button class="menu-item" data-pc-screen="return">退仓管理</button>
               <button class="menu-item" data-pc-screen="goodsreturn">退货管理</button>
+              <button class="menu-item" data-pc-screen="qualityreport">质检报告</button>
+            </div>
+
+            <div class="menu-group">
+              <div class="menu-title">主数据管理</div>
+              <button class="menu-item" data-pc-screen="warehouse">配送仓管理</button>
+              <button class="menu-item" data-pc-screen="supplier">供应商信息（MDM）</button>
+              <button class="menu-item" data-pc-screen="ownersupplier">货主供应商</button>
+              <button class="menu-item" data-pc-screen="supplierproduct">供应商商品关系</button>
+              <button class="menu-item" data-pc-screen="productinfo">商品信息与包装</button>
+              <button class="menu-item" data-pc-screen="ownermaterial">货主商品管理</button>
+              <button class="menu-item" data-pc-screen="ownerpack">货主包装信息</button>
+              <button class="menu-item" data-pc-screen="customer">客户信息</button>
+              <button class="menu-item" data-pc-screen="customerstore">客户门店</button>
+              <button class="menu-item" data-pc-screen="storeordercycle">门店订货周期</button>
+              <button class="menu-item" data-pc-screen="sourcelist">货源清单</button>
+              <button class="menu-item" data-pc-screen="sizemapping">大小码对应关系</button>
+              <button class="menu-item" data-pc-screen="newproduct">新品入驻</button>
+              <button class="menu-item" data-pc-screen="ownerwarehouse">货主仓库管理</button>
+              <button class="menu-item" data-pc-screen="forwardmapping">前置映射</button>
+              <button class="menu-item" data-pc-screen="ownercategorymaterial">货主品类商品</button>
+              <button class="menu-item" data-pc-screen="ownercategory">货主品类管理</button>
+              
+              
             </div>
 
             <div class="menu-group">
@@ -1039,10 +1065,21 @@
             </div>
 
             <div class="menu-group">
+              <div class="menu-title">运营分析</div>
+              <button class="menu-item" data-pc-screen="reportcenter">报表中心</button>
+              <button class="menu-item" data-pc-screen="sla">SLA 管理</button>
+            </div>
+
+            <div class="menu-group">
               <div class="menu-title">库存与协同</div>
               <button class="menu-item" data-pc-screen="inventory">库存台账</button>
+              <button class="menu-item" data-pc-screen="inoutrecord">出入明细</button>
+              <button class="menu-item" data-pc-screen="inventorynotify">库存预警</button>
+              <button class="menu-item" data-pc-screen="invadjust">库存调整</button>
+              <button class="menu-item" data-pc-screen="loctransfer">库存地点调整</button>
               <button class="menu-item" data-pc-screen="approval">审批中心</button>
               <button class="menu-item" data-pc-screen="logs">接口日志</button>
+              <button class="menu-item" data-pc-screen="errororder">异常单与补偿</button>
             </div>
           </aside>
 
@@ -1065,14 +1102,45 @@
                 <button data-pc-screen="purchasein">采购入库接收</button>
                 <button data-pc-screen="delivery">配送管理</button>
                 <button data-pc-screen="return">退仓管理</button>
+                <button data-pc-screen="returndetail">退仓单明细</button>
                 <button data-pc-screen="goodsreturn">退货管理</button>
-                <button data-pc-screen="return">退仓管理</button>
                 <button data-pc-screen="loss">损溢管理</button>
+                <button data-pc-screen="inboundnotice">入库通知单</button>
+                <button data-pc-screen="transportservice">运输服务申请</button>
+                <button data-pc-screen="qualityreport">质检报告</button>
+                <button data-pc-screen="owner">货主管理</button>
+                <button data-pc-screen="warehouse">配送仓管理</button>
+                <button data-pc-screen="supplier">供应商信息（MDM）</button>
+                <button data-pc-screen="ownersupplier">货主供应商</button>
+                <button data-pc-screen="productinfo">商品信息与包装</button>
+                <button data-pc-screen="ownermaterial">货主商品管理</button>
+                <button data-pc-screen="ownerpack">货主包装信息</button>
+                <button data-pc-screen="customer">客户信息</button>
+                <button data-pc-screen="customerstore">客户门店</button>
+                <button data-pc-screen="storeordercycle">门店订货周期</button>
+                <button data-pc-screen="newproduct">新品入驻</button>
+                <button data-pc-screen="sizemapping">大小码对应关系</button>
+                <button data-pc-screen="sourcelist">货源清单</button>
+                <button data-pc-screen="ownerwarehouse">货主仓库管理</button>
+                <button data-pc-screen="invadjust">库存调整</button>
+                <button data-pc-screen="loctransfer">库存地点调整</button>
+                <button data-pc-screen="forwardmapping">前置映射</button>
+                <button data-pc-screen="ownercategorymaterial">货主品类商品</button>
+                <button data-pc-screen="ownercategory">货主品类管理</button>
+                
+                
                 <button data-pc-screen="packgoods">商品包装信息</button>
                 <button data-pc-screen="priceadjust">价格维护</button>
                 <button data-pc-screen="inventory">库存台账</button>
+                <button data-pc-screen="inoutrecord">出入明细</button>
+                <button data-pc-screen="inventorynotify">库存预警</button>
                 <button data-pc-screen="approval">审批中心</button>
                 <button data-pc-screen="logs">接口日志</button>
+                <button data-pc-screen="errororder">异常单与补偿</button>
+                <button data-pc-screen="supplierproduct">供应商商品关系</button>
+                <button data-pc-screen="suppliercontract">货主合同</button>
+                <button data-pc-screen="reportcenter">报表中心</button>
+                <button data-pc-screen="sla">SLA 管理</button>
               </div>
 
               <div class="pc-screen active" id="pc-dashboard">
@@ -1478,7 +1546,7 @@
                 </table></div>
               </div>
 
-              <div class="pc-screen" id="pc-return">
+              <div class="pc-screen" id="pc-returndetail">
                 <div class="detail-layout">
                   <div class="section-card">
                     <h3>退仓单列表</h3>
@@ -1663,7 +1731,121 @@
 
               
 
-              <div class="pc-screen" id="pc-packgoods">
+              <div class="pc-screen" id="pc-sizemapping"><div class="section-card"><div class="section-head"><div class="title">大小码对应关系（12.2.6 t_3pl_size_mapping）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>大码商品</th><th>小码商品</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>XFJ-CS-1001 什锦糖果整箱</td><td>XFJ-KG-1001 什锦糖果散装</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>XFJ-CS-1001 什锦糖果整箱</td><td>XFJ-KG-1002 什锦糖果分享装</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>XFJ-CS-1002 混合坚果整箱</td><td>XFJ-KG-1003 混合坚果散装</td><td>停用</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">小码全表唯一；大码在系统中无库存，库存仅按小码管理</div></div></div>
+            <div class="pc-screen" id="pc-sourcelist"><div class="section-card"><div class="section-head"><div class="title">货源清单（12.1.5 t_mdm_source_list）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>供应商</th><th>商品编码</th><th>包装规格</th><th>优先级</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>华益食品</td><td>XFJ-KG-1001</td><td>袋装</td><td>1</td><td>生效</td></tr>
+<tr><td>JJY00001</td><td>东方供应商</td><td>XFJ-KG-1001</td><td>袋装</td><td>2</td><td>生效</td></tr>
+<tr><td>JJY00001</td><td>华益食品</td><td>XFJ-CS-1001</td><td>箱装</td><td>1</td><td>生效</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">MDM 初始化写入；同一商品多供应商按优先级匹配</div></div></div>
+            <div class="pc-screen" id="pc-ownermaterial">
+              <div class="section-card">
+                <div class="section-head"><div class="title">货主商品管理（12.2.7 t_3pl_owner_material）</div><span class="tag blue">3PL 平台内部管理</span></div>
+                <div class="section-note">V2.3：已按「商品主数据有、货主商品信息无」原则补齐商品属性字段（名称 / 条码 / 分类 / 品牌 / 规格 / 计量 / 包装层级 / 重量体积 / 效期温层 / 损耗 / 价格税务 / 货源），库存域与单据域仍只存编码，展示按编码关联本表</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">商品编码 / 名称：什锦</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>货主编码</th><th>商品编码</th><th>商品名称</th><th>规格</th><th>基本单位</th><th>品牌</th><th>温层</th><th>批次管理</th><th>包装层级</th><th>售价</th><th>供应商</th><th>状态</th></tr></thead>
+                  <tbody>
+                    <tr><td>JJY00001</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>12KG/箱</td><td>CS</td><td>徐福记</td><td>常温</td><td>是</td><td><span class="tag blue">1 箱包装</span></td><td>188.00</td><td>华益食品 / 东莞分厂</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>JJY00001</td><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>散装</td><td>KG</td><td>徐福记</td><td>常温</td><td>是</td><td><span class="tag orange">3 单品</span></td><td>19.80</td><td>华益食品</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>JJY00001</td><td>XFJ-CS-1003</td><td>混合果仁礼盒</td><td>6盒/箱</td><td>CS</td><td>徐福记</td><td>常温</td><td>否</td><td><span class="tag blue">1 箱包装</span></td><td>268.00</td><td>—</td><td><span class="tag gray">停用</span></td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">唯一约束 uk(owner_code, material_code)；供应商取值与校验范围为「货主供应商」（12.2.12）本货主启用记录</div>
+              </div>
+
+              <div class="grid-2">
+                <div class="section-card">
+                  <div class="section-head"><div class="title">商品档案明细 · 基础与分类</div><span class="tag gray">示例：XFJ-CS-1001</span></div>
+                  <div class="info-item"><div class="k">货主编码 / 商品编码</div><div>JJY00001 / XFJ-CS-1001</div></div>
+                  <div class="info-item"><div class="k">商品名称 / 简称 / 显示名称</div><div>什锦糖果整箱 / 什锦糖整箱 / 徐福记什锦糖果整箱 12KG</div></div>
+                  <div class="info-item"><div class="k">助记符 / 货号</div><div>SJTG-ZX / ART-100288</div></div>
+                  <div class="info-item"><div class="k">国际条码 / 物流条码</div><div>6901234500018 / LF6901234500018</div></div>
+                  <div class="info-item"><div class="k">大 / 中 / 小类 · 品类</div><div>10 食品 / 1002 糖果 / 1002001 什锦糖果 · CATE-0018</div></div>
+                  <div class="info-item"><div class="k">品牌编码 / 品牌名称</div><div>XFJ / 徐福记</div></div>
+                  <div class="info-item"><div class="k">产地</div><div>中国广东省东莞市</div></div>
+                </div>
+
+                <div class="section-card">
+                  <div class="section-head"><div class="title">商品档案明细 · 规格与计量</div><span class="tag gray">12.1.1 补齐</span></div>
+                  <div class="info-item"><div class="k">规格 / MDM 规格</div><div>12KG/箱 / 12KG/箱</div></div>
+                  <div class="info-item"><div class="k">基本单位 / 订单单位 / 销售单位 / 发货单位</div><div>CS / CS / KG / CS</div></div>
+                  <div class="info-item"><div class="k">商品计量（计重 / 计件）</div><div>1 计重（散装按 KG 记账）</div></div>
+                  <div class="info-item"><div class="k">最大箱包数 / 包装方式 / 包装形态</div><div>12.00 / 02 箱装 / 箱装</div></div>
+                  <div class="info-item"><div class="k">最小要货量</div><div>1.0 箱</div></div>
+                  <div class="info-item"><div class="k">单位重量 / 毛重 / 净重</div><div>12.000 / 12.500 / 12.000 KG</div></div>
+                  <div class="info-item"><div class="k">长 / 宽 / 高 · 体积</div><div>40 / 30 / 40 CM · 0.048 M3</div></div>
+                </div>
+
+                <div class="section-card">
+                  <div class="section-head"><div class="title">商品档案明细 · 包装层级与转换（F1 / F2）</div><span class="tag blue">与 12.2.11 联动</span></div>
+                  <div class="info-item"><div class="k">包装层级 pack_level</div><div><span class="tag blue">1 箱包装</span></div></div>
+                  <div class="info-item"><div class="k">层级来源 pack_level_source</div><div>AUTO 推导（可人工锁定，锁定后留痕 t_3pl_goods_audit_log）</div></div>
+                  <div class="info-item"><div class="k">允许拆箱 is_devanning</div><div><span class="tag green">允许</span>（大码转换前置强校验）</div></div>
+                  <div class="info-item"><div class="k">允许配送 is_delivery</div><div><span class="tag green">允许</span></div></div>
+                  <div class="info-item"><div class="k">存在包装数据 has_package_data</div><div>是（货主包装信息 12.2.11 有 2 条启用记录：CS / CS2）</div></div>
+                  <div class="info-item"><div class="k">换算参考（分子 / 分母）</div><div><span class="tag orange">只读</span> 1 箱 = 12 KG，不参与系统折算（PR-7）</div></div>
+                </div>
+
+                <div class="section-card">
+                  <div class="section-head"><div class="title">商品档案明细 · 效期、温层与质检</div><span class="tag gray">入库与仓内作业依据</span></div>
+                  <div class="info-item"><div class="k">保质期 / 最短剩余货架寿命</div><div>365 天 / 90 天</div></div>
+                  <div class="info-item"><div class="k">储藏状态 / 温层</div><div>01 常温 / 常温</div></div>
+                  <div class="info-item"><div class="k">批次管理 need_batch</div><div>是（入库必须录入批次与生产日期）</div></div>
+                  <div class="info-item"><div class="k">需要质检报告 / 批次报告</div><div>是 / 是</div></div>
+                  <div class="info-item"><div class="k">采购到货 / 在仓 / 配送损耗率</div><div>0.500% / 0.200% / 0.300%</div></div>
+                  <div class="info-item"><div class="k">无订单入库 / 库存扣减规则</div><div>否 / 01 按可用量扣减</div></div>
+                </div>
+
+                <div class="section-card">
+                  <div class="section-head"><div class="title">商品档案明细 · 价格、税务与货源</div><span class="tag gray">客户价优先级更高（12.2.5）</span></div>
+                  <div class="info-item"><div class="k">售价 sale_price / 币种</div><div>188.00 CNY（客户要货未配置客户价时的兜底价）</div></div>
+                  <div class="info-item"><div class="k">指导批发价 / 税率</div><div>172.00 / 13.0000%</div></div>
+                  <div class="info-item"><div class="k">供应商列表 supplier_codes</div><div>SUP001 华益食品、JJY-SUP-01 徐福记东莞分厂</div></div>
+                  <div class="info-item"><div class="k">默认供应商 default_supplier_code</div><div>SUP001 华益食品</div></div>
+                  <div class="info-item"><div class="k">商品状态 / 生效日 / 失效日</div><div>01 正常 / 2026-01-01 / 2099-12-31</div></div>
+                  <div class="info-item"><div class="k">数据来源 / 属性来源</div><div>SYNC 主数据同步 / MANUAL（覆盖字段：sale_price、temp_layer、need_batch）</div></div>
+                </div>
+
+                <div class="section-card">
+                  <div class="section-head"><div class="title">字段来源与读写规则</div><span class="tag orange">同步策略</span></div>
+                  <div class="list">
+                    <div class="list-row"><div><div class="title">同步只读</div><div class="meta">由 12.1.1 / 12.1.3 同步带出，界面置灰，主数据变更自动刷新</div></div><span class="tag gray">R</span></div>
+                    <div class="list-row"><div><div class="title">同步可覆盖</div><div class="meta">带出默认值，允许按货主改写；改写后 attr_source=MANUAL，写入 override_fields，同步跳过该字段，提供「恢复同步」</div></div><span class="tag blue">U</span></div>
+                    <div class="list-row"><div><div class="title">货主维护</div><div class="meta">主数据中没有的货主级业务字段：售价、货源、温层、批次管理、损耗率、库存策略等</div></div><span class="tag green">C/W</span></div>
+                    <div class="list-row"><div><div class="title">未纳入字段</div><div class="meta">陈列排面、价格段、营销属性、生鲜细分类、托盘与嵌套尺寸等约 140 个与仓储配送无关的字段不冗余，按需实时关联 12.1.1</div></div><span class="tag gray">不冗余</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pc-screen" id="pc-ownerwarehouse"><div class="section-card"><div class="section-head"><div class="title">货主仓库管理（12.2.3 t_3pl_owner_warehouse）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>仓库编码</th><th>仓库名称</th><th>关系类型</th><th>默认入库仓</th><th>默认出库仓</th></tr></thead><tbody><tr><td>JJY00001</td><td>华东1仓</td><td>WH01</td><td>存储/配送/退仓</td><td>是</td><td>是</td></tr>
+<tr><td>JJY00001</td><td>华东2仓</td><td>WH02</td><td>存储</td><td>否</td><td>否</td></tr>
+<tr><td>JJY00001</td><td>威海仓</td><td>WH03</td><td>存储/退仓</td><td>否</td><td>否</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">货主与仓库的关系维护；决定默认发货仓与退回仓</div></div></div>
+            <div class="pc-screen" id="pc-invadjust"><div class="section-card"><div class="section-head"><div class="title">库存调整（12.5.10 t_3pl_profit_loss）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>调整单号</th><th>WMS来源</th><th>调整类型</th><th>货主</th><th>仓库</th><th>状态</th><th>过账日期</th></tr></thead><tbody><tr><td>SSDD0001</td><td>HDWMS</td><td>01 报损</td><td>JJY00001</td><td>华东1仓</td><td>已同步库存</td><td>2026-05-28</td></tr>
+<tr><td>SSDD0002</td><td>HDWMS</td><td>03 盘亏</td><td>JJY00001</td><td>华东1仓</td><td>已关闭</td><td>2026-05-27</td></tr>
+<tr><td>SSDD0003</td><td>FDC</td><td>02 盘盈</td><td>JJY00001</td><td>华东2仓</td><td>已同步库存</td><td>2026-05-26</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">WMS 回传生成；01报损/02盘盈/03盘亏/04领用/05存货变更/06-09加工分级</div></div></div>
+            <div class="pc-screen" id="pc-loctransfer"><div class="section-card"><div class="section-head"><div class="title">库存地点调整（12.5.12 t_3pl_stock_loc_transfer）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>调整单号</th><th>货主</th><th>仓库</th><th>原库位</th><th>新库位</th><th>调整类型</th><th>状态</th></tr></thead><tbody><tr><td>DDTZ0001</td><td>JJY00001</td><td>华东1仓</td><td>A-01-01</td><td>B-02-03</td><td>库位调整</td><td>已同步库存</td></tr>
+<tr><td>DDTZ0002</td><td>JJY00001</td><td>华东2仓</td><td>C-01-01</td><td>C-01-02</td><td>库位调整</td><td>已关闭</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">WMS 回传生成；调整库位归属</div></div></div>
+            <div class="pc-screen" id="pc-forwardmapping"><div class="section-card"><div class="section-head"><div class="title">前置映射（11.3 主数据管理）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>前置仓编码</th><th>中央仓编码</th><th>映射关系</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>WH05 前置仓</td><td>WH01 中央仓</td><td>主从映射</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>WH06 前置仓</td><td>WH01 中央仓</td><td>主从映射</td><td>启用</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">前置仓与中央仓的映射关系，用于越库/差错单回溯</div></div></div>
+            <div class="pc-screen" id="pc-ownercategory"><div class="section-card"><div class="section-head"><div class="title">货主品类管理（12.2.8 t_3pl_owner_category）</div><span class="tag blue">3PL 平台管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>品类编码</th><th>品类名称</th><th>层级</th><th>父级品类</th><th>管理模式</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>C01</td><td>糖果大类</td><td>1</td><td>—</td><td>正常管理</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>C0101</td><td>什锦糖果中类</td><td>2</td><td>C01</td><td>正常管理</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>C010101</td><td>袋装什锦小类</td><td>3</td><td>C0101</td><td>批次产地</td><td>启用</td></tr>
+<tr><td>JJY00001</td><td>C02</td><td>坚果大类</td><td>1</td><td>—</td><td>正常管理</td><td>启用</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">不同货主自定义独立品类树；品类编码货主内唯一</div></div></div>
+            <div class="pc-screen" id="pc-ownercategorymaterial"><div class="section-card"><div class="section-head"><div class="title">货主品类商品（12.2.9 t_3pl_owner_category_material）</div><span class="tag blue">3PL 平台管理</span></div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>品类编码</th><th>品类名称</th><th>商品编码</th><th>商品名称</th><th>主品类</th><th>排序</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>C010101</td><td>袋装什锦小类</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>Y</td><td>1</td><td>有效</td></tr>
+<tr><td>JJY00001</td><td>C010101</td><td>袋装什锦小类</td><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>N</td><td>2</td><td>有效</td></tr>
+<tr><td>JJY00001</td><td>C02</td><td>坚果大类</td><td>XFJ-CS-1002</td><td>混合坚果整箱</td><td>Y</td><td>1</td><td>有效</td></tr>
+</tbody></table></div><div class="meta" style="margin-top:8px;">一个商品可归属多个品类；主品类仅一个</div></div></div>
+            
+            
+            <div class="pc-screen" id="pc-packgoods">
                 <div class="detail-layout">
                   <div class="section-card">
                     <h3>商品包装信息</h3>
@@ -1790,6 +1972,48 @@
                   </div>
                 </div>
               </div>
+
+<div class="pc-screen" id="pc-owner"><div class="section-card"><div class="section-head"><div class="title">货主信息（12.2.1 t_3pl_owner）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">货主档案；区分自有货主与外部货主，是全部业务数据隔离的第一维度</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>货主名称</th><th>货主类型</th><th>结算主体</th><th>联系人</th><th>联系电话</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>徐福记</td><td>外部货主</td><td>徐福记（中国）有限公司</td><td>陈明</td><td>138****6621</td><td><span class="tag green">启用</span></td></tr><tr><td>ZF00001</td><td>自有货主A</td><td>自有货主</td><td>华东配送中心</td><td>王强</td><td>139****3082</td><td><span class="tag green">启用</span></td></tr><tr><td>HY00002</td><td>恒益食品</td><td>外部货主</td><td>恒益食品（上海）有限公司</td><td>李婷</td><td>137****5510</td><td><span class="tag gray">停用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">状态：0 待复核 / 1 启用 / 2 停用；停用货主不可发起任何业务单据</div></div></div>
+
+<div class="pc-screen" id="pc-warehouse"><div class="section-card"><div class="section-head"><div class="title">配送仓管理（12.2.2 t_3pl_warehouse）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">仓库档案；徐福记专用仓 9801 在此维护</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>仓库编码</th><th>仓库名称</th><th>仓库类型</th><th>所属区域</th><th>温层</th><th>负责人</th><th>状态</th></tr></thead><tbody><tr><td>WH01</td><td>华东1仓</td><td>中央仓</td><td>华东</td><td>常温 / 冷藏</td><td>张伟</td><td><span class="tag green">启用</span></td></tr><tr><td>WH03</td><td>威海仓</td><td>配送仓</td><td>华东</td><td>常温</td><td>刘洋</td><td><span class="tag green">启用</span></td></tr><tr><td>9801</td><td>徐福记专用仓</td><td>中央仓</td><td>华东</td><td>常温</td><td>赵磊</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">前置仓与中央仓的对应关系见 t_3pl_forward_central_mapping（12.2.8）</div></div></div>
+
+<div class="pc-screen" id="pc-supplier"><div class="section-card"><div class="section-head"><div class="title">供应商信息（12.1.4 t_mdm_supplier · 主数据平台同步）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">MDM 全局供应商主数据，无货主维度；货主级供应商见「货主供应商」（12.2.12）</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>供应商编码</th><th>供应商名称</th><th>简称</th><th>供应商类型</th><th>联系人</th><th>联系电话</th><th>纳税人识别号</th><th>状态</th></tr></thead><tbody><tr><td>SUP001</td><td>华益食品有限公司</td><td>华益食品</td><td>生产厂商</td><td>周敏</td><td>021-6688****</td><td>91310115MA1K3***</td><td><span class="tag green">启用</span></td></tr><tr><td>SUP002</td><td>东方供应链管理有限公司</td><td>东方供应商</td><td>贸易商</td><td>孙浩</td><td>021-6688****</td><td>91310115MA1K4***</td><td><span class="tag green">启用</span></td></tr><tr><td>SUP003</td><td>南丰代工厂</td><td>南丰代工</td><td>代工厂</td><td>吴静</td><td>0512-6688****</td><td>91320585MA1M5***</td><td><span class="tag gray">停用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">停用供应商不可新增货源关系；同步后按货主分配生成货主供应商记录（12.2.12）</div></div></div>
+
+<div class="pc-screen" id="pc-ownersupplier"><div class="section-card"><div class="section-head"><div class="title">货主供应商（12.2.12 t_3pl_owner_supplier）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">V2.3 新增：参考供应商信息（12.1.4）并增加货主字段 owner_code；同一货主下供应商编码唯一</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>供应商编码</th><th>供应商名称</th><th>简称</th><th>供应商类型</th><th>联系人</th><th>联系电话</th><th>结算方式</th><th>来源</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>SUP001</td><td>华益食品有限公司</td><td>华益食品</td><td>生产厂商</td><td>周敏</td><td>021-6688****</td><td>月结 30 天</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr><tr><td>JJY00001</td><td>SUP002</td><td>东方供应链管理有限公司</td><td>东方供应商</td><td>贸易商</td><td>孙浩</td><td>021-6688****</td><td>现结</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr><tr><td>JJY00001</td><td>JJY-SUP-01</td><td>徐福记东莞分厂</td><td>东莞分厂</td><td>生产厂商</td><td>郑凯</td><td>0769-8899****</td><td>月结 60 天</td><td>货主自建</td><td><span class="tag green">启用</span></td></tr><tr><td>ZF00001</td><td>SUP001</td><td>华益食品有限公司</td><td>华益食品</td><td>生产厂商</td><td>周敏</td><td>021-6688****</td><td>月结 30 天</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">唯一约束 uk(owner_code, supplier_code)；货主商品（12.2.7）的供应商列表只能取本货主启用记录；停用前须先解绑货源引用</div></div></div>
+
+<div class="pc-screen" id="pc-ownerpack"><div class="section-card"><div class="section-head"><div class="title">货主包装信息（12.2.11 t_3pl_owner_material_package）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">V2.3 新增：参考商品包装主数据（12.1.8 material_package）并增加货主字段 owner_code，承载同一商品在不同货主下的包装差异</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>商品编码</th><th>可选单位</th><th>包装层级</th><th>层级来源</th><th>基本单位</th><th>箱/中包标</th><th>换算参考</th><th>包装条码</th><th>包装规格</th><th>允许拆箱</th><th>允许配送</th><th>默认收货</th><th>默认发货</th><th>毛重</th><th>体积</th><th>来源</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>XFJ-CS-1001</td><td>CS</td><td><span class="tag blue">1 箱包装</span></td><td>AUTO 推导</td><td>是</td><td>箱</td><td>1 箱 = 12 KG</td><td>6901234500018</td><td>什锦糖果 12KG/箱</td><td><span class="tag green">允许</span></td><td>允许</td><td>是</td><td>是</td><td>12.5 KG</td><td>0.048 M3</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr><tr><td>JJY00001</td><td>XFJ-CS-1001</td><td>CS2</td><td><span class="tag orange">2 中包装</span></td><td>MANUAL 锁定</td><td>否</td><td>中包</td><td>1 中包 = 3 KG</td><td>6901234500070</td><td>什锦糖果 3KG/提</td><td><span class="tag green">允许</span></td><td>允许</td><td>否</td><td>否</td><td>3.2 KG</td><td>0.012 M3</td><td>人工新增</td><td><span class="tag green">启用</span></td></tr><tr><td>JJY00001</td><td>XFJ-ST-0001</td><td>KG</td><td><span class="tag orange">3 单品</span></td><td>AUTO 推导</td><td>是</td><td>—</td><td>1 / 1</td><td>6901234500025</td><td>草莓味散装糖果</td><td><span class="tag gray">不适用</span></td><td>允许</td><td>否</td><td>是</td><td>—</td><td>—</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr><tr><td>ZF00001</td><td>XFJ-CS-1001</td><td>CS</td><td><span class="tag blue">1 箱包装</span></td><td>AUTO 推导</td><td>是</td><td>箱</td><td>1 箱 = 24 瓶</td><td>6901234500091</td><td>什锦糖果 24瓶/箱</td><td><span class="tag green">允许</span></td><td>允许</td><td>是</td><td>是</td><td>12.0 KG</td><td>0.048 M3</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">唯一约束 uk(owner_code, material_code, optional_unit)；同一货主同一商品仅一个基本计量单位；分子/分母为只读参考，不做系统折算（PR-7）</div></div></div>
+
+<div class="pc-screen" id="pc-productinfo"><div class="section-card"><div class="section-head"><div class="title">商品信息与包装（12.1.1 material / 12.1.8 material_package · 主数据镜像）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">A 类主数据镜像，一期自建、存量初始化写入；平台侧维护后经 RocketMQ 下发 WMS / TMS / BMS</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>商品编码</th><th>商品名称</th><th>规格</th><th>基本单位</th><th>品牌</th><th>国际条码</th><th>包装层级</th><th>计重/计件</th><th>保质期(天)</th><th>储藏状态</th><th>状态</th></tr></thead><tbody><tr><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>12KG/箱</td><td>CS</td><td>徐福记</td><td>6901234500018</td><td><span class="tag blue">大码（箱）</span></td><td>1 计重</td><td>365</td><td>常温</td><td><span class="tag green">启用</span></td></tr><tr><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>散装</td><td>KG</td><td>徐福记</td><td>6901234500025</td><td><span class="tag orange">小码（散装）</span></td><td>1 计重</td><td>365</td><td>常温</td><td><span class="tag green">启用</span></td></tr><tr><td>MAT-10611461</td><td>纯净水 550ml</td><td>24瓶/箱</td><td>CS2</td><td>润田</td><td>6903000000051</td><td><span class="tag blue">大码（箱）</span></td><td>2 计件</td><td>540</td><td>常温</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">货主维度的商品属性与包装差异在「货主商品管理」（12.2.7）与「货主包装信息」（12.2.11）维护</div></div></div>
+
+<div class="pc-screen" id="pc-customer"><div class="section-card"><div class="section-head"><div class="title">客户信息（12.1.6 t_mdm_customer）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">客户的货主归属由 owner_code 承载，不单独建关系表；作为要货归属与退仓回溯的匹配依据</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>客户编码</th><th>客户名称</th><th>客户类型</th><th>联系人</th><th>联系电话</th><th>省 / 市</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>CUS001</td><td>华润万家（华东）</td><td>连锁</td><td>林芳</td><td>138****2109</td><td>江苏省 / 苏州市</td><td><span class="tag green">启用</span></td></tr><tr><td>JJY00001</td><td>CUS002</td><td>天虹会员店</td><td>会员店</td><td>何磊</td><td>139****7745</td><td>广东省 / 深圳市</td><td><span class="tag green">启用</span></td></tr><tr><td>ZF00001</td><td>CUS003</td><td>华东批发商</td><td>批发</td><td>范军</td><td>137****9033</td><td>浙江省 / 杭州市</td><td><span class="tag gray">停用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">停用客户不可发起要货；客户门店见 t_mdm_customer_store（12.1.7）</div></div></div>
+
+<div class="pc-screen" id="pc-customerstore"><div class="section-card"><div class="section-head"><div class="title">客户门店（12.1.7 t_mdm_customer_store）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">门店为要货与配送的收货地址来源；订货周期与要货窗口在「门店订货周期」配置</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>客户编码</th><th>门店编码</th><th>门店名称</th><th>门店类型</th><th>联系人</th><th>详细地址</th><th>订货周期</th><th>要货时间窗</th><th>状态</th></tr></thead><tbody><tr><td>CUS001</td><td>ST001</td><td>华润万家天河店</td><td>大卖场</td><td>林芳</td><td>苏州市工业园区星湖街 328 号</td><td>每周一</td><td>08:00-12:00</td><td><span class="tag green">启用</span></td></tr><tr><td>CUS001</td><td>ST002</td><td>华润万家园区分店</td><td>社区店</td><td>徐蕾</td><td>苏州市工业园区钟园路 88 号</td><td>每日</td><td>09:00-15:00</td><td><span class="tag green">启用</span></td></tr><tr><td>CUS002</td><td>ST003</td><td>天虹会员店南山店</td><td>会员店</td><td>何磊</td><td>深圳市南山区科技园路 1 号</td><td>每周三</td><td>10:00-16:00</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">停用门店不可要货</div></div></div>
+
+<div class="pc-screen" id="pc-inboundnotice"><div class="section-card"><div class="section-head"><div class="title">入库通知单 RKTZ（入库三段式第二段）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">入库申请 RKSD 审批通过后生成，下发 WMS 准备收货；WMS 收货回传后生成入库单 CGRK</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>通知单号</th><th>关联申请单</th><th>货主</th><th>仓库</th><th>供应商</th><th>计划到货日</th><th>下发状态</th><th>状态</th></tr></thead><tbody><tr><td>JJY0000120260526RKTZ00001</td><td>JJY0000120260526RKSD00001</td><td>徐福记</td><td>威海仓</td><td>华益食品</td><td>2026-05-28</td><td><span class="tag green">已下发 WMS</span></td><td>待收货</td></tr><tr><td>JJY0000120260527RKTZ00002</td><td>JJY0000120260527RKSD00002</td><td>徐福记</td><td>华东1仓</td><td>东莞分厂</td><td>2026-05-30</td><td><span class="tag green">已下发 WMS</span></td><td>收货中</td></tr><tr><td>JJY0000120260525RKTZ00003</td><td>JJY0000120260525RKSD00003</td><td>自有货主A</td><td>华东1仓</td><td>东方供应商</td><td>2026-05-27</td><td><span class="tag gray">已关闭</span></td><td>已完成</td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">入库申请 RKSD → 入库通知单 RKTZ → 入库单 CGRK；三段单号互相冗余可查</div></div></div>
+
+<div class="pc-screen" id="pc-inoutrecord"><div class="section-card"><div class="section-head"><div class="title">出入明细（12.3.4 t_3pl_inventory_transaction）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">每次出入库产生一条流水；动作方向含 形态转换（大小码转换过账）</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>流水号</th><th>单据号</th><th>动作方向</th><th>货主</th><th>商品编码</th><th>批次号</th><th>数量</th><th>仓库 / 库位</th><th>时间</th></tr></thead><tbody><tr><td>TX20260526001</td><td>JJY0000120260526CGRK00001</td><td>入库</td><td>徐福记</td><td>XFJ-CS-1001</td><td>BATCH20261118A</td><td>+120.0</td><td>威海仓 / A-01</td><td>2026-05-26 09:12</td></tr><tr><td>TX20260526002</td><td>JJY0000120260526KHYH00001</td><td>形态转换</td><td>徐福记</td><td>XFJ-ST-0001</td><td>BATCH20261118A-C1</td><td>+42.5</td><td>威海仓 / A-拆箱作业位</td><td>2026-05-26 10:12</td></tr><tr><td>TX20260526003</td><td>JJY0000120260526FHCK00001</td><td>出库</td><td>徐福记</td><td>XFJ-ST-0001</td><td>BATCH20261118A-C1</td><td>-42.5</td><td>威海仓 / A-散装区</td><td>2026-05-26 14:05</td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">数量与重量存储 decimal(18,3)、展示一位小数（PR-2）</div></div></div>
+
+<div class="pc-screen" id="pc-inventorynotify"><div class="section-card"><div class="section-head"><div class="title">库存预警（安全库存与效期）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">安全库存与效期预警；一期不做阈值配置（R9），按商品档案的保质期与最小要货量提示</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主</th><th>仓库</th><th>商品编码</th><th>商品名称</th><th>可用库存</th><th>安全库存</th><th>临期批次</th><th>最早到期日</th><th>预警类型</th></tr></thead><tbody><tr><td>徐福记</td><td>威海仓</td><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>38.0 KG</td><td>50.0 KG</td><td>BATCH20260518A</td><td>2026-11-18</td><td><span class="tag orange">低于安全库存</span></td></tr><tr><td>徐福记</td><td>华东1仓</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>12.0 箱</td><td>10.0 箱</td><td>BATCH20260312B</td><td>2026-09-12</td><td><span class="tag red">临期 60 天内</span></td></tr><tr><td>自有货主A</td><td>华东1仓</td><td>MAT-10611461</td><td>纯净水 550ml</td><td>860.0 箱</td><td>200.0 箱</td><td>—</td><td>—</td><td><span class="tag green">正常</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">预警仅提示，不阻断业务</div></div></div>
+
+<div class="pc-screen" id="pc-newproduct"><div class="section-card"><div class="section-head"><div class="title">新品入驻（平台审核）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">货主在门户提交新品申请（po-entry），平台审核通过后写入商品主数据与商品主数据（12.1.1）</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>申请单号</th><th>货主</th><th>商品编码</th><th>商品名称</th><th>规格</th><th>基本单位</th><th>供应商</th><th>提交时间</th><th>状态</th></tr></thead><tbody><tr><td>JJY0000120260528XPSQ00001</td><td>徐福记</td><td>XFJ-ST-0004</td><td>蜜桃味散装糖果</td><td>散装</td><td>KG</td><td>华益食品</td><td>2026-05-28 09:20</td><td><span class="tag orange">待审核</span></td></tr><tr><td>JJY0000120260527XPSQ00002</td><td>徐福记</td><td>XFJ-CS-1003</td><td>混合果仁礼盒</td><td>6盒/箱</td><td>CS</td><td>东莞分厂</td><td>2026-05-27 15:40</td><td><span class="tag green">已通过</span></td></tr><tr><td>ZF0000120260526XPSQ00003</td><td>自有货主A</td><td>MAT-10611999</td><td>苏打气泡水</td><td>12瓶/箱</td><td>CS</td><td>东方供应商</td><td>2026-05-26 11:05</td><td><span class="tag red">已驳回</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">审核通过后自动初始化该商品的货主包装信息（12.2.11）</div></div></div>
+
+<div class="pc-screen" id="pc-qualityreport"><div class="section-card"><div class="section-head"><div class="title">质检报告管理</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">商品质检报告的登记与查询；商品档案 need_reports / need_batch_report（12.2.7）为是否必填的依据</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>报告编号</th><th>货主</th><th>商品编码</th><th>商品名称</th><th>批次号</th><th>供应商</th><th>检验结果</th><th>有效期至</th></tr></thead><tbody><tr><td>QC20260526001</td><td>徐福记</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>BATCH20261118A</td><td>华益食品</td><td><span class="tag green">合格</span></td><td>2027-05-26</td></tr><tr><td>QC20260524002</td><td>徐福记</td><td>XFJ-ST-0002</td><td>柠檬味散装糖果</td><td>BATCH20260518B</td><td>华益食品</td><td><span class="tag green">合格</span></td><td>2027-05-24</td></tr><tr><td>QC20260520003</td><td>自有货主A</td><td>MAT-10611461</td><td>纯净水 550ml</td><td>BATCH20260410C</td><td>东方供应商</td><td><span class="tag orange">复检中</span></td><td>2027-05-20</td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">质检报告不阻断入库流程，仅作追溯与查询</div></div></div>
+
+<div class="pc-screen" id="pc-transportservice"><div class="section-card"><div class="section-head"><div class="title">运输服务申请</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">货主门户提交的运输服务申请，平台受理后纳入配送管理执行</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>申请单号</th><th>货主</th><th>起运地</th><th>目的地</th><th>货量</th><th>期望发运时间</th><th>运输方式</th><th>状态</th></tr></thead><tbody><tr><td>JJY0000120260528YSSQ00001</td><td>徐福记</td><td>威海仓</td><td>华润万家天河店</td><td>120 箱</td><td>2026-05-29 08:00</td><td>3PL 运输</td><td><span class="tag orange">待受理</span></td></tr><tr><td>JJY0000120260527YSSQ00002</td><td>徐福记</td><td>华东1仓</td><td>天虹会员店南山店</td><td>60 箱</td><td>2026-05-28 10:00</td><td>3PL 运输</td><td><span class="tag blue">已受理</span></td></tr><tr><td>JJY0000120260526YSSQ00003</td><td>自有货主A</td><td>华东1仓</td><td>华东批发商</td><td>200 箱</td><td>2026-05-27 09:00</td><td>供应商自提</td><td><span class="tag green">已完成</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">受理后进入配送管理（pc-delivery）生成配送通知单 PSTZ</div></div></div>
+
+<div class="pc-screen" id="pc-errororder"><div class="section-card"><div class="section-head"><div class="title">异常单与补偿（11.12 运营支撑）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">接口调用失败自动生成异常单，支持重试与补偿；与接口日志（pc-logs）联动</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>异常单号</th><th>接口编码</th><th>关联单据</th><th>失败原因</th><th>重试次数</th><th>最近重试时间</th><th>状态</th></tr></thead><tbody><tr><td>ERR20260526001</td><td>MD095</td><td>SSDD0001</td><td>WMS 连接超时</td><td>3</td><td>2026-05-26 15:12</td><td><span class="tag red">待人工处理</span></td></tr><tr><td>ERR20260525002</td><td>API-13A</td><td>JJY0000120260525CGRK00002</td><td>报文校验失败：批次为空</td><td>2</td><td>2026-05-25 20:40</td><td><span class="tag orange">重试中</span></td></tr><tr><td>ERR20260524003</td><td>API-10</td><td>XFJ-ST-0003</td><td>商品主数据下发失败</td><td>1</td><td>2026-05-24 11:30</td><td><span class="tag green">已补偿</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">接口幂等按 uk(source_system, interface_code, source_bill_no) 保证重复推送不重复出单</div></div></div>
+
+<div class="pc-screen" id="pc-storeordercycle"><div class="section-card"><div class="section-head"><div class="title">门店订货周期（12.1.7 扩展配置）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">配置客户门店的订货周期与要货窗口，作为要货时间校验与提醒依据</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">新增</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>客户编码</th><th>门店编码</th><th>门店名称</th><th>订货周期</th><th>要货时间窗</th><th>生效日</th><th>失效日</th><th>状态</th></tr></thead><tbody><tr><td>CUS001</td><td>ST001</td><td>华润万家天河店</td><td>每周一</td><td>08:00-12:00</td><td>2026-01-01</td><td>2099-12-31</td><td><span class="tag green">启用</span></td></tr><tr><td>CUS001</td><td>ST002</td><td>华润万家园区分店</td><td>每日</td><td>09:00-15:00</td><td>2026-03-15</td><td>2099-12-31</td><td><span class="tag green">启用</span></td></tr><tr><td>CUS002</td><td>ST003</td><td>天虹会员店南山店</td><td>每周三</td><td>10:00-16:00</td><td>2026-05-01</td><td>2099-12-31</td><td><span class="tag green">启用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">与门店档案（pc-customerstore）同步维护</div></div></div>
+
+
+<div class="pc-screen" id="pc-supplierproduct"><div class="section-card"><div class="section-head"><div class="title">供应商商品关系（12.2.7 货源明细）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">供应商与商品的可供关系；与货主商品（12.2.7）的 supplier_codes 互为明细，后续如需供货价 / 比例 / 优先级在此维护</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>货主编码</th><th>供应商编码</th><th>供应商名称</th><th>商品编码</th><th>商品名称</th><th>供货单位</th><th>供货价</th><th>优先级</th><th>状态</th></tr></thead><tbody><tr><td>JJY00001</td><td>SUP001</td><td>华益食品</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>CS</td><td>168.00</td><td>1</td><td><span class="tag green">生效</span></td></tr><tr><td>JJY00001</td><td>SUP001</td><td>华益食品</td><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>KG</td><td>17.60</td><td>1</td><td><span class="tag green">生效</span></td></tr><tr><td>JJY00001</td><td>JJY-SUP-01</td><td>徐福记东莞分厂</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>CS</td><td>165.00</td><td>2</td><td><span class="tag green">生效</span></td></tr><tr><td>JJY00001</td><td>SUP002</td><td>东方供应商</td><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>CS2</td><td>52.00</td><td>1</td><td><span class="tag gray">停用</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">供应商与商品必须先满足：供应商在本货主下启用（12.2.12）、商品在本货主下启用（12.2.7）</div></div></div>
+
+<div class="pc-screen" id="pc-suppliercontract"><div class="section-card"><div class="section-head"><div class="title">货主合同（BMS 下发，平台只读）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">服务合同、计费模板、结算周期、信用额度由 BMS 配置完成后下发，平台只读引用；未同步成功或已失效的合同不得用于业务执行</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>合同编号</th><th>货主编码</th><th>BMS 合同号</th><th>计费模板</th><th>结算周期</th><th>信用额度</th><th>有效期</th><th>同步状态</th><th>状态</th></tr></thead><tbody><tr><td>HT2026001</td><td>JJY00001</td><td>BMS-C-2026-0088</td><td>仓储+配送综合</td><td>月结</td><td>500,000.00</td><td>2026-01-01 ~ 2026-12-31</td><td><span class="tag green">已同步</span></td><td><span class="tag green">生效</span></td></tr><tr><td>HT2026002</td><td>ZF00001</td><td>BMS-C-2026-0102</td><td>按件计费</td><td>月结 30 天</td><td>300,000.00</td><td>2026-03-01 ~ 2027-02-28</td><td><span class="tag green">已同步</span></td><td><span class="tag green">生效</span></td></tr><tr><td>HT2025009</td><td>HY00002</td><td>BMS-C-2025-0031</td><td>仓储基础</td><td>月结</td><td>100,000.00</td><td>2025-01-01 ~ 2025-12-31</td><td><span class="tag orange">同步失败</span></td><td><span class="tag gray">已失效</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">R7：一期不做 BMS 计费与财务对账，本页仅作合同有效性校验与查询；业务流转前强制校验合同有效性</div></div></div>
+
+<div class="pc-screen" id="pc-reportcenter"><div class="section-card"><div class="section-head"><div class="title">报表中心</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">运营综合、配送履约、库存分析三类报表；按货主 / 仓库 / 时间维度统计，支持导出</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>报表编号</th><th>报表名称</th><th>统计维度</th><th>更新频率</th><th>最近更新</th><th>数据范围</th><th>操作</th></tr></thead><tbody><tr><td>RPT-001</td><td>客户要货履约日报</td><td>货主 / 客户 / 商品</td><td>每日 06:00</td><td>2026-05-29 06:00</td><td>近 30 天</td><td>查看 | 导出</td></tr><tr><td>RPT-002</td><td>库存周转与呆滞分析</td><td>货主 / 仓库 / 批次</td><td>每日 07:00</td><td>2026-05-29 07:00</td><td>当前结存</td><td>查看 | 导出</td></tr><tr><td>RPT-003</td><td>配送时效与异常统计</td><td>承运商 / 线路 / 门店</td><td>每周一 08:00</td><td>2026-05-25 08:00</td><td>近 12 周</td><td>查看 | 导出</td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">报表口径与库存台账（12.3）、出入明细（12.3.4）一致；出入库数量展示一位小数</div></div></div>
+
+<div class="pc-screen" id="pc-sla"><div class="section-card"><div class="section-head"><div class="title">SLA 管理（服务时效标准）</div><span class="tag blue">3PL 平台内部管理</span></div><div class="section-note">服务时效标准配置与考核；超时数据用于要货履约监控与转换超时预警（11.12）</div><div class="action-row" style="margin-bottom:10px;"><div class="input">货主：JJY00001 徐福记</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">导出</button></div><div class="table-scroll"><table><thead><tr><th>SLA 编号</th><th>服务环节</th><th>时效标准</th><th>考核对象</th><th>统计周期</th><th>达成率</th><th>状态</th></tr></thead><tbody><tr><td>SLA-001</td><td>要货单审批</td><td>4 小时内完成审批</td><td>平台运营</td><td>2026-05</td><td>96.2%</td><td><span class="tag green">达标</span></td></tr><tr><td>SLA-002</td><td>入库通知下发 WMS</td><td>审批通过后 10 分钟内下发</td><td>平台 / WMS</td><td>2026-05</td><td>99.1%</td><td><span class="tag green">达标</span></td></tr><tr><td>SLA-003</td><td>大小码转换录入</td><td>拆箱完成后 2 小时内录入</td><td>驻场作业人员</td><td>2026-05</td><td>88.5%</td><td><span class="tag orange">未达标</span></td></tr></tbody></table></div><div class="meta" style="margin-top:8px;">未达标项进入异常单与补偿（pc-errororder）跟踪</div></div></div>
+
 
               <div class="pc-screen" id="pc-approval">
                 <div class="grid-2">
@@ -1957,6 +2181,17 @@
             <div class="menu-group"><div class="menu-title">账号</div>
               <button class="menu-item" data-po-screen="account">账号与角色（用户中心）</button>
             </div>
+          
+            <div class="menu-group">
+              <div class="menu-title">基础数据（货主自维护）</div>
+              <button class="menu-item" data-po-screen="ownermaterial">货主商品</button>
+              <button class="menu-item" data-po-screen="ownercategory">货主品类</button>
+              <button class="menu-item" data-po-screen="ownercategorymaterial">品类商品</button>
+              <button class="menu-item" data-po-screen="ownersupplier">货主供应商</button>
+              <button class="menu-item" data-po-screen="supplierproduct">供应商商品</button>
+              <button class="menu-item" data-po-screen="ownerpack">包装信息</button>
+            </div>
+
           </aside>
           <div class="portal-main">
             <div class="pc-page-tabs" id="poPageTabs">
@@ -1968,6 +2203,13 @@
                 <button data-po-screen="goodsreturn">退货申请</button>              <button data-po-screen="data">数据查询</button>              <button data-po-screen="track">全链路跟踪</button>
               <button data-po-screen="account">账号与角色</button>
             </div>
+              <button data-po-screen="ownermaterial">货主商品</button>
+              <button data-po-screen="ownercategory">货主品类</button>
+              <button data-po-screen="ownercategorymaterial">品类商品</button>
+              <button data-po-screen="ownersupplier">货主供应商</button>
+              <button data-po-screen="supplierproduct">供应商商品</button>
+              <button data-po-screen="ownerpack">包装信息</button>
+            
 
             <div class="po-screen active" id="po-home">
               <div class="grid-3">
@@ -2088,25 +2330,186 @@
               </div>
             </div>
 
-            <div class="po-screen" id="po-data">
+                                                                                    
+            
+            
+            
+            
+            
+            
+            <div class="po-screen" id="po-ownermaterial">
               <div class="section-card">
-                <div class="section-head"><div class="title">基础数据查询（商品 / 包装）</div><span class="tag gray">主数据同步，门户只读</span></div>
-                <div class="action-row" style="margin-bottom:10px;">
-                  <div class="input">商品编码 / 名称：什锦</div><div class="input">包装层级：全部</div><button class="primary-button">查询</button>
-                </div>
+                <div class="section-head"><div class="title">货主商品管理（12.2.7 t_3pl_owner_material）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 仅本货主</span></div>
+                <div class="section-note">货主可自行新增、编辑、停用、删除本货主商品档案；商品编码须从商品主数据（12.1.1 material）选择，不允许凭空自建；删除为逻辑删除（status=0），已产生库存、在途单据或被品类 / 货源引用的商品不可删除。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">商品编码 / 名称：请输入</div><div class="input">品类：全部</div><div class="input">状态：全部</div><div class="input">数据来源：全部</div><div class="input">是否有包装数据：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 新增</button><button class="ghost-button">批量删除</button><button class="ghost-button">批量启用</button><button class="ghost-button">导入</button><button class="ghost-button">导出</button></div>
                 <div class="table-scroll"><table>
-                  <thead><tr><th>商品编码</th><th>商品名称</th><th>规格</th><th>单位</th><th>包装层级</th><th>转换关系</th><th>状态</th></tr></thead>
-                  <tbody>
-                    <tr><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>24瓶/箱</td><td>箱</td><td>大码</td><td>1 箱 = 24 瓶</td><td><span class="tag green">启用</span></td></tr>
-                    <tr><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>1瓶</td><td>瓶</td><td>小码</td><td>—</td><td><span class="tag green">启用</span></td></tr>
-                    <tr><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>6瓶/提</td><td>提</td><td>小码</td><td>—</td><td><span class="tag green">启用</span></td></tr>
-                  </tbody>
+                  <thead><tr><th><input type="checkbox"></th><th>商品编码</th><th>商品名称</th><th>规格</th><th>基本单位</th><th>销售单位</th><th>品类</th><th>最小要货量</th><th>售价(元)</th><th>默认供应商</th><th>包装数据</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>24瓶/箱</td><td>CS</td><td>CS</td><td>C010101</td><td>5</td><td>128.00</td><td>华益食品</td><td><span class="tag green">有</span></td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>1瓶</td><td>ST</td><td>ST</td><td>C010101</td><td>10</td><td>6.80</td><td>东方供应商</td><td><span class="tag green">有</span></td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>6瓶/提</td><td>ST</td><td>ST</td><td>C010102</td><td>3</td><td>42.00</td><td>华益食品</td><td><span class="tag green">有</span></td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>散装</td><td>KG</td><td>KG</td><td>C0102</td><td>20</td><td>—</td><td>—</td><td><span class="tag gray">无</span></td><td><span class="tag gray">停用</span></td><td>编辑 | 删除 | 启用</td></tr></tbody>
                 </table></div>
-                <div class="meta" style="margin-top:8px;">说明：商品、品类、品牌、包装信息均来源于主数据平台同步，货主门户只读查询（11.10）。</div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑商品（货主可维护字段）</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 商品编码</div>下拉选择（12.1.1 material）</div><div class="form-field"><div class="field-label">商品名称</div>同步只读</div><div class="form-field"><div class="field-label">商品简称</div>可覆盖</div><div class="form-field"><div class="field-label">显示名</div>可覆盖</div><div class="form-field"><div class="field-label">国际条码</div>可覆盖</div><div class="form-field"><div class="field-label">* 品类</div>下拉选择（12.2.8）</div><div class="form-field"><div class="field-label">品牌</div>同步只读</div><div class="form-field"><div class="field-label">规格</div>可覆盖</div><div class="form-field"><div class="field-label">* 基本单位</div>CS / ST / KG</div><div class="form-field"><div class="field-label">订单单位</div>下拉</div><div class="form-field"><div class="field-label">* 销售单位</div>下拉</div><div class="form-field"><div class="field-label">包装层级</div>1 箱 / 2 中包 / 3 单品</div><div class="form-field"><div class="field-label">允许拆箱</div>是 / 否</div><div class="form-field"><div class="field-label">* 最小要货量</div>5</div><div class="form-field"><div class="field-label">保质期(天)</div>365</div><div class="form-field"><div class="field-label">温层</div>常温 / 冷藏 / 冷冻</div><div class="form-field"><div class="field-label">批号管理</div>是 / 否</div><div class="form-field"><div class="field-label">售价(元)</div>128.00</div><div class="form-field"><div class="field-label">币种</div>CNY</div><div class="form-field"><div class="field-label">税率(%)</div>13</div><div class="form-field"><div class="field-label">默认供应商</div>下拉（12.2.15）</div><div class="form-field"><div class="field-label">* 状态</div>启用 / 停用</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, material_code)，同一货主下商品编码不可重复；来源与读写三态：同步只读（置灰）／同步可覆盖（改写后写 override_fields、attr_source=MANUAL，可「重置为同步值」恢复）／货主维护（自由增删改）。</div>
               </div>
             </div>
 
-            
+            <div class="po-screen" id="po-ownercategory">
+              <div class="section-card">
+                <div class="section-head"><div class="title">货主品类管理（12.2.8 t_3pl_owner_category）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 品类树</span></div>
+                <div class="section-note">货主可自行定义品类树（大类 / 中类 / 小类，在 12.1.9 material_category 基础上增加货主字段），不同货主品类结构彼此独立；删除为逻辑删除，存在子品类或已挂载商品的品类不可删除。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">品类编码 / 名称：请输入</div><div class="input">层级：全部</div><div class="input">父级品类：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 新增品类</button><button class="ghost-button">+ 新增子级</button><button class="ghost-button">批量删除</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th><input type="checkbox"></th><th>品类编码</th><th>品类名称</th><th>层级</th><th>父级品类</th><th>启用批次产地</th><th>启用直送</th><th>商品管理模式</th><th>默认库存地点</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>C01</td><td>糖果大类</td><td>1</td><td>—</td><td>是</td><td>否</td><td>正常管理</td><td>WH01</td><td><span class="tag green">启用</span></td><td>编辑 | 新增子级 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>C0101</td><td>什锦糖果中类</td><td>2</td><td>C01</td><td>是</td><td>是</td><td>正常管理</td><td>WH01</td><td><span class="tag green">启用</span></td><td>编辑 | 新增子级 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>C010101</td><td>袋装什锦小类</td><td>3</td><td>C0101</td><td>否</td><td>否</td><td>正常管理</td><td>WH01</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>C02</td><td>坚果大类</td><td>1</td><td>—</td><td>否</td><td>否</td><td>批次管理</td><td>WH02</td><td><span class="tag green">启用</span></td><td>编辑 | 新增子级 | 删除 | 停用</td></tr></tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑品类</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 品类编码</div>C010102</div><div class="form-field"><div class="field-label">* 品类名称</div>礼盒什锦小类</div><div class="form-field"><div class="field-label">* 层级</div>大类1 / 中类2 / 小类3</div><div class="form-field"><div class="field-label">父级品类</div>下拉（C0101）</div><div class="form-field"><div class="field-label">启用批次产地</div>是 / 否</div><div class="form-field"><div class="field-label">启用直送</div>是 / 否</div><div class="form-field"><div class="field-label">商品管理模式</div>正常管理 / 批次管理</div><div class="form-field"><div class="field-label">默认库存地点</div>下拉（12.2.4）</div><div class="form-field"><div class="field-label">* 状态</div>启用 / 停用</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, category_code)；父级品类须为本货主已启用且层级低一级的品类；删除前须先移除全部子品类与挂载商品。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-ownercategorymaterial">
+              <div class="section-card">
+                <div class="section-head"><div class="title">品类商品管理（12.2.9 t_3pl_owner_category_material）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 一商品可挂多品类</span></div>
+                <div class="section-note">货主自行维护「品类 ↔ 商品」归属关系：一个商品可归属多个品类（跨品类经营），但仅允许一个主品类（is_primary=Y）；移除即逻辑删除（status=0），可重新挂载恢复。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">品类：全部</div><div class="input">商品编码 / 名称：请输入</div><div class="input">是否主品类：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 挂载商品</button><button class="ghost-button">批量挂载</button><button class="ghost-button">批量移除</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th><input type="checkbox"></th><th>品类编码</th><th>品类名称</th><th>商品编码</th><th>商品名称</th><th>主品类</th><th>排序</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>C010101</td><td>袋装什锦小类</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td><span class="tag blue">Y</span></td><td>1</td><td><span class="tag green">有效</span></td><td>编辑 | 移除</td></tr><tr><td><input type="checkbox"></td><td>C010101</td><td>袋装什锦小类</td><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>N</td><td>2</td><td><span class="tag green">有效</span></td><td>编辑 | 移除</td></tr><tr><td><input type="checkbox"></td><td>C010102</td><td>礼盒什锦小类</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td><span class="tag blue">Y</span></td><td>1</td><td><span class="tag green">有效</span></td><td>编辑 | 移除</td></tr><tr><td><input type="checkbox"></td><td>C0102</td><td>散称中类</td><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td><span class="tag blue">Y</span></td><td>1</td><td><span class="tag gray">已移除</span></td><td>恢复 | 删除</td></tr></tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑品类商品关系</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 品类编码</div>下拉（12.2.8 本货主）</div><div class="form-field"><div class="field-label">* 商品编码</div>多选（12.2.7 本货主）</div><div class="form-field"><div class="field-label">是否主品类</div>Y / N</div><div class="form-field"><div class="field-label">排序号</div>1</div><div class="form-field"><div class="field-label">* 状态</div>有效 / 移除</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, category_code, material_code)；同一商品仅一个主品类，设置新主品类时自动把原主品类置为 N；商品须为本货主已启用商品，品类须为本货主已启用品类。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-ownersupplier">
+              <div class="section-card">
+                <div class="section-head"><div class="title">货主供应商管理（12.2.15 t_3pl_owner_supplier）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 仅本货主</span></div>
+                <div class="section-note">货主自行维护本货主供应商档案（结构参考 12.1.4 t_mdm_supplier 并增加货主字段）：可由 MDM 供应商分配初始化（source_type=MDM），也支持货主自行建档（MANUAL，编码在货主内唯一）；停用供应商时若仍被启用商品引用（12.2.7 supplier_codes）则阻断停用。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">供应商编码 / 名称：请输入</div><div class="input">供应商类型：全部</div><div class="input">来源：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 新增供应商</button><button class="ghost-button">批量删除</button><button class="ghost-button">从 MDM 引入</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th><input type="checkbox"></th><th>供应商编码</th><th>供应商名称</th><th>简称</th><th>类型</th><th>联系人</th><th>联系电话</th><th>结算方式</th><th>结算账期</th><th>合作有效期</th><th>来源</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>GYS001</td><td>华益食品有限公司</td><td>华益食品</td><td>生产厂商</td><td>张三</td><td>138****6621</td><td>月结</td><td>月结30天</td><td>2024-01-01 ~ 长期</td><td>MDM 同步</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>GYS002</td><td>东方供应链管理有限公司</td><td>东方供应商</td><td>贸易商</td><td>李四</td><td>139****3082</td><td>账期</td><td>月结60天</td><td>2024-06-01 ~ 2027-05-31</td><td>货主自建</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>JJY-SUP-01</td><td>徐福记东莞分厂</td><td>东莞分厂</td><td>生产厂商</td><td>郑凯</td><td>0769-8899****</td><td>现结</td><td>—</td><td>2025-01-01 ~ 长期</td><td>货主自建</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>GYS003</td><td>南方原料贸易行</td><td>南方原料</td><td>贸易商</td><td>王五</td><td>020-3355****</td><td>月结</td><td>月结30天</td><td>2023-03-01 ~ 2026-02-28</td><td>MDM 同步</td><td><span class="tag gray">停用</span></td><td>编辑 | 删除 | 启用</td></tr></tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑供应商</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 供应商编码</div>GYS004</div><div class="form-field"><div class="field-label">* 供应商名称</div>文本</div><div class="form-field"><div class="field-label">简称</div>文本</div><div class="form-field"><div class="field-label">供应商类型</div>生产厂商 / 贸易商 / 代工厂</div><div class="form-field"><div class="field-label">联系人</div>文本</div><div class="form-field"><div class="field-label">联系电话</div>文本</div><div class="form-field"><div class="field-label">电子邮箱</div>文本</div><div class="form-field"><div class="field-label">省 / 市 / 区县</div>三级联动</div><div class="form-field"><div class="field-label">注册地址</div>同步可覆盖</div><div class="form-field"><div class="field-label">纳税人识别号</div>同步可覆盖</div><div class="form-field"><div class="field-label">开户银行</div>文本</div><div class="form-field"><div class="field-label">银行账号</div>文本</div><div class="form-field"><div class="field-label">结算方式</div>现结 / 月结 / 账期</div><div class="form-field"><div class="field-label">结算账期</div>月结 30 天</div><div class="form-field"><div class="field-label">合作开始日期</div>2026-01-01</div><div class="form-field"><div class="field-label">合作结束日期</div>空=长期</div><div class="form-field"><div class="field-label">* 状态</div>启用 / 停用</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, supplier_code)，同一全局供应商在同一货主下不可重复引入（mdm_supplier_code 亦唯一）；停用前校验是否被 12.2.7 启用商品引用，命中则提示「存在 N 个商品引用」并阻断；合作结束日期已过的供应商不可新增货源关系。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-supplierproduct">
+              <div class="section-card">
+                <div class="section-head"><div class="title">供应商商品管理（12.2.10 t_3pl_owner_supplier_material）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 供货关系与进价</span></div>
+                <div class="section-note">货主自行维护「供应商 ↔ 商品」三方供货关系（进价、账期、结算方式、优先级）；同一商品可配置多个货源，要货申请与入库申请按优先级取货源与成本；删除为逻辑删除（status=0）。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">供应商：全部</div><div class="input">商品编码 / 名称：请输入</div><div class="input">结算方式：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 新增货源</button><button class="ghost-button">批量删除</button><button class="ghost-button">批量调价</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th><input type="checkbox"></th><th>供应商编码</th><th>供应商名称</th><th>商品编码</th><th>商品名称</th><th>进价(含税)</th><th>币种</th><th>账期</th><th>结算方式</th><th>优先级</th><th>有效期</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>GYS001</td><td>华益食品</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>108.00</td><td>CNY</td><td>30天</td><td>电汇</td><td>1</td><td>2026-01-01 ~ 长期</td><td><span class="tag green">生效</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>GYS001</td><td>华益食品</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>6.50</td><td>CNY</td><td>30天</td><td>电汇</td><td>1</td><td>2026-01-01 ~ 长期</td><td><span class="tag green">生效</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>GYS002</td><td>东方供应商</td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>6.80</td><td>CNY</td><td>60天</td><td>票据</td><td>2</td><td>2026-03-01 ~ 长期</td><td><span class="tag green">生效</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>GYS002</td><td>东方供应商</td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>110.00</td><td>CNY</td><td>60天</td><td>票据</td><td>2</td><td>2025-01-01 ~ 2025-12-31</td><td><span class="tag gray">停用</span></td><td>编辑 | 删除 | 启用</td></tr></tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑供应商商品关系</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 供应商编码</div>下拉（12.2.15 本货主启用）</div><div class="form-field"><div class="field-label">* 商品编码</div>下拉（12.2.7 本货主启用）</div><div class="form-field"><div class="field-label">进价(含税)</div>108.00</div><div class="form-field"><div class="field-label">币种</div>CNY</div><div class="form-field"><div class="field-label">账期(天)</div>0 现结 / 30 / 60 / 90</div><div class="form-field"><div class="field-label">结算方式</div>电汇 / 票据 / 承兑 / 现金 / 其他</div><div class="form-field"><div class="field-label">供货优先级</div>1</div><div class="form-field"><div class="field-label">生效日期</div>2026-01-01</div><div class="form-field"><div class="field-label">失效日期</div>空=长期有效</div><div class="form-field"><div class="field-label">* 状态</div>生效 / 停用</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, supplier_code, material_code)；供应商须为本货主启用且合作期未过期的记录；同一商品同一优先级不可重复，优先级数值越小越优先。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-ownerpack">
+              <div class="section-card">
+                <div class="section-head"><div class="title">包装信息管理（12.2.14 t_3pl_owner_material_package）</div><span class="tag blue">货主自维护 · 增 / 删 / 改 / 查 · 按货主隔离</span></div>
+                <div class="section-note">货主自行维护本货主商品包装档案（结构参考 12.1.8 material_package 并增加货主字段）；新货主引入时由 12.1.8 按商品编码初始化默认记录（data_source=SYNC），之后货主可新增单位、改写箱规 / 条码 / 拆箱策略；停用后不可被单据引用。</div>
+                <div class="action-row" style="margin-bottom:10px;"><div class="input">商品编码 / 名称：请输入</div><div class="input">可选单位：全部</div><div class="input">包装层级：全部</div><div class="input">来源：全部</div><div class="input">状态：全部</div><button class="primary-button">查询</button><button class="ghost-button">重置</button><button class="primary-button">+ 新增包装</button><button class="ghost-button">批量删除</button><button class="ghost-button">从主数据同步</button><button class="ghost-button">导出</button></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th><input type="checkbox"></th><th>商品编码</th><th>商品名称</th><th>可选单位</th><th>包装层级</th><th>层级来源</th><th>基本单位</th><th>换算关系</th><th>包装条码</th><th>包装规格</th><th>允许拆箱</th><th>允许配送</th><th>默认收货</th><th>默认发货</th><th>状态</th><th>操作</th></tr></thead>
+                  <tbody><tr><td><input type="checkbox"></td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>CS</td><td><span class="tag blue">1 箱包装</span></td><td>AUTO</td><td>是</td><td>1 箱 = 12 KG</td><td>6901234500018</td><td>什锦糖果 12KG/箱</td><td><span class="tag green">允许</span></td><td>允许</td><td>是</td><td>是</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>CS2</td><td><span class="tag orange">2 中包装</span></td><td>MANUAL</td><td>否</td><td>1 中包 = 3 KG</td><td>6901234500070</td><td>什锦糖果 3KG/提</td><td><span class="tag green">允许</span></td><td>允许</td><td>否</td><td>否</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-KG-1001</td><td>什锦糖果散装</td><td>KG</td><td><span class="tag orange">3 单品</span></td><td>AUTO</td><td>是</td><td>1 / 1</td><td>6901234500025</td><td>草莓味散装糖果</td><td><span class="tag gray">不适用</span></td><td>允许</td><td>否</td><td>是</td><td><span class="tag green">启用</span></td><td>编辑 | 删除 | 停用</td></tr><tr><td><input type="checkbox"></td><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>ST</td><td><span class="tag orange">3 单品</span></td><td>AUTO</td><td>是</td><td>1 提 = 6 瓶</td><td>6901234500032</td><td>什锦糖果 6瓶/提</td><td><span class="tag gray">不适用</span></td><td>允许</td><td>是</td><td>否</td><td><span class="tag gray">停用</span></td><td>编辑 | 删除 | 启用</td></tr></tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">操作列：编辑（改） / 删除（逻辑删除 status=0） / 停用·启用；列表默认按本货主过滤，跨货主数据不可见。</div>
+              </div>
+              <div class="section-card" style="margin-top:14px;">
+                <div class="section-head"><div class="title">新增 / 编辑包装信息</div><span class="tag green">* 为必填 · 灰底为主数据同步只读</span></div>
+                <div class="grid-3"><div class="form-field"><div class="field-label">* 商品编码</div>下拉（12.2.7 本货主）</div><div class="form-field"><div class="field-label">* 可选单位</div>CS / CS1 / CS2 / ST / KG</div><div class="form-field"><div class="field-label">包装层级</div>1 箱 / 2 中包 / 3 单品</div><div class="form-field"><div class="field-label">层级来源</div>AUTO 推导 / MANUAL 锁定</div><div class="form-field"><div class="field-label">箱包装标记</div>X / 空</div><div class="form-field"><div class="field-label">中包装标记</div>X / 空</div><div class="form-field"><div class="field-label">基本计量单位</div>是 / 否（同商品唯一）</div><div class="form-field"><div class="field-label">换算关系描述</div>1 箱 = 12 KG（仅参考）</div><div class="form-field"><div class="field-label">EAN / 国际文件号</div>同步可覆盖</div><div class="form-field"><div class="field-label">包装条码</div>同步可覆盖</div><div class="form-field"><div class="field-label">包装规格</div>24 瓶 / 箱</div><div class="form-field"><div class="field-label">允许拆箱</div>是 / 否</div><div class="form-field"><div class="field-label">允许配送</div>是 / 否</div><div class="form-field"><div class="field-label">默认收货单位</div>是 / 否</div><div class="form-field"><div class="field-label">默认发货单位</div>是 / 否</div><div class="form-field"><div class="field-label">毛重(KG)</div>12.500</div><div class="form-field"><div class="field-label">长 / 宽 / 高</div>40 / 30 / 40</div><div class="form-field"><div class="field-label">体积(M3)</div>0.048</div><div class="form-field"><div class="field-label">单托数量</div>60</div><div class="form-field"><div class="field-label">* 状态</div>启用 / 停用</div><div class="form-field"><div class="field-label">备注</div>文本</div></div>
+                <div class="action-row" style="margin-top:12px;">
+                  <button class="primary-button">保存</button><button class="ghost-button">取消</button><button class="ghost-button">重置为同步值</button>
+                </div>
+                <div class="meta" style="margin-top:10px;">唯一约束 uk(owner_code, material_code, optional_unit)，同货主同商品仅一个基本计量单位；分子 / 分母为只读参考，不做系统折算（PR-7）；层级锁定为 MANUAL 后不随主数据刷新，修改留痕 12.4.1 t_3pl_goods_audit_log。</div>
+              </div>
+            </div>
+
+            <div class="po-screen" id="po-data">
+              <div class="section-card">
+                <div class="section-head"><div class="title">主数据查询（商品 / 包装 / 供应商）</div><span class="tag gray">MDM 全局主数据 · 门户只读</span></div>
+                <div class="section-note">展示 MDM 全局主数据镜像：商品主数据（12.1.1 material）、商品包装主数据（12.1.8 material_package）、供应商信息（12.1.4 t_mdm_supplier），门户只读；货主级可维护档案请到左侧「基础数据（货主自维护）」各页面自行增删改查。</div>
+                <div class="segment" style="margin-bottom:12px;">
+                  <button class="active">商品档案</button><button>包装信息</button><button>供应商</button>
+                </div>
+                <div class="action-row" style="margin-bottom:10px;">
+                  <div class="input">商品编码 / 名称：什锦</div><div class="input">状态：全部</div><button class="primary-button">查询</button>
+                </div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>商品编码</th><th>商品名称</th><th>规格</th><th>基本单位</th><th>品牌</th><th>温层</th><th>包装层级</th><th>转换关系</th><th>状态</th></tr></thead>
+                  <tbody>
+                    <tr><td>XFJ-CS-1001</td><td>什锦糖果整箱</td><td>12KG/箱</td><td>CS</td><td>徐福记</td><td>常温</td><td><span class="tag blue">1 箱包装</span></td><td>1 箱 = 12 KG</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-ST-0001</td><td>草莓味散装糖果</td><td>散装</td><td>KG</td><td>徐福记</td><td>常温</td><td><span class="tag orange">3 单品</span></td><td>—</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-KG-1002</td><td>什锦糖果分享装</td><td>6瓶/提</td><td>CS2</td><td>徐福记</td><td>常温</td><td><span class="tag orange">2 中包装</span></td><td>—</td><td><span class="tag green">启用</span></td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：本页为 MDM 全局主数据只读查询；货主维度的商品、品类、供应商、包装、货源维护请在「基础数据（货主自维护）」菜单中操作，无需提单申请。</div>
+              </div>
+
+              <div class="section-card">
+                <div class="section-head"><div class="title">商品包装主数据（12.1.8 material_package）</div><span class="tag gray">只读</span></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>商品编码</th><th>可选单位</th><th>包装层级</th><th>基本单位</th><th>换算参考</th><th>包装条码</th><th>包装规格</th><th>允许拆箱</th><th>毛重</th><th>状态</th></tr></thead>
+                  <tbody>
+                    <tr><td>XFJ-CS-1001</td><td>CS</td><td><span class="tag blue">1 箱包装</span></td><td>是</td><td>1 箱 = 12 KG</td><td>6901234500018</td><td>什锦糖果 12KG/箱</td><td><span class="tag green">允许</span></td><td>12.5 KG</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-CS-1001</td><td>CS2</td><td><span class="tag orange">2 中包装</span></td><td>否</td><td>1 中包 = 3 KG</td><td>6901234500070</td><td>什锦糖果 3KG/提</td><td><span class="tag green">允许</span></td><td>3.2 KG</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>XFJ-ST-0001</td><td>KG</td><td><span class="tag orange">3 单品</span></td><td>是</td><td>1 / 1</td><td>6901234500025</td><td>草莓味散装糖果</td><td><span class="tag gray">不适用</span></td><td>—</td><td><span class="tag green">启用</span></td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：本页为 12.1.8 全局包装主数据只读镜像；货主维度包装（12.2.14 t_3pl_owner_material_package）由货主在「包装信息」页自行维护。</div>
+              </div>
+
+              <div class="section-card">
+                <div class="section-head"><div class="title">供应商信息（12.1.4 t_mdm_supplier）</div><span class="tag gray">只读</span></div>
+                <div class="table-scroll"><table>
+                  <thead><tr><th>供应商编码</th><th>供应商名称</th><th>简称</th><th>供应商类型</th><th>联系人</th><th>联系电话</th><th>结算方式</th><th>来源</th><th>状态</th></tr></thead>
+                  <tbody>
+                    <tr><td>SUP001</td><td>华益食品有限公司</td><td>华益食品</td><td>生产厂商</td><td>周敏</td><td>021-6688****</td><td>月结 30 天</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>SUP002</td><td>东方供应链管理有限公司</td><td>东方供应商</td><td>贸易商</td><td>孙浩</td><td>021-6688****</td><td>现结</td><td>MDM 同步</td><td><span class="tag green">启用</span></td></tr>
+                    <tr><td>JJY-SUP-01</td><td>徐福记东莞分厂</td><td>东莞分厂</td><td>生产厂商</td><td>郑凯</td><td>0769-8899****</td><td>月结 60 天</td><td>货主自建</td><td><span class="tag green">启用</span></td></tr>
+                  </tbody>
+                </table></div>
+                <div class="meta" style="margin-top:8px;">说明：本页为 12.1.4 全局供应商只读查询；货主供应商（12.2.15 t_3pl_owner_supplier）在「货主供应商」页维护，商品货源只取本货主启用记录。</div>
+              </div>
+            </div>
 
             <div class="po-screen" id="po-track">
               <div class="section-card">
@@ -2163,7 +2566,7 @@
     </div>
 
     <div class="proto-note">
-      当前原型分为平台端与货主端两个面板，重点用于评审信息架构、页面布局和核心业务流程。下一步可继续扩展为多页面 HTML 原型、补充更细的字段交互、空态异常态、审批弹层、以及更贴近真实产品的高保真视觉稿。
+      当前原型分为平台端与货主端两个面板，重点用于评审信息架构、页面布局和核心业务流程。货主端「基础数据（货主自维护）」6 个页面支持货主自行新增、编辑、删除、查询，与主数据只读查询页分离。下一步可继续扩展为多页面 HTML 原型、补充更细的字段交互、空态异常态、审批弹层、以及更贴近真实产品的高保真视觉稿。
     </div>
   </div>
 
